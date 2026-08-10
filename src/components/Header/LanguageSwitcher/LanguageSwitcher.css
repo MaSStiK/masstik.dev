@@ -1,0 +1,31 @@
+.language-switcher {
+    width: fit-content;
+    height: 32px;
+    padding: 3px;
+    overflow: hidden;
+    align-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    background-color: var(--bg-section);
+}
+
+.language-switcher button {
+    width: 32px;
+    height: 24px;
+    border-radius: 5px;
+
+    font-family: var(--font-console);
+    text-transform: uppercase;
+    font-size: var(--fs-tiny);
+    color: rgb(147, 146, 147);
+}
+
+.language-switcher button:is(:hover, :focus-visible) {
+    color: var(--white);
+}
+
+.language-switcher button.active {
+    background-color: var(--purple);
+    color: rgb(26, 23, 32);
+}

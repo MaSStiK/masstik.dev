@@ -1,0 +1,35 @@
+:root {
+    --header-height: 64px;
+}
+
+header {
+    width: 100%;
+    height: var(--header-height);
+    padding: 0 24px;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color: var(--bg-header);
+    border-bottom: 1px solid var(--header-border);
+}
+
+.header-button, nav ul li {
+    height: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: var(--fs-small);
+}
+
+nav ul li {
+    
+    border: none;
+}
+
+nav ul li:is(:hover, :focus-visible) {
+    background-color: var(--bg-section);
+}

@@ -1,0 +1,42 @@
+@import "./base/typography.css";
+@import "./base/flex.css";
+@import "./UI/button.css";
+
+:root {
+    --bg-primary: #2d2a2e;
+    --bg-section: #383539;
+    --bg-header:  #221f22;
+    --header-border: #19181a;
+
+    /* Monokai Pro Color Palette */
+    --white:  #fdf9f3;
+    --red:    #ff6188;
+    --orange: #fc9867;
+    --yellow: #ffd866;
+    --green:  #a9dc76;
+    --blue:   #78dce8;
+    --purple: #ab9df2;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: var(--bg-primary);
+}
+
+section {
+    background-color: var(--bg-section);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    scroll-behavior: smooth;
+    color-scheme: dark;
+}
