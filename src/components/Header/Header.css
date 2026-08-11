@@ -17,19 +17,17 @@ header {
     border-bottom: 1px solid var(--header-border);
 }
 
-.header-button, nav ul li {
+.header-button {
     height: 32px;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-1);
     border: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: 8px;
-    padding: 6px 12px;
+    padding:  12px;
     font-size: var(--fs-small);
 }
 
-nav ul li {
-    
-    border: none;
-}
-
-nav ul li:is(:hover, :focus-visible) {
+.header-button:is(:hover, :focus-visible) {
     background-color: var(--bg-section);
 }

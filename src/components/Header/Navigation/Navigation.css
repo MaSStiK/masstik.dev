@@ -1,0 +1,13 @@
+nav ul li button {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-1);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: var(--fs-small);
+}
+
+nav ul li button:is(:hover, :focus-visible) {
+    background-color: var(--bg-section);
+}
