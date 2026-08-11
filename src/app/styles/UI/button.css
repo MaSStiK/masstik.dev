@@ -22,9 +22,10 @@ button {
     border-radius: 0;
     border: none;
     outline: none;
-    color: var(--white);
     background-color: transparent;
     cursor: pointer;
+    font-family: var(--font-primary);
+    color: var(--white);
 }
 
 /* Стили для кнопки */

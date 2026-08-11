@@ -13,7 +13,9 @@
     --fw-medium:    500;
     --fw-regular:   400;
 
-    --font-primary: var(--font-baloo), var(--font-comfortaa), sans-serif;
+    --font-primary: var(--font-comfortaa), sans-serif;
+    --font-secondary: var(--font-balsamiq);
+    --font-comment: var(--font-asinastra);
     --font-console: Consolas, "Courier New", monospace;
 }
 
@@ -29,10 +31,10 @@
     }
 }
 
-body {
+* {
     font-family: var(--font-primary);
-    color: var(--white);
     font-weight: var(--fw-regular);
+    color: var(--white);
     overflow-wrap: break-word;
 }
 
@@ -40,6 +42,10 @@ code {
     font-family: var(--font-console);
     white-space: pre-wrap;
 }
+
+.font-primary   { font-family: var(--font-primary); }
+.font-secondary { font-family: var(--font-secondary); }
+.font-comment   { font-family: var(--font-comment); }
 
 /* Размер текста */
 h1, .h1 { font-size: var(--fs-xlarge); font-weight: var(--fw-bold); line-height: 1.2; }

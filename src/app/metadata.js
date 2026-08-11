@@ -1,20 +1,27 @@
-import { Baloo_2, Comfortaa } from "next/font/google";
+import { Balsamiq_Sans, Comfortaa } from "next/font/google"
+import localFont from "next/font/local"
 
-export const baloo = Baloo_2({
-    subsets: ["latin"],
-    variable: "--font-baloo",
-    weight: ["400", "500", "600", "700", "800"],
-    style: ["normal"],
-    display: "swap",
-    fallback: []
-})
-
+// Основной шрифт
 export const comfortaa = Comfortaa({
-    subsets: ["cyrillic"],
+    subsets: ['latin', 'cyrillic'],
     weight: ["300", "400", "500", "600", "700"],
     variable: "--font-comfortaa",
+    display: "swap"
+})
+
+// Второстепенный шрифт для заголовков
+export const balsamiqSans = Balsamiq_Sans({
+    subsets: ['latin', 'cyrillic'],
+    variable: "--font-balsamiq",
+    weight: ["400", "700"],
+    display: "swap"
+})
+
+// Шрифт для личных записей
+export const asinastra = localFont({
+    src: "./styles/fonts/Asinastra.otf",
+    variable: "--font-asinastra",
     display: "swap",
-    fallback: []
 })
 
 const THEME_COLOR = "#2d2a2e"

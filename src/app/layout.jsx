@@ -1,5 +1,11 @@
 import { cookies, headers } from "next/headers"
-import { baloo, comfortaa, _viewport, _metadata } from "./metadata"
+import {
+    comfortaa,
+    balsamiqSans,
+    asinastra,
+    _viewport,
+    _metadata
+} from "./metadata"
 import "@/app/styles/style.css"
 
 import JotaiProvider from "@/components/JotaiProvider"
@@ -21,7 +27,7 @@ export default async function RootLayout({ children }) {
     const language = getInitialLanguage(savedLanguage, acceptLanguage)
 
     return (
-        <html lang={language} className={`${baloo.variable} ${comfortaa.variable}`}>
+        <html lang={language} className={`${comfortaa.variable} ${balsamiqSans.variable} ${asinastra.variable}`}>
             <body>
                 {/*  */}
                 <JotaiProvider language={language}>

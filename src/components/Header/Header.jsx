@@ -11,9 +11,9 @@ export default function Header() {
     return (
         <header className="flex-row">
             <span>
-                <span className="fs-xlarge text-purple">{"<"}</span>
-                <span className="fs-xlarge fw-bold"> MaSStiK.dev </span>
-                <span className="fs-xlarge text-purple">{"/>"}</span>
+                <span className="font-secondary fs-xlarge text-purple">{"<"}</span>
+                <span className="font-secondary fs-xlarge"> MaSStiK.dev </span>
+                <span className="font-secondary fs-xlarge text-purple">{"/>"}</span>
                 </span>
             <Navigation />
             <div className="flex-row gap-2">
