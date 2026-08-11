@@ -1,20 +1,23 @@
+import useLocale from "@/hooks/useLocale"
 import "./Navigation.css"
 
 export default function Navigation() {
+    const locale = useLocale()
+
     return (
         <nav>
             <ul className="flex-row gap-1">
                 <li>
-                    <button>Обо мне</button>
+                    <button>{locale.header.nav.about_me}</button>
                 </li>
                 <li>
-                    <button>Проекты</button>
+                    <button>{locale.header.nav.projects}</button>
                 </li>
                 <li>
-                    <button>Стек</button>
+                    <button>{locale.header.nav.stack}</button>
                 </li>
                 <li>
-                    <button>Контакты</button>
+                    <button>{locale.header.nav.contacts}</button>
                 </li>
             </ul>
         </nav>

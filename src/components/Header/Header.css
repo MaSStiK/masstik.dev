@@ -18,8 +18,10 @@ header {
 }
 
 .header-button {
+    width: 88px;
     height: 32px;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: var(--gap-1);
     border: 1px solid rgba(255, 255, 255, 0.07);

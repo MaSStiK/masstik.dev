@@ -1,7 +1,15 @@
 const fr = {
-    heroHello: "Bonjour,",
-    heroName: "Je suis Matvei",
-    heroProfession: "Développeur Web",
+    header: {
+        nav: {
+
+        },
+        disc: "Disque"
+    },
+    hero: {
+        hello: "Bonjour,",
+        name: "Je suis Matvei",
+        profession: "Développeur Web",
+    }
 }
 
 export default fr

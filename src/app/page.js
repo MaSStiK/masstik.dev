@@ -1,14 +1,13 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link"
-import { useAtomValue } from "jotai"
-import { localeAtom } from "@/store/language"
+import useLocale from "@/hooks/useLocale"
 import "@/app/styles/home.css"
 
 import Header from "@/components/Header/Header"
 
 export default function Home() {
-    const locale = useAtomValue(localeAtom)
+    const locale = useLocale()
 
     return (
         <>
@@ -16,10 +15,10 @@ export default function Home() {
 
             <main>
                 <div className="flex-col">  
-                    <h1>{locale.heroHello}</h1>
-                    <p>{locale.heroName}</p>
-                    <p>{locale.heroProfession}</p>
-                    <p>{locale.heroDesc}</p>
+                    <h1>{locale.hero.hello}</h1>
+                    <p>{locale.hero.name}</p>
+                    <p>{locale.hero.profession}</p>
+                    <p>{locale.hero.desc}</p>
                 </div>
             </main>
         </>
