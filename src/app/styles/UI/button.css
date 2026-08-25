@@ -47,7 +47,7 @@ button {
 
     outline: none;
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: 8px;
     background-color: var(--button-default);
 
     overflow: hidden;
@@ -60,10 +60,10 @@ button {
 
 /* Наведение на пк */
 @media (hover: hover) {
-    .button:is(:hover, :focus-visible)          { background-color: var(--button-default-hover); }
+    .button:is(:hover, :focus-visible) { background-color: var(--button-default-hover); }
 }
 
 /* Клик на телефоне */
 @media (hover: none) {
-    .button:active          { background-color: var(--button-default-hover); }
+    .button:active { background-color: var(--button-default-hover); }
 }

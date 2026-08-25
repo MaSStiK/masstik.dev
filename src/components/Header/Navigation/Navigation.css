@@ -5,9 +5,19 @@ nav ul li button {
     gap: var(--gap-1);
     border-radius: 8px;
     padding: 6px 12px;
-    font-size: var(--fs-small);
-}
 
-nav ul li button:is(:hover, :focus-visible) {
-    background-color: var(--bg-section);
+    font-size: var(--fs-small);
+    color: var(--gray);
+
+    @media (hover: hover) {
+        &:is(:hover, :focus-visible) {
+            background-color: var(--bg-secondary);
+            color: var(--white);
+        }
+    }
+
+    &:active {
+        background-color: var(--bg-secondary);
+        color: var(--white);
+    }
 }

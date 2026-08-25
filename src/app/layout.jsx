@@ -29,7 +29,6 @@ export default async function RootLayout({ children }) {
     return (
         <html lang={language} className={`${comfortaa.variable} ${balsamiqSans.variable} ${asinastra.variable}`}>
             <body>
-                {/*  */}
                 <JotaiProvider language={language}>
                     {children}
                 </JotaiProvider>

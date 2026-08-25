@@ -14,7 +14,7 @@ export default function Header() {
                 <span className="font-secondary fs-xlarge text-purple">{"<"}</span>
                 <span className="font-secondary fs-xlarge"> MaSStiK.dev </span>
                 <span className="font-secondary fs-xlarge text-purple">{"/>"}</span>
-                </span>
+            </span>
             <Navigation />
             <div className="flex-row gap-2">
                 <LanguageSwitcher />

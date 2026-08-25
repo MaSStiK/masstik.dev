@@ -22,7 +22,7 @@ export default function LanguageSwitcher() {
             {LANGUAGES.map((lang, i) => (
                 <button
                     key={i}
-                    className={language === lang ? "active" : ""}
+                    className={language === lang ? "selected" : ""}
                     onClick={() => changeLanguage(lang)}
                 >
                     {lang}

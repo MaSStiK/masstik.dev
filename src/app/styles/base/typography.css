@@ -1,6 +1,6 @@
 :root {
     /* Размеры текста */
-    --fs-xxlarge: 28px;
+    --fs-xxlarge: 50px;
     --fs-xlarge:  24px;
     --fs-large:   18px;
     --fs-medium:  16px;
@@ -14,8 +14,8 @@
     --fw-regular:   400;
 
     --font-primary: var(--font-comfortaa), sans-serif;
-    --font-secondary: var(--font-balsamiq);
-    --font-comment: var(--font-asinastra);
+    --font-secondary: var(--font-balsamiq), sans-serif;
+    --font-comment: var(--font-asinastra), sans-serif;
     --font-console: Consolas, "Courier New", monospace;
 }
 
@@ -35,24 +35,31 @@
     font-family: var(--font-primary);
     font-weight: var(--fw-regular);
     color: var(--white);
-    overflow-wrap: break-word;
+    /* overflow-wrap: break-word; */
 }
 
 code {
     font-family: var(--font-console);
     white-space: pre-wrap;
+    display: flex;
+    flex-direction: column;
+
+    & * {
+        font-family: var(--font-console);
+    }
 }
 
-.font-primary   { font-family: var(--font-primary); }
-.font-secondary { font-family: var(--font-secondary); }
-.font-comment   { font-family: var(--font-comment); }
+.font-primary   { font-family: var(--font-primary); }   /* Основной шрифт */
+.font-secondary { font-family: var(--font-secondary); } /* Второстепенный шрифт для заголовков */
+.font-comment   { font-family: var(--font-comment); }   /* Шрифт для личных записей */
+.font-console   { font-family: var(--font-console); }   /* Шрифт для консольного текста */
 
 /* Размер текста */
-h1, .h1 { font-size: var(--fs-xlarge); font-weight: var(--fw-bold); line-height: 1.2; }
-h2, .h2 { font-size: var(--fs-xlarge); font-weight: var(--fw-semibold); line-height: 1.25; }
-h3, .h3 { font-size: var(--fs-large);  font-weight: var(--fw-semibold); line-height: 1.3; }
-h4, .h4 { font-size: var(--fs-large);  font-weight: var(--fw-semibold); line-height: 1.35; }
-p, .p, span, label { font-size: var(--fs-medium); line-height: 1.5; }
+h1, .h1 { font-size: var(--fs-xlarge); font-weight: var(--fw-bold); }
+h2, .h2 { font-size: var(--fs-xlarge); font-weight: var(--fw-semibold); }
+h3, .h3 { font-size: var(--fs-large);  font-weight: var(--fw-semibold); }
+h4, .h4 { font-size: var(--fs-large);  font-weight: var(--fw-semibold); }
+p, .p, span, label { font-size: var(--fs-medium); }
 .fs-xxlarge  { font-size: var(--fs-xxlarge); }
 .fs-xlarge   { font-size: var(--fs-xlarge); }
 .fs-large    { font-size: var(--fs-large); }
@@ -68,6 +75,7 @@ p, .p, span, label { font-size: var(--fs-medium); line-height: 1.5; }
 
 /* Цвет текста */
 .text-white  { color: var(--white); }
+.text-gray   { color: var(--gray); }
 .text-red    { color: var(--red); }
 .text-orange { color: var(--orange); }
 .text-yellow { color: var(--yellow); }
@@ -83,15 +91,6 @@ p, .p, span, label { font-size: var(--fs-medium); line-height: 1.5; }
 
 /* Подчеркнутый текст */
 .text-underline { text-decoration: underline; }
-
-/* Подчеркивание текста при наведении */
-@media (hover: hover) {
-    .text-hover-underline:is(:hover, :focus-visible) { text-decoration: underline; }
-}
-
-@media (hover: none) {
-    .text-hover-underline:active { text-decoration: underline; }
-}
 
 /* Тег Link */
 a {

@@ -5,9 +5,9 @@
     overflow: hidden;
     align-items: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border: 1px solid #ffffff12;
     border-radius: 8px;
-    background-color: var(--bg-section);
+    background-color: var(--bg-secondary);
 }
 
 .language-switcher button {
@@ -16,16 +16,21 @@
     border-radius: 5px;
 
     font-family: var(--font-console);
-    text-transform: uppercase;
     font-size: var(--fs-tiny);
-    color: rgb(147, 146, 147);
+    color: var(--gray);
+    text-transform: uppercase;
+
+    @media (hover: hover) {
+        &:is(:hover, :focus-visible) {
+            color: var(--white);
+        }
+    }
+    &:active {
+        color: var(--white);
+    }
 }
 
-.language-switcher button:is(:hover, :focus-visible) {
-    color: var(--white);
-}
-
-.language-switcher button.active {
+.language-switcher button.selected {
     background-color: var(--purple);
-    color: rgb(26, 23, 32);
+    color: #1A1720;
 }

@@ -9,10 +9,26 @@ const en = {
         disc: "Drive"
     },
     hero: {
-        hello: "Hello,",
-        name: "I'm Matvei",
-        profession: "Web Developer",
-        desc: "I turn designs into fast, responsive, production-ready websites with React and Next.js."
+        aboutMe: {
+            name: "Matvey",
+            gender: "Male",
+            role: "Web Developer",
+            langRu: "Russian",
+            langEn: "English B2",
+            langFr: "French A2",
+        },
+        readme: {
+            whoAmI: "Hi, username! I'm Matvey - a Web Developer.",
+            start: "I've been into programming since the summer of 2018.",
+            webStart: "Started learning web development in 2021 and I'm still improving my skills.",
+            experience: "I currently have over 2 years of professional experience in web development.",
+            passion: "Building fully functional websites from designs - from the first line of code all the way to launch.",
+            ideas: "Always coming up with new ideas.",
+            inspiration: "Love discovering talented creative people - musicians, animators, and game developers - and following their projects and growth."
+        }
+    },
+    projects: {
+        header: "Projects"
     }
 }
 

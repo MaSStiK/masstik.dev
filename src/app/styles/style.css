@@ -4,32 +4,18 @@
 
 :root {
     --bg-primary: #2d2a2e;
-    --bg-section: #383539;
+    --bg-secondary: #383539;
     --bg-header:  #221f22;
-    --header-border: #19181a;
 
     /* Monokai Pro Color Palette */
     --white:  #fdf9f3;
+    --gray:   #939293;
     --red:    #ff6188;
     --orange: #fc9867;
     --yellow: #ffd866;
     --green:  #a9dc76;
     --blue:   #78dce8;
     --purple: #ab9df2;
-}
-
-html, body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-body {
-    background-color: var(--bg-primary);
-}
-
-section {
-    background-color: var(--bg-section);
 }
 
 * {
@@ -40,3 +26,17 @@ section {
     scroll-behavior: smooth;
     color-scheme: dark;
 }
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body {
+    background-color: var(--bg-primary);
+}
+
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
