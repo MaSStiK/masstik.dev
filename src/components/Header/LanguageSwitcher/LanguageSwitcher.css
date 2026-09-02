@@ -5,9 +5,9 @@
     overflow: hidden;
     align-items: center;
 
-    border: 1px solid #ffffff12;
     border-radius: 8px;
-    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-surface);
 }
 
 .language-switcher button {
@@ -32,5 +32,5 @@
 
 .language-switcher button.selected {
     background-color: var(--purple);
-    color: #1A1720;
+    color: var(--bg-surface);
 }

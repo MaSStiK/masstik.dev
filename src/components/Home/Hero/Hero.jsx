@@ -1,6 +1,8 @@
 import Image from "next/image"
+import Link from "next/link"
 import useLocale from "@/hooks/useLocale"
 import PixelBlast from "@/components/ReactBits/PixelBlast/PixelBlast"
+import { FaGithub, FaTelegramPlane, FaAt } from "react-icons/fa"
 import HeroCode from "./HeroCode"
 
 import "./Hero.css"
@@ -13,7 +15,7 @@ export default function Hero() {
             <PixelBlast
                 variant="triangle"
                 pixelSize={4}
-                color="#AB9DF2"
+                color="#ab9df2"
                 patternScale={2}
                 patternDensity={1.5}
                 pixelSizeJitter={0}
@@ -28,7 +30,7 @@ export default function Hero() {
             />
 
             <div className="hero__container">
-                <div className="flex-row gap-7 hero__content">
+                <div className="hero__content">
                     <div className="hero-block hero__info">
                         <div className="hero-block__header">
                             <span className="text-gray">{`// About.md`}</span>
@@ -45,18 +47,53 @@ export default function Hero() {
                         </div>
                     </div>
 
-                    <div className="hero-block hero__bio">
-                        <div className="hero-block__header">
-                            <span className="text-gray">{`// README.md`}</span>
+                    <div className="hero__wrapper">
+                        <div className="hero-block hero__bio">
+                            <div className="hero-block__header">
+                                <span className="text-gray">{`// README.md`}</span>
+                            </div>
+                            <div className="hero-block__inner">
+                                <p><span className="text-gray">&gt;</span> {locale.hero.readme.whoAmI}</p>
+                                <p><span className="text-gray">&gt;</span> {locale.hero.readme.start}</p>
+                                <p><span className="text-gray">&gt;</span> {locale.hero.readme.webStart}</p>
+                                <p><span className="text-gray">&gt;</span> {locale.hero.readme.experience}</p>
+                                <p><span className="text-gray">&gt;</span> {locale.hero.readme.passion}</p>
+                                <p><span className="text-gray">&gt;</span> {locale.hero.readme.ideas}</p>
+                                <p><span className="text-gray">&gt;</span> {locale.hero.readme.inspiration}</p>
+
+                                <hr />
+
+                                <ul className="flex-row gap-4 hero__links">
+                                    <li>
+                                        <Link className="button hero__link-github"
+                                            href="https://github.com/MaSStiK"
+                                            target="_blank"
+                                        >
+                                            <FaGithub />Github
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="button hero__link-telegram"
+                                            href="https://t.me/MaSStiK"
+                                            target="_blank"
+                                        >
+                                            <FaTelegramPlane />Telegram
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="button hero__link-gmail"
+                                            href="mailto:masstik.dev@gmail.com"
+                                        >
+                                            <FaAt />Gmail
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div className="hero-block__inner">
-                            <p><span className="text-gray">&gt;</span> {locale.hero.readme.whoAmI}</p>
-                            <p><span className="text-gray">&gt;</span> {locale.hero.readme.start}</p>
-                            <p><span className="text-gray">&gt;</span> {locale.hero.readme.webStart}</p>
-                            <p><span className="text-gray">&gt;</span> {locale.hero.readme.experience}</p>
-                            <p><span className="text-gray">&gt;</span> {locale.hero.readme.passion}</p>
-                            <p><span className="text-gray">&gt;</span> {locale.hero.readme.ideas}</p>
-                            <p><span className="text-gray">&gt;</span> {locale.hero.readme.inspiration}</p>
+
+                        <div className="flex-row gap-6 hero__buttons">
+                            <button className="button hero__button-hire">Связаться со мной</button>
+                            <button className="button hero__button-projects">Проекты</button>
                         </div>
                     </div>
                 </div>

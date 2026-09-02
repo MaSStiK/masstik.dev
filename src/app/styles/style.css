@@ -3,13 +3,16 @@
 @import "./UI/button.css";
 
 :root {
-    --bg-primary: #2d2a2e;
-    --bg-secondary: #383539;
-    --bg-header:  #221f22;
+    --bg-base:      #19181a; /* Основной фон */
+    --bg-surface:   #2d2a2e; /* Фон блоков поверх основного */
+    --bg-highlight: #383539; /* Фон вложенных или выделенных элементов */
+    --bg-header:    #221f22; /* Фон для header и заголовков блоков */
+    --border-color: #373537;
 
     /* Monokai Pro Color Palette */
     --white:  #fdf9f3;
     --gray:   #939293;
+    --dark:   #727072;
     --red:    #ff6188;
     --orange: #fc9867;
     --yellow: #ffd866;
@@ -35,8 +38,13 @@ html, body {
 }
 
 body {
-    background-color: var(--bg-primary);
+    background-color: var(--bg-base);
 }
 
-.bg-primary { background-color: var(--bg-primary); }
-.bg-secondary { background-color: var(--bg-secondary); }
+.bg-primary { background-color: var(--bg-base); }
+.bg-secondary { background-color: var(--bg-surface); }
+
+hr {
+    border: none;
+    border-top: 1px solid var(--dark);
+}

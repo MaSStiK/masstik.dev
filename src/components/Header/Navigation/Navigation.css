@@ -11,13 +11,13 @@ nav ul li button {
 
     @media (hover: hover) {
         &:is(:hover, :focus-visible) {
-            background-color: var(--bg-secondary);
+            background-color: var(--bg-surface);
             color: var(--white);
         }
     }
 
     &:active {
-        background-color: var(--bg-secondary);
+        background-color: var(--bg-surface);
         color: var(--white);
     }
 }

@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     position: absolute;
     top: 0;
     left: 0;
@@ -18,6 +19,8 @@
 }
 
 .hero__content {
+    display: flex;
+    gap: var(--gap-6);
     padding: var(--gap-2);
     position: relative;
     pointer-events: none;
@@ -29,12 +32,14 @@
 
 .hero-block {
     overflow: hidden;
-    align-items: center;
     border-radius: 8px;
 
     backdrop-filter: blur(8px);
-    border: 1px solid #FFFFFF22;
+    border: 1px solid var(--border-color);
     box-shadow: 4px 4px 30px #00000080;
+
+    /* TODO: Добавить переключение прозрачности в заголовок About и README */
+    background-color: var(--bg-surface);
 }
 
 .hero-block__header {
@@ -54,23 +59,151 @@
     padding: var(--gap-4);
 }
 
+/* Обвертка для блока hero__bio и hero__buttons */
+.hero__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    pointer-events: none;
+
+    & > * {
+        pointer-events: auto;
+    }
+}
+
 /* Блок с краткой информацией */
-.hero__info code {
-    /* Фиксированная ширина, чтобы не скакала при смене языка */
-    width: 258px;
+.hero__info {
+    align-items: center;
+
+    & code {
+        /* Фиксированная ширина, чтобы не скакала при смене языка */
+        width: 100%;
+    }
 }
 
 .hero__info-pic {
     border-radius: 8px;
 }
 
-/* Блок с описанием */
+/* Блок с текстовым описанием */
 .hero__bio {
     width: 700px;
     height: fit-content;
     
     & p {
-        font-size: 16px;
         line-height: 1.4;
+    }
+
+    & hr {
+        margin-top: var(--gap-4);
+        padding-bottom: var(--gap-4);
+    }
+}
+
+/* Ссылки */
+.hero__links a {
+    text-transform: uppercase;
+    font-size: var(--fs-small);
+    font-family: var(--font-console);
+    border: none;
+    transition: outline-color 0.15s ease-out;
+}
+
+.hero__links svg {
+    width: 20px;
+    height: 20px;
+    transition: fill 0.15s ease-out;
+}
+
+.hero__link-github {
+    color: var(--green);
+    outline: 2px solid var(--green);
+    & svg { fill: var(--green) }
+}
+
+.hero__link-telegram {
+    color: var(--blue);
+    outline: 2px solid var(--blue);
+    & svg { fill: var(--blue) }
+}
+
+.hero__link-gmail {
+    color: var(--red);
+    outline: 2px solid var(--red);
+    & svg { fill: var(--red) }
+}
+
+@media (hover: hover) {
+    .hero__links a:is(:hover, :focus-visible) {
+        color: var(--bg-header);
+        outline-color: #00000000;
+        & svg { fill: var(--bg-header) }
+    }
+
+    .hero__link-github:is(:hover, :focus-visible) { background-color: var(--green); }
+    .hero__link-telegram:is(:hover, :focus-visible) { background-color: var(--blue); }
+    .hero__link-gmail:is(:hover, :focus-visible) { background-color: var(--red); }
+}
+
+@media (hover: none) {
+    .hero__links a:active {
+        color: var(--bg-header);
+        outline-color: #00000000;
+        & svg { fill: var(--bg-header) }
+    }
+
+    .hero__link-github:active { background-color: var(--green); }
+    .hero__link-telegram:active { background-color: var(--blue); }
+    .hero__link-gmail:active { background-color: var(--red); }
+}
+
+
+/* Кнопки связи и проектов */
+.hero__buttons {
+    margin-bottom: 30px;
+}
+
+.hero__buttons button {
+    height: 48px;
+    padding: 16px;
+    color: var(--bg-surface);
+    font-weight: var(--fw-bold);
+
+    border: none;
+    outline: 4px solid #00000000;
+    outline-offset: 4px;
+    transition: outline-color .15s ease-out;
+}
+
+.hero__button-hire {
+    background-color: var(--orange);
+}
+
+.hero__button-projects {
+    background-color: var(--yellow);
+}
+
+@media (hover: hover) {
+    .hero__button-hire:is(:hover, :focus-visible) {
+        background-color: #fb8044;
+        outline-color: #fb8044;
+    }
+    
+    .hero__button-projects:is(:hover, :focus-visible) {
+        background-color: #ffcf42;
+        outline-color: #ffcf42;
+    }
+}
+
+@media (hover: none) {
+    .hero__button-hire:active {
+        background-color: #fb8044;
+        outline-color: #fb8044;
+    }
+
+    .hero__button-projects:active {
+        background-color: #ffcf42;
+        outline-color: #ffcf42;
     }
 }

@@ -11,20 +11,19 @@ const fr = {
     hero: {
         aboutMe: {
             name: "Matvey",
-            gender: "Masculin",
             role: "Développeur Web",
             langRu: "Russe",
             langEn: "Anglais B2",
             langFr: "Français A2",
         },
         readme: {
-            whoAmI: "Salut, username ! Je suis Matvey - Développeur Web.",
-            start: "Programme depuis l'été 2018.",
+            whoAmI: "Salut, Username ! Je suis Matvey, Développeur Web.",
+            start: "Je programme depuis l'été 2019.",
             webStart: "Commencé à apprendre le développement web en 2021 et continue à progresser.",
             experience: "Aujourd'hui, plus de 2 ans d'expérience professionnelle en développement web.",
-            passion: "Création de sites web entièrement fonctionnels à partir de maquettes - de la première ligne de code jusqu'à la mise en ligne.",
+            passion: "Je crée des sites web entièrement fonctionnels à partir de maquettes - de la première ligne de code jusqu'à la mise en ligne.",
             ideas: "J'ai toujours plein de nouvelles idées.",
-            inspiration: "J'adore découvrir des créateurs talentueux - musiciens, animateurs et développeurs de jeux vidéo - et suivre leurs projets et leur évolution."
+            inspiration: "J'adore découvrir des créateurs talentueux, suivre leurs projets et m'inspirer de leur travail."
         }
     },
     projects: {

@@ -4,7 +4,7 @@ import useLocale from "@/hooks/useLocale"
 const aboutMe = {
     name: "Matvey",
     age: 22,
-    gender: "Male",
+    nickname: "MaSStiK",
     role: "Web Developer",
     openToWork: true,
     energy: Infinity,
@@ -41,9 +41,9 @@ export default function HeroCode() {
             </span>
             <span>
                 {`    `}
-                <span>gender</span>
+                <span>nickname</span>
                 <span className="text-gray">: &quot;</span>
-                <span className="text-yellow">{locale.hero.aboutMe.gender}</span>
+                <span className="text-yellow">MaSStiK</span>
                 <span className="text-gray">&quot;,</span>
             </span>
             <span>

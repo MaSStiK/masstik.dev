@@ -1,7 +1,7 @@
 :root {
     /* Цвета кнопок */
-    /* --button-default:         var(--red); */
-    /* --button-default-hover:   #AD151C; */
+    --button-default:         var(--bg-surface);
+    --button-default-hover:   var(--bg-highlight);
     /* --button-accent:          var(--red-light); */
     /* --button-accent-hover:    #D73740; */
     /* --button-tp:               transparent; */
@@ -13,57 +13,63 @@
     /* --button-disabled:        #88252A; */
 
     /* Размеры кнопки */
-    --button-height: 44px;
+    --button-height: 40px;
 }
 
 /* Отключаем стили у стандартной кнопки */
+/* Подходит для любых интерактивных элементов */
 button {
     padding: 0;
     border-radius: 0;
     border: none;
     outline: none;
     background-color: transparent;
-    cursor: pointer;
     font-family: var(--font-primary);
     color: var(--white);
+    cursor: pointer;
 }
 
 /* Стили для кнопки */
+/* Подходит для любых элементов которым надо придать стандартные для кнопки стили */
 .button {
-    width: min(200px, 100%);
+    min-width: var(--button-height);
     height: var(--button-height);
-    min-height: var(--button-height); /* Минимальная ширина кнопки является высота и получается квадратная форма */
-    padding: var(--gap-1);
+    min-height: var(--button-height);
+    padding: 0 var(--gap-2);
 
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: var(--gap-1);
+    gap: var(--gap-2);
 
-    color: var(--text-light);
-    font-size: var(--fs-medium);
-    font-weight: var(--fw-medium);
+    font-family: var(--font-primary);
+    color: var(--white);
     text-decoration: none;
 
     outline: none;
-    border: none;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     background-color: var(--button-default);
 
     overflow: hidden;
     user-select: none;
     cursor: pointer;
+    transition:
+        background-color 0.15s ease-out,
+        border-color 0.15s ease-out,
+        color 0.15s ease-out,
+        transform 0.15s ease-out;
+
+    @media (hover: hover) {
+        &:is(:hover, :focus-visible) {
+            background-color: var(--button-default-hover);
+        }
+    }
+
+    &:active {
+        background-color: var(--button-default-hover);
+    }
 }
 
 /* Обводка при табуляции */
-:is(button, .button):focus-visible { outline: 2px solid white; }
-
-/* Наведение на пк */
-@media (hover: hover) {
-    .button:is(:hover, :focus-visible) { background-color: var(--button-default-hover); }
-}
-
-/* Клик на телефоне */
-@media (hover: none) {
-    .button:active { background-color: var(--button-default-hover); }
-}
+:is(button, .button):focus-visible { outline: 2px solid var(--yellow); }
