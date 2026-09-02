@@ -92,8 +92,8 @@ export default function Hero() {
                         </div>
 
                         <div className="flex-row gap-6 hero__buttons">
-                            <button className="button hero__button-hire">Связаться со мной</button>
-                            <button className="button hero__button-projects">Проекты</button>
+                            <button className="button hero__button-hire">{locale.hero.actions.contact}</button>
+                            <button className="button hero__button-projects">{locale.hero.actions.projects}</button>
                         </div>
                     </div>
                 </div>

@@ -107,13 +107,13 @@
     font-size: var(--fs-small);
     font-family: var(--font-console);
     border: none;
-    transition: outline-color 0.15s ease-out;
+    transition: outline-color 0.15s ease;
 }
 
 .hero__links svg {
     width: 20px;
     height: 20px;
-    transition: fill 0.15s ease-out;
+    transition: fill 0.15s ease;
 }
 
 .hero__link-github {
@@ -173,7 +173,7 @@
     border: none;
     outline: 4px solid #00000000;
     outline-offset: 4px;
-    transition: outline-color .15s ease-out;
+    transition: outline-color .15s ease;
 }
 
 .hero__button-hire {

@@ -24,6 +24,10 @@ const fr = {
             passion: "Je crée des sites web entièrement fonctionnels à partir de maquettes - de la première ligne de code jusqu'à la mise en ligne.",
             ideas: "J'ai toujours plein de nouvelles idées.",
             inspiration: "J'adore découvrir des créateurs talentueux, suivre leurs projets et m'inspirer de leur travail."
+        },
+        actions: {
+            contact: "Me contacter",
+            projects: "Projets"
         }
     },
     projects: {

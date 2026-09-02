@@ -24,6 +24,10 @@ const en = {
             passion: "I build fully functional websites from designs - from the first line of code all the way to launch.",
             ideas: "Always coming up with new ideas.",
             inspiration: "Love discovering talented creators, following their projects, and getting inspired by their work."
+        },
+        actions: {
+            contact: "Contact me",
+            projects: "Projects"
         }
     },
     projects: {
