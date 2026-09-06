@@ -1,5 +1,5 @@
 main {
-    margin-top: var(--header-height);
+    padding-top: var(--header-height);
 
     /* Сетка */
     background-image:
@@ -13,6 +13,6 @@ main {
             transparent 1px
         );
 
-    background-position: 22px 22px;
+    background-position: 30px 34px;
     background-size: 60px 60px;
 }
