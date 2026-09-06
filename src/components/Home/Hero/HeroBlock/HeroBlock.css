@@ -2,16 +2,22 @@
     overflow: hidden;
     border-radius: 8px;
 
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--border-color);
     box-shadow: 4px 4px 30px #00000080;
-
-    /* TODO: Добавить переключение прозрачности в заголовок About и README */
     background-color: var(--bg-surface);
 }
 
+/* Изначально прозрачность включена */
+.hero-block--transparent {
+    background-color: transparent;
+}
+
+/* Заголовок блока */
 .hero-block__header {
     width: 100%;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--bg-header);
     padding: var(--gap-2);
 
@@ -20,6 +26,37 @@
     }
 }
 
+/* Переключение прозрачности */
+.hero-block__header-toggle {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: background-color 0.15s ease;
+        
+    & svg {
+        stroke: var(--gray);
+    }
+
+    @media (hover: hover) {
+        &:is(:hover, :focus-visible) {
+            background-color: var(--bg-highlight);
+        }
+    }
+
+    &:active {
+        background-color: var(--bg-highlight);
+    }
+}
+
+/* Если нажат - отключение прозрачности */
+.hero-block__header-toggle--active {
+    background-color: var(--bg-highlight);
+}
+
+/* Часть с children */
 .hero-block__inner {
     display: flex;
     flex-direction: column;
@@ -56,59 +93,58 @@
     }
 }
 
-/* Ссылки в hero__bio */
-.hero-bio__link {
+/* Ссылки в hero-bio */
+.hero-block .hero-bio__link {
+    --accent-color: var(--gray);
     text-transform: uppercase;
     font-size: var(--fs-small);
     font-family: var(--font-console);
     border: none;
+
+    color: var(--accent-color);
+    outline: 2px solid var(--accent-color);
     transition: outline-color 0.15s ease;
+    background-color: color-mix(in srgb, var(--accent-color) 10%, var(--button-default));
 
     & svg {
         width: 20px;
         height: 20px;
         transition: fill 0.15s ease;
+        fill: var(--accent-color)
     }
 }
 
-.hero-bio__link--github {
-    color: var(--green);
-    outline: 2px solid var(--green);
-    & svg { fill: var(--green) }
+/* Когда прозрачность включена - у кнопок прозрачный фон */
+.hero-block.hero-block--transparent .hero-bio__link {
+    background-color: color-mix(in srgb, var(--accent-color) 20%, transparent);
 }
 
-.hero-bio__link--telegram {
-    color: var(--blue);
-    outline: 2px solid var(--blue);
-    & svg { fill: var(--blue) }
+.hero-block .hero-bio__link--github {
+    --accent-color: var(--green);
 }
 
-.hero-bio__link--gmail {
-    color: var(--red);
-    outline: 2px solid var(--red);
-    & svg { fill: var(--red) }
+.hero-block .hero-bio__link--telegram {
+    --accent-color: var(--blue);
+}
+
+.hero-block .hero-bio__link--gmail {
+    --accent-color: var(--red);
 }
 
 @media (hover: hover) {
-    .hero-bio__link:is(:hover, :focus-visible) {
+    .hero-block .hero-bio__link:is(:hover, :focus-visible) {
         color: var(--bg-header);
         outline-color: #00000000;
+        background-color: var(--accent-color);
         & svg { fill: var(--bg-header) }
     }
-
-    .hero-bio__link--github:is(:hover, :focus-visible) { background-color: var(--green); }
-    .hero-bio__link--telegram:is(:hover, :focus-visible) { background-color: var(--blue); }
-    .hero-bio__link--gmail:is(:hover, :focus-visible) { background-color: var(--red); }
 }
 
 @media (hover: none) {
-    .hero-bio__link:active {
+    .hero-block .hero-bio__link:active {
         color: var(--bg-header);
         outline-color: #00000000;
+        background-color: var(--accent-color);
         & svg { fill: var(--bg-header) }
     }
-
-    .hero-bio__link--github:active { background-color: var(--green); }
-    .hero-bio__link--telegram:active { background-color: var(--blue); }
-    .hero-bio__link--gmail:active { background-color: var(--red); }
 }

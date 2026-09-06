@@ -62,7 +62,8 @@ export default function Hero() {
                                         rel="noopener noreferrer"
                                         target="_blank"
                                     >
-                                        <FaGithub />Github
+                                        <FaGithub size={20} />
+                                        Github
                                     </Link>
                                 </li>
                                 <li>
@@ -71,14 +72,16 @@ export default function Hero() {
                                         rel="noopener noreferrer"
                                         target="_blank"
                                     >
-                                        <FaTelegramPlane />Telegram
+                                        <FaTelegramPlane size={20} />
+                                        Telegram
                                     </Link>
                                 </li>
                                 <li>
                                     <Link className="button hero-bio__link hero-bio__link--gmail"
                                         href="mailto:masstik.dev@gmail.com"
                                     >
-                                        <FaAt />Gmail
+                                        <FaAt size={20} />
+                                        Gmail
                                     </Link>
                                 </li>
                             </ul>

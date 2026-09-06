@@ -30,7 +30,7 @@
     }
 }
 
-/* Обвертка для блока hero__bio и hero__buttons */
+/* Обвертка для блока hero-bio и hero__buttons */
 .hero__side {
     display: flex;
     flex-direction: column;
