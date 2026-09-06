@@ -2,7 +2,6 @@ main {
     margin-top: var(--header-height);
 
     /* Сетка */
-    background-position: 22px 22px;
     background-image:
         linear-gradient(
             rgba(255, 255, 255, 0.035) 1px,
@@ -14,5 +13,6 @@ main {
             transparent 1px
         );
 
+    background-position: 22px 22px;
     background-size: 60px 60px;
 }

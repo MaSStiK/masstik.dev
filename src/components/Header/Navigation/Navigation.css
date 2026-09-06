@@ -1,3 +1,12 @@
+nav {
+    min-width: 375px;
+}
+
+nav ul {
+    width: 100%;
+    justify-content: center;
+}
+
 nav ul li button {
     height: 32px;
     display: flex;

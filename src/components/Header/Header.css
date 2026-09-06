@@ -6,8 +6,8 @@
 header {
     width: 100%;
     height: var(--header-height);
-    padding: 0 24px;
-    justify-content: space-between;
+    padding: 0 var(--gap-4);
+    justify-content: space-evenly;
     align-items: center;
 
     position: fixed;
@@ -40,4 +40,8 @@ header {
     &:active {
         background-color: var(--bg-surface);
     }
+}
+
+.site-title {
+    margin: 0 4px;
 }

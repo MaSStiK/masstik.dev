@@ -14,9 +14,6 @@ export default function Navigation() {
                     <button>{locale.header.nav.projects}</button>
                 </li>
                 <li>
-                    <button>{locale.header.nav.stack}</button>
-                </li>
-                <li>
                     <button>{locale.header.nav.contacts}</button>
                 </li>
             </ul>

@@ -1,0 +1,114 @@
+.hero-block {
+    overflow: hidden;
+    border-radius: 8px;
+
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-color);
+    box-shadow: 4px 4px 30px #00000080;
+
+    /* TODO: Добавить переключение прозрачности в заголовок About и README */
+    background-color: var(--bg-surface);
+}
+
+.hero-block__header {
+    width: 100%;
+    background-color: var(--bg-header);
+    padding: var(--gap-2);
+
+    & span {
+        font-family: var(--font-console);
+    }
+}
+
+.hero-block__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2);
+    padding: var(--gap-4);
+}
+
+/* Блок с краткой информацией */
+.hero-info {
+    align-items: center;
+
+    & code {
+        /* Фиксированная ширина, чтобы не скакала при смене языка */
+        width: 100%;
+    }
+}
+
+.hero-info__pic {
+    border-radius: 8px;
+}
+
+/* Блок с текстовым описанием */
+.hero-bio {
+    width: 700px;
+    height: fit-content;
+    
+    & p {
+        line-height: 1.4;
+    }
+
+    & hr {
+        margin-top: var(--gap-4);
+        padding-bottom: var(--gap-4);
+    }
+}
+
+/* Ссылки в hero__bio */
+.hero-bio__link {
+    text-transform: uppercase;
+    font-size: var(--fs-small);
+    font-family: var(--font-console);
+    border: none;
+    transition: outline-color 0.15s ease;
+
+    & svg {
+        width: 20px;
+        height: 20px;
+        transition: fill 0.15s ease;
+    }
+}
+
+.hero-bio__link--github {
+    color: var(--green);
+    outline: 2px solid var(--green);
+    & svg { fill: var(--green) }
+}
+
+.hero-bio__link--telegram {
+    color: var(--blue);
+    outline: 2px solid var(--blue);
+    & svg { fill: var(--blue) }
+}
+
+.hero-bio__link--gmail {
+    color: var(--red);
+    outline: 2px solid var(--red);
+    & svg { fill: var(--red) }
+}
+
+@media (hover: hover) {
+    .hero-bio__link:is(:hover, :focus-visible) {
+        color: var(--bg-header);
+        outline-color: #00000000;
+        & svg { fill: var(--bg-header) }
+    }
+
+    .hero-bio__link--github:is(:hover, :focus-visible) { background-color: var(--green); }
+    .hero-bio__link--telegram:is(:hover, :focus-visible) { background-color: var(--blue); }
+    .hero-bio__link--gmail:is(:hover, :focus-visible) { background-color: var(--red); }
+}
+
+@media (hover: none) {
+    .hero-bio__link:active {
+        color: var(--bg-header);
+        outline-color: #00000000;
+        & svg { fill: var(--bg-header) }
+    }
+
+    .hero-bio__link--github:active { background-color: var(--green); }
+    .hero-bio__link--telegram:active { background-color: var(--blue); }
+    .hero-bio__link--gmail:active { background-color: var(--red); }
+}

@@ -12,7 +12,7 @@ export default function Header() {
         <header className="flex-row">
             <span>
                 <span className="font-console fs-xlarge text-gray">{"<"}</span>
-                <span className="font-console fs-xlarge text-red"> MaSStiK.dev </span>
+                <span className="font-console fs-xlarge text-red site-title">MaSStiK.dev</span>
                 <span className="font-console fs-xlarge text-gray">{"/>"}</span>
             </span>
             <Navigation />

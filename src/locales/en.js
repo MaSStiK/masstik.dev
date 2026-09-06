@@ -2,8 +2,7 @@ const en = {
     header: {
         nav: {
             about_me: "About me",
-            projects: "Projects",
-            stack: "Stack",
+            projects: "Projects & Stack",
             contacts: "Contacts"
         },
         disc: "Drive"

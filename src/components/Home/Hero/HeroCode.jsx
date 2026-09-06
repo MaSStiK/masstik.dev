@@ -34,13 +34,6 @@ export default function HeroCode() {
             </span>
             <span>
                 {`    `}
-                <span>age</span>
-                <span className="text-gray">: </span>
-                <span className="text-purple">22</span>
-                <span className="text-gray">,</span>
-            </span>
-            <span>
-                {`    `}
                 <span>nickname</span>
                 <span className="text-gray">: &quot;</span>
                 <span className="text-yellow">MaSStiK</span>

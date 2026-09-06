@@ -1,5 +1,5 @@
 // Языки, которые поддерживает сайт
-export const LANGUAGES = ["ru", "en", "fr"]
+export const LANGUAGES = ["en", "ru", "fr"]
 
 // Язык по умолчанию
 export const BASE_LANGUAGE = "en"
