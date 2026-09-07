@@ -1,0 +1,36 @@
+.project {
+    width: calc(50% - 8px);
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #403e41;
+}
+
+.project__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-2);
+    padding: var(--gap-2);
+    background-color: var(--bg-header);
+
+    & span {
+        font-family: var(--font-console);
+    }
+}
+
+.project__header-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.project-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2);
+    padding: var(--gap-4);
+}
+
+.project__image {
+    width: 70%;
+    height: auto;
+}

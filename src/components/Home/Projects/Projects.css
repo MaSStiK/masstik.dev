@@ -1,12 +1,29 @@
 .projects {
     width: 100%;
     height: 900px;
-    background-color: var(--bg-surface);
     padding: 20px;
     position: relative;
-    z-index: -1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-4);
+}
+.projects::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-surface);
+    z-index: -2;
 }
 
 .projects__container {
-    z-index: 1;
+    width: 1616px;
+    display: flex;
+    gap: var(--gap-4);
+    /* outline: 1px solid white; */
+    flex-wrap: wrap;
 }

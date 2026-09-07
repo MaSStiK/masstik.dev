@@ -15,4 +15,5 @@ main {
 
     background-position: 30px 34px;
     background-size: 60px 60px;
+    z-index: -1;
 }

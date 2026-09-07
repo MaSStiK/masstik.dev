@@ -24,7 +24,7 @@ export default function HeroBlock({
 
     return (
         <div className={blockClasses}>
-            <div className="flex-row hero-block__header">
+            <div className="hero-block__header">
                 <span className="text-gray">{title}</span>
                 <button
                     className={toggleClasses}
