@@ -1,52 +1,58 @@
 const projectsData = [
     {
         slug: "hedgehog-rp",
-        title: "hedgehog-rp.ru",
-        icon: "/projects/hedgehog-rp-fav.png",
-        iconAlt: "Hedgehog RP project icon",
         image: "/projects/hedgehog-rp.png",
-        alt: "Hedgehog RP project image"
+        alt: "Hedgehog RP project image",
+        category: "personal",
+        title: "Ежиное РП",
+        desc: "Социальная платформа для политической ролевой игры.",
+        stack: ["React", "JavaScript", "jQuery", "Vite"]
     },
     {
         slug: "punkt-b",
-        title: "lk.punkt-b.pro",
-        icon: "/projects/punkt-b-fav.png",
-        iconAlt: "Punkt B project icon",
         image: "/projects/punkt-b.png",
-        alt: "Punkt B project image"
+        alt: "Punkt B project image",
+        category: "commercial",
+        title: "Punkt B - Личный кабинет",
+        desc: "Коммерческий проект для международной онлайн-школы выбора профессии «Пункт Б».",
+        stack: ["HTML", "CSS", "JavaScript", "jQuery"]
     },
     {
         slug: "igorsavelievsocialstudies",
-        title: "www.igorsavelievsocialstudies.ru",
-        icon: "/projects/preparation-fav.ico",
-        iconAlt: "Igor Saveliev Social Studies project icon",
         image: "/projects/preparation.png",
-        alt: "Igor Saveliev Social Studies project image"
+        alt: "Igor Saveliev Social Studies project image",
+        category: "commercial",
+        title: "Сайт частного преподавателя",
+        desc: "Коммерческий проект лендинга для частного преподавателя обществознания.",
+        stack: ["HTML", "CSS", "JavaScript", "jQuery"]
     },
     {
         slug: "1",
-        title: "hedgehog-rp.ru",
-        icon: "/projects/hedgehog-rp-fav.png",
-        iconAlt: "Hedgehog RP project icon",
         image: "/projects/hedgehog-rp.png",
-        alt: "Hedgehog RP project image"
+        alt: "Hedgehog RP project image",
+        category: "personal",
+        title: "Ежиное РП",
+        desc: "Социальная платформа для политической ролевой игры.",
+        stack: ["React", "JavaScript", "jQuery", "Vite"]
     },
     {
         slug: "2",
-        title: "hedgehog-rp.ru",
-        icon: "/projects/hedgehog-rp-fav.png",
-        iconAlt: "Hedgehog RP project icon",
         image: "/projects/hedgehog-rp.png",
-        alt: "Hedgehog RP project image"
+        alt: "Hedgehog RP project image",
+        category: "personal",
+        title: "Ежиное РП",
+        desc: "Социальная платформа для политической ролевой игры.",
+        stack: ["React", "JavaScript", "jQuery", "Vite"]
     },
     {
         slug: "3",
-        title: "hedgehog-rp.ru",
-        icon: "/projects/hedgehog-rp-fav.png",
-        iconAlt: "Hedgehog RP project icon",
         image: "/projects/hedgehog-rp.png",
-        alt: "Hedgehog RP project image"
-    }
+        alt: "Hedgehog RP project image",
+        category: "personal",
+        title: "Ежиное РП",
+        desc: "Социальная платформа для политической ролевой игры.",
+        stack: ["React", "JavaScript", "jQuery", "Vite"]
+    },
 ]
 
 export default projectsData

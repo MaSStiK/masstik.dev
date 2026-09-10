@@ -17,13 +17,6 @@ export const balsamiqSans = Balsamiq_Sans({
     display: "swap"
 })
 
-// Шрифт для личных записей
-export const asinastra = localFont({
-    src: "./styles/fonts/Asinastra.otf",
-    variable: "--font-asinastra",
-    display: "swap",
-})
-
 const THEME_COLOR = "#2d2a2e"
 
 export const _metadata = {

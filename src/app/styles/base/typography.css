@@ -2,7 +2,7 @@
     /* Размеры текста */
     --fs-xxlarge: 50px;
     --fs-xlarge:  24px;
-    --fs-large:   18px;
+    --fs-large:   20px;
     --fs-medium:  16px;
     --fs-small:   14px;
     --fs-tiny:    12px;
@@ -15,7 +15,6 @@
 
     --font-primary: var(--font-comfortaa), sans-serif;
     --font-secondary: var(--font-balsamiq), sans-serif;
-    --font-comment: var(--font-asinastra), sans-serif;
     --font-console: Consolas, "Courier New", monospace;
 }
 
@@ -51,7 +50,6 @@ code {
 
 .font-primary   { font-family: var(--font-primary); }   /* Основной шрифт */
 .font-secondary { font-family: var(--font-secondary); } /* Второстепенный шрифт для заголовков */
-.font-comment   { font-family: var(--font-comment); }   /* Шрифт для личных записей */
 .font-console   { font-family: var(--font-console); }   /* Шрифт для консольного текста */
 
 /* Размер текста */
@@ -75,6 +73,7 @@ p, .p, span, label { font-size: var(--fs-medium); }
 
 /* Цвет текста */
 .text-white  { color: var(--white); }
+.text-light  { color: var(--light); }
 .text-gray   { color: var(--gray); }
 .text-red    { color: var(--red); }
 .text-orange { color: var(--orange); }

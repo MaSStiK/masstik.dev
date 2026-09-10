@@ -7,10 +7,13 @@
     --bg-surface:   #2d2a2e; /* Фон блоков поверх основного */
     --bg-highlight: #383539; /* Фон вложенных или выделенных элементов */
     --bg-header:    #221f22; /* Фон для header и заголовков блоков */
-    --border-color: #373537;
+
+    --border-dark:  #373537;
+    --border-black:  #19181a;
 
     /* Monokai Pro Color Palette */
     --white:  #fdf9f3;
+    --light:  #c1c0c0;
     --gray:   #939293;
     --dark:   #727072;
     --red:    #ff6188;

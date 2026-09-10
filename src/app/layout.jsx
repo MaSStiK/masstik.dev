@@ -2,7 +2,6 @@ import { cookies, headers } from "next/headers"
 import {
     comfortaa,
     balsamiqSans,
-    asinastra,
     _viewport,
     _metadata
 } from "./metadata"
@@ -27,7 +26,7 @@ export default async function RootLayout({ children }) {
     const language = getInitialLanguage(savedLanguage, acceptLanguage)
 
     return (
-        <html lang={language} className={`${comfortaa.variable} ${balsamiqSans.variable} ${asinastra.variable}`}>
+        <html lang={language} className={`${comfortaa.variable} ${balsamiqSans.variable}`}>
             <body>
                 <JotaiProvider language={language}>
                     {children}

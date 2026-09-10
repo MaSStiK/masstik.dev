@@ -6,7 +6,7 @@
     cursor: pointer;
 
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-dark);
     background-color: var(--bg-surface);
     box-shadow: 4px 4px 30px #00000080;
 
