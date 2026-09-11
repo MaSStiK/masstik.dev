@@ -5,10 +5,11 @@ import {
     _viewport,
     _metadata
 } from "./metadata"
-import "@/app/styles/style.css"
 
 import JotaiProvider from "@/components/JotaiProvider"
 import getInitialLanguage from "@/utils/InitialLanguage"
+
+import "@/app/styles/style.css"
 
 export const metadata = _metadata
 export const viewport = _viewport

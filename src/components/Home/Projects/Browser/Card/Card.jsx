@@ -2,9 +2,9 @@ import Image from "next/image"
 import stackIcons from "./stackIcons"
 import { useRouter } from "next/navigation"
 
-import "./Project.css"
+import "./Card.css"
 
-export default function Project({
+export default function Card({
     image="",
     alt="",
     category="category",
@@ -13,8 +13,8 @@ export default function Project({
     stack=[]
 }) {
     return (
-        <div className="project">
-            <div className="project__image">
+        <div className="card">
+            <div className="card__image">
                 <Image
                     src={image}
                     alt={alt}
@@ -23,14 +23,14 @@ export default function Project({
                     draggable={false}
                 />
             </div>
-            <div className="project__title">
-                <div className={`project__category project__category--${category}`}></div>
+            <div className="card__title">
+                <div className={`card__category card__category--${category}`}></div>
                 <span className="fs-large fw-bold">{title}</span>
             </div>
-            <p className="text-light project__desc">{desc}</p>
-            <div className="project__stack">
+            <p className="text-light card__desc">{desc}</p>
+            <div className="card__stack">
                 {stack.map((item) => (
-                    <div key={item} className="project__stack-item">
+                    <div key={item} className="card__stack-item">
                         <Image
                             src={stackIcons[item.toLowerCase()]}
                             alt={item}

@@ -8,8 +8,12 @@
     --bg-highlight: #383539; /* Фон вложенных или выделенных элементов */
     --bg-header:    #221f22; /* Фон для header и заголовков блоков */
 
+    --bg-projects:  #262427; /* Фон для projects (bg-base Lighten 5%)  */
+    --bg-browser:   #201E21; /* Фон для browser (bg-surface Darken 5%)  */
+
+    /* https://toolbark.com/tools/darken-lighten-color */
+
     --border-dark:  #373537;
-    --border-black:  #19181a;
 
     /* Monokai Pro Color Palette */
     --white:  #fdf9f3;

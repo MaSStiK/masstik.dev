@@ -120,17 +120,9 @@
     background-color: color-mix(in srgb, var(--accent-color) 20%, transparent);
 }
 
-.hero-block .hero-bio__link--github {
-    --accent-color: var(--green);
-}
-
-.hero-block .hero-bio__link--telegram {
-    --accent-color: var(--blue);
-}
-
-.hero-block .hero-bio__link--gmail {
-    --accent-color: var(--red);
-}
+.hero-block .hero-bio__link--github   { --accent-color: var(--green); }
+.hero-block .hero-bio__link--telegram { --accent-color: var(--blue); }
+.hero-block .hero-bio__link--gmail    { --accent-color: var(--red); }
 
 @media (hover: hover) {
     .hero-block .hero-bio__link:is(:hover, :focus-visible) {
