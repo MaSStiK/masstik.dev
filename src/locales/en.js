@@ -38,7 +38,7 @@ const en = {
         tree: {
             all: "All projects",
             commercial: "Commercial",
-            pet: "Pet projects",
+            pet: "Personal projects",
             educational: "Educational",
             test: "Test",
             other: "Other"

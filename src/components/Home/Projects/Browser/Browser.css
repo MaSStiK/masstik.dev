@@ -1,5 +1,5 @@
 .browser {
-    width: min(1616px, 100%);
+    width: min(1600px, 100%);
     display: flex;
     flex-direction: column;
     border-radius: 16px;
@@ -16,6 +16,6 @@
     width: 100%;
     padding: var(--gap-5);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--gap-4);
 }

@@ -28,13 +28,13 @@ function TreeItem({ item, locale }) {
     return (
         <li className="browser-tree__item">
             <button type="button" className="browser-tree__row">
-                {item.children && <ChevronDown size={20} color="var(--gray)" />}
-                {!item.children && <ChevronRight size={20} color="var(--gray)" />}
+                {item.children && <ChevronDown size={24} color="var(--gray)" />}
+                {!item.children && <ChevronRight size={24} color="var(--gray)" />}
                 <Image
                     src={item.icon}
                     alt=""
-                    width={20}
-                    height={20}
+                    width={24}
+                    height={24}
                 />
                 <span>{locale.projects.tree[item.nameKey]}</span>
             </button>

@@ -38,7 +38,7 @@ const ru = {
         tree: {
             all: "Все проекты",
             commercial: "Коммерческие",
-            pet: "Pet-проекты",
+            pet: "Личные проекты",
             educational: "Учебные",
             test: "Тестовые",
             other: "Другие"

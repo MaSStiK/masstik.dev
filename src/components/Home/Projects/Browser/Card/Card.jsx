@@ -25,7 +25,7 @@ export default function Card({
             </div>
             <div className="card__title">
                 <div className={`card__category card__category--${category}`}></div>
-                <span className="fs-large fw-bold">{title}</span>
+                <span className="fw-bold">{title}</span>
             </div>
             <p className="text-light card__desc">{desc}</p>
             <div className="card__stack">
