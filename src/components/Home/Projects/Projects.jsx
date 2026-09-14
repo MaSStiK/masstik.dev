@@ -8,7 +8,7 @@ export default function Projects() {
                 <span className="font-secondary fs-xxlarge fw-bold">Проекты</span>
                 <span className="font-console">
                     {`// Здесь собраны мои проекты`}<br />
-                    {`// Коммерческие, учебные, экспериментальные и тестовые`}
+                    {`// Коммерческие, учебные, личные и тестовые`}
                 </span>
             </div>
             <Browser />

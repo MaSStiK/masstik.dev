@@ -30,7 +30,19 @@ const fr = {
         }
     },
     projects: {
-        header: "Projets"
+        header: "Projets",
+        toolbar: {
+            back: "Retour",
+            search: "Rechercher par titre, description ou technologies"
+        },
+        tree: {
+            all: "Tous les projets",
+            commercial: "Commerciaux",
+            pet: "Projets personnels",
+            educational: "Éducatifs",
+            test: "Tests",
+            other: "Autres"
+        }
     }
 }
 

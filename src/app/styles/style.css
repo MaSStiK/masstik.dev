@@ -1,15 +1,17 @@
 @import "./base/typography.css";
 @import "./base/flex.css";
 @import "./UI/button.css";
+@import "./UI/input.css";
 
 :root {
-    --bg-base:      #19181a; /* Основной фон */
+    --bg-base:      #19181a; /* Основной фон (Самый темный) */
     --bg-surface:   #2d2a2e; /* Фон блоков поверх основного */
     --bg-highlight: #383539; /* Фон вложенных или выделенных элементов */
     --bg-header:    #221f22; /* Фон для header и заголовков блоков */
+    --bg-inset:     #19181a; /* Углублённый фон */
 
-    --bg-projects:  #262427; /* Фон для projects (bg-base Lighten 5%)  */
-    --bg-browser:   #201E21; /* Фон для browser (bg-surface Darken 5%)  */
+    --bg-projects:  #262427; /* Фон для projects (bg-base Lighter 5%) */
+    --bg-browser:   #19181a; /* Фон для browser */
 
     /* https://toolbark.com/tools/darken-lighten-color */
 

@@ -35,7 +35,6 @@
     justify-content: center;
     align-items: center;
     border-radius: 4px;
-    transition: background-color 0.15s ease;
         
     & svg {
         stroke: var(--gray);
@@ -104,7 +103,6 @@
 
     color: var(--accent-color);
     outline: 2px solid var(--accent-color);
-    transition: outline-color 0.15s ease;
     background-color: color-mix(in srgb, var(--accent-color) 10%, var(--button-default));
 
     & svg {

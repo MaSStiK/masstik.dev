@@ -54,11 +54,6 @@ button {
     overflow: hidden;
     user-select: none;
     cursor: pointer;
-    transition:
-        background-color 0.15s ease,
-        border-color 0.15s ease,
-        color 0.15s ease,
-        transform 0.15s ease;
 
     @media (hover: hover) {
         &:is(:hover, :focus-visible) {
@@ -72,4 +67,13 @@ button {
 }
 
 /* Обводка при табуляции */
-:is(button, .button):focus-visible { outline: 2px solid var(--yellow); }
+:is(a, button, .button):focus-visible { outline: 2px solid var(--yellow); }
+
+.button-transition {
+    transition:
+        background-color 0.15s ease,
+        outline-color 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.15s ease,
+        color 0.15s ease;
+}

@@ -30,7 +30,19 @@ const en = {
         }
     },
     projects: {
-        header: "Projects"
+        header: "Projects",
+        toolbar: {
+            back: "Go back",
+            search: "Search by title, description, or stack"
+        },
+        tree: {
+            all: "All projects",
+            commercial: "Commercial",
+            pet: "Pet projects",
+            educational: "Educational",
+            test: "Test",
+            other: "Other"
+        }
     }
 }
 

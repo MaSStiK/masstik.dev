@@ -22,8 +22,12 @@
     flex-direction: column;
 }
 
-/* Флекс перенос строки */
-.flex-wrap { flex-wrap: wrap; }
+/* Центрировать контент внутри */
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Отступы между и внутри блоков */
 .gap-1 { gap: var(--gap-1); }

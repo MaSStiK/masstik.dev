@@ -1,0 +1,55 @@
+.browser__sidebar {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: var(--gap-5);
+    background-color: var(--bg-header);
+    border-right: 1px solid rgb(78, 80, 95);
+}
+
+/* .browser__sidebar button {
+    width: 230px;
+    height: 40px;
+    padding: var(--gap-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+
+    @media (hover: hover) {
+        &:is(:hover, :focus-visible) {
+            background-color: var(--button-default-hover);
+        }
+    }
+
+    &:active {
+        background-color: var(--button-default-hover);
+    }
+}
+
+.browser__sidebar-button--selected {
+    background-color: var(--button-default-hover);
+    border: 1px solid var(--purple);
+} */
+
+.browser-tree,
+.browser-tree__children {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.browser-tree__children {
+    padding-left: var(--gap-4);
+}
+
+.browser-tree__row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    & span {
+        margin-left: var(--gap-1);
+    }
+}

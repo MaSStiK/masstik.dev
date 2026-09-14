@@ -30,7 +30,19 @@ const ru = {
         }
     },
     projects: {
-        header: "Проекты"
+        header: "Проекты",
+        toolbar: {
+            back: "Назад",
+            search: "Поиск по названию, описанию или стеку"
+        },
+        tree: {
+            all: "Все проекты",
+            commercial: "Коммерческие",
+            pet: "Pet-проекты",
+            educational: "Учебные",
+            test: "Тестовые",
+            other: "Другие"
+        }
     }
 }
 

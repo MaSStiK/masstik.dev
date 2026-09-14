@@ -57,7 +57,7 @@ export default function Hero() {
 
                             <ul className="flex-row gap-4">
                                 <li>
-                                    <Link className="button hero-bio__link hero-bio__link--github"
+                                    <Link className="button button-transition hero-bio__link hero-bio__link--github"
                                         href="https://github.com/MaSStiK"
                                         rel="noopener noreferrer"
                                         target="_blank"
@@ -67,7 +67,7 @@ export default function Hero() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className="button hero-bio__link hero-bio__link--telegram"
+                                    <Link className="button button-transition hero-bio__link hero-bio__link--telegram"
                                         href="https://t.me/MaSStiK"
                                         rel="noopener noreferrer"
                                         target="_blank"
@@ -77,7 +77,7 @@ export default function Hero() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className="button hero-bio__link hero-bio__link--gmail"
+                                    <Link className="button button-transition hero-bio__link hero-bio__link--gmail"
                                         href="mailto:masstik.dev@gmail.com"
                                     >
                                         <FaAt size={20} />
@@ -88,8 +88,8 @@ export default function Hero() {
                         </HeroBlock>
 
                         <div className="flex-row gap-6 hero__buttons">
-                            <button className="button hero__button hero__button--hire">{locale.hero.actions.contact}</button>
-                            <button className="button hero__button hero__button--projects">{locale.hero.actions.projects}</button>
+                            <button className="button button-transition hero__button hero__button--hire">{locale.hero.actions.contact}</button>
+                            <button className="button button-transition hero__button hero__button--projects">{locale.hero.actions.projects}</button>
                         </div>
                     </div>
                 </div>

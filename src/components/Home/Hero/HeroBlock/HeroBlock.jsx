@@ -18,6 +18,7 @@ export default function HeroBlock({
     )
 
     const toggleClasses = clsx(
+        "button-transition",
         "hero-block__header-toggle",
         !isBackgroundTransparent && "hero-block__header-toggle--active"
     )

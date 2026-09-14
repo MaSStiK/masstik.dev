@@ -1,32 +1,55 @@
+import Image from "next/image"
+import { ChevronRight, ChevronDown } from "lucide-react"
+import treeData from "./treeData"
+
 import "./BrowserSidebar.css"
+import useLocale from "@/hooks/useLocale"
+
+// Также добавить кол-во проектов с правого края папки
 
 export default function BrowserSidebar() {
+    const locale = useLocale()
     return (
         <aside className="browser__sidebar">
-            <button className="browser__sidebar-button--selected">
-                <span>Все</span>
-                <span>30</span>
-            </button>
-            <button>
-                <span>Коммерческие</span>
-                <span>2</span>
-            </button>
-            <button>
-                <span>Pet-Проекты</span>
-                <span>8</span>
-            </button>
-            <button>
-                <span>Учебные</span>
-                <span>4</span>
-            </button>
-            <button>
-                <span>Тестовые</span>
-                <span>6</span>
-            </button>
-            <button>
-                <span>Другие</span>
-                <span>10</span>
-            </button>
+            <ul className="browser-tree">
+                {treeData.map((item) => (
+                    <TreeItem
+                        key={item.nameKey}
+                        item={item}
+                        locale={locale}
+                    />
+                ))}
+            </ul>
         </aside>
+    )
+}
+
+function TreeItem({ item, locale }) {
+    return (
+        <li className="browser-tree__item">
+            <button type="button" className="browser-tree__row">
+                {item.children && <ChevronDown size={20} color="var(--gray)" />}
+                {!item.children && <ChevronRight size={20} color="var(--gray)" />}
+                <Image
+                    src={item.icon}
+                    alt=""
+                    width={20}
+                    height={20}
+                />
+                <span>{locale.projects.tree[item.nameKey]}</span>
+            </button>
+
+            {item.children && (
+                <ul className="browser-tree__children">
+                    {item.children.map((child) => (
+                        <TreeItem
+                            key={child.nameKey}
+                            item={child}
+                            locale={locale}
+                        />
+                    ))}
+                </ul>
+            )}
+        </li>
     )
 }

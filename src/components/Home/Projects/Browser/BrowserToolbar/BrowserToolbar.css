@@ -3,11 +3,13 @@
     height: 50px;
     display: flex;
     align-items: center;
-    padding: var(--gap-5);
+    gap: var(--gap-6);
+    padding: 0 var(--gap-5);
     background-color: var(--bg-header);
     border-bottom: 1px solid rgb(78, 80, 95);
 }
 
+/* Mac точки */
 .browser__toolbar-dots {
     display: flex;
     gap: var(--gap-2);
@@ -24,3 +26,51 @@
 .browser__toolbar-dot--red    { --accent-color: var(--red); }
 .browser__toolbar-dot--yellow { --accent-color: var(--yellow); }
 .browser__toolbar-dot--green  { --accent-color: var(--green); }
+
+/* Ссылка */
+.browser__address-bar {
+    width: 700px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-2);
+    padding: 0 var(--gap-2);
+    border-radius: 8px;
+    border: 2px solid var(--border-dark);
+    background-color: var(--bg-inset);
+}
+
+/* Кнопка назад */
+.browser__back-button {
+    width: 36px;
+    height: 36px;
+    background-color: var(--bg-surface);
+    border-radius: 8px;
+    
+    @media (hover: hover) {
+        &:is(:hover, :focus-visible) {
+            background-color: var(--bg-highlight);
+        }
+    }
+
+    &:active {
+        background-color: var(--bg-highlight);
+    }
+}
+
+/* Строка поиска */
+.browser__search-bar {
+    width: 500px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-2);
+    padding: 0 var(--gap-2);
+    border-radius: 8px;
+    border: 2px solid var(--border-dark);
+    background-color: var(--bg-inset);
+
+    & input {
+        width: 100%;
+    }
+}
