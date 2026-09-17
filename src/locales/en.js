@@ -33,15 +33,15 @@ const en = {
         header: "Projects",
         toolbar: {
             back: "Go back",
+            refresh: "Refresh",
             search: "Search by title, description, or stack"
         },
         tree: {
             all: "All projects",
-            commercial: "Commercial",
-            pet: "Personal projects",
-            educational: "Educational",
-            test: "Test",
-            other: "Other"
+            commercial: "commercial",
+            personal: "personal",
+            educational: "educational",
+            test: "test"
         }
     }
 }

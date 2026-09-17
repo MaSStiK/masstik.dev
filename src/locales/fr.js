@@ -33,15 +33,15 @@ const fr = {
         header: "Projets",
         toolbar: {
             back: "Retour",
+            refresh: "Actualiser",
             search: "Rechercher par titre, description ou technologies"
         },
         tree: {
             all: "Tous les projets",
-            commercial: "Commerciaux",
-            pet: "Projets personnels",
-            educational: "Éducatifs",
-            test: "Tests",
-            other: "Autres"
+            commercial: "commerciaux",
+            personal: "personnels",
+            educational: "éducatifs",
+            test: "tests"
         }
     }
 }

@@ -72,15 +72,16 @@ p, .p, span, label { font-size: var(--fs-medium); }
 .fw-regular  { font-weight: var(--fw-regular); }
 
 /* Цвет текста */
-.text-white  { color: var(--white); }
-.text-light  { color: var(--light); }
-.text-gray   { color: var(--gray); }
-.text-red    { color: var(--red); }
-.text-orange { color: var(--orange); }
-.text-yellow { color: var(--yellow); }
-.text-green  { color: var(--green); }
-.text-blue   { color: var(--blue); }
-.text-purple { color: var(--purple); }
+.text-white      { color: var(--white); }
+.text-light-gray { color: var(--light-gray); }
+.text-gray       { color: var(--gray); }
+.text-dark-gray  { color: var(--dark-gray); }
+.text-red        { color: var(--red); }
+.text-orange     { color: var(--orange); }
+.text-yellow     { color: var(--yellow); }
+.text-green      { color: var(--green); }
+.text-blue       { color: var(--blue); }
+.text-purple     { color: var(--purple); }
 
 /* Текст по центру */
 .text-center { text-align: center;}

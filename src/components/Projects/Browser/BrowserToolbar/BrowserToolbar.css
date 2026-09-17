@@ -1,0 +1,91 @@
+.browser__toolbar {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-4);
+    padding: 0 var(--gap-5);
+    background-color: var(--bg-browser-toolbar);
+    border-bottom: 1px solid var(--border-gray);
+}
+
+/* Mac точки */
+.browser__toolbar-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.browser__toolbar-dot {
+    --accent-color: var(--gray);
+    --size: 12px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--size);
+    background-color: var(--accent-color);
+}
+
+.browser__toolbar-dot--red    { --accent-color: var(--red); }
+.browser__toolbar-dot--yellow { --accent-color: var(--yellow); }
+.browser__toolbar-dot--green  { --accent-color: var(--green); }
+
+/* Кнопки Назад и Обновить */
+.browser__toolbar-button {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    /* background-color: var(--bg-surface); */
+    
+    @media (hover: hover) {
+        &:is(:hover, :focus-visible) {
+            background-color: var(--bg-highlight);
+        }
+    }
+
+    &:active {
+        background-color: var(--bg-highlight);
+    }
+}
+
+/* Общие стили для browser__address-bar и browser__search-bar */
+.browser__bar  {
+    height: 28px;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-2);
+    padding: 0 var(--gap-2);
+    border-radius: 4px;
+    border: 1px solid var(--border-gray);
+    background-color: var(--bg-inset);
+}
+
+/* Блок с кнопками и ссылкой */
+.browser__address {
+    width: min(700px, 100%);
+    display: flex;
+    gap: var(--gap-2);
+}
+
+/* Ссылка */
+.browser__address-bar {
+    flex: 1;
+
+    & svg {
+        fill: var(--gray);
+    }
+
+    & span {
+        font-family: var(--font-console);
+        font-size: var(--fs-tiny);
+        color: var(--gray);
+    }
+}
+
+/* Строка поиска */
+.browser__search-bar {
+    width: min(500px, 100%);
+
+    & input {
+        width: 100%;
+        font-size: var(--fs-tiny);
+    }
+}

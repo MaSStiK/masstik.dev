@@ -10,24 +10,29 @@
     --bg-header:    #221f22; /* Фон для header и заголовков блоков */
     --bg-inset:     #19181a; /* Углублённый фон */
 
-    --bg-projects:  #262427; /* Фон для projects (bg-base Lighter 5%) */
-    --bg-browser:   #19181a; /* Фон для browser */
+    --bg-projects:  #211F22; /* Фон для раздела Projects (bg-base Lighter 3%) */
+    --bg-browser:   var(--bg-surface); /* Фон для Browser */
+    --bg-browser-card: var(--bg-surface); /* Фон для Card */
+    --bg-browser-toolbar: var(--bg-header); /* Фон для BrowserToolbar */
+    --bg-browser-sidebar: var(--bg-base); /* Фон для browserSidebar */
 
+    /* Осветить или Затемнить цвет */
     /* https://toolbark.com/tools/darken-lighten-color */
 
+    --border-gray:  #413f42;
     --border-dark:  #373537;
 
     /* Monokai Pro Color Palette */
-    --white:  #fdf9f3;
-    --light:  #c1c0c0;
-    --gray:   #939293;
-    --dark:   #727072;
-    --red:    #ff6188;
-    --orange: #fc9867;
-    --yellow: #ffd866;
-    --green:  #a9dc76;
-    --blue:   #78dce8;
-    --purple: #ab9df2;
+    --white:      #fdf9f3;
+    --light-gray: #c1c0c0;
+    --gray:       #939293;
+    --dark-gray:  #727072;
+    --red:        #ff6188;
+    --orange:     #fc9867;
+    --yellow:     #ffd866;
+    --green:      #a9dc76;
+    --blue:       #78dce8;
+    --purple:     #ab9df2;
 }
 
 * {
@@ -55,5 +60,5 @@ body {
 
 hr {
     border: none;
-    border-top: 1px solid var(--dark);
+    border-top: 1px solid var(--border-dark);
 }

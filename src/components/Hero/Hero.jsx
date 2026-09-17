@@ -13,7 +13,7 @@ export default function Hero() {
 
     return (
         <section className="hero">
-            <PixelBlast
+            {/* <PixelBlast
                 variant="triangle"
                 pixelSize={4}
                 color="#ab9df2"
@@ -28,7 +28,7 @@ export default function Hero() {
                 speed={0.5}
                 edgeFade={0}
                 transparent
-            />
+            /> */}
 
             <div className="hero__container">
                 <div className="hero__content">

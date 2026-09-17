@@ -2,4 +2,11 @@ input {
     background: none;
     border: none;
     outline: none;
+    font-family: var(--font-console);
+    font-size: var(--fs-medium);
+    color: var(--white);
+
+    &::placeholder {
+        color: var(--gray);
+    }
 }

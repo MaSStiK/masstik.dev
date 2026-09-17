@@ -1,5 +1,5 @@
-import Image from "next/image"
-import { ChevronLeft, Search } from "lucide-react"
+import { ChevronLeft, RefreshCw, Search } from "lucide-react"
+import { LockIcon } from "@/icons"
 import useLocale from "@/hooks/useLocale"
 
 import "./BrowserToolbar.css"
@@ -14,25 +14,25 @@ export default function BrowserToolbar() {
                 <div className="browser__toolbar-dot browser__toolbar-dot--green"></div>
             </div>
 
-            <div className="flex-row gap-3">
-                <button className="button-transition center browser__back-button"
+            <div className="browser__address">
+                <button className="button-transition flex-center browser__toolbar-button"
                     aria-label={locale.projects.toolbar.back}
                 >
-                    <ChevronLeft size={20} />
+                    <ChevronLeft size={16} />
                 </button>
-                <div className="browser__address-bar">
-                    <Image
-                        src="/icons/lock.svg"
-                        alt=""
-                        width="20"
-                        height="20"
-                    />
-                    <span className="text-gray font-console">masstik.dev/projects</span>
+                <button className="button-transition flex-center browser__toolbar-button"
+                    aria-label={locale.projects.toolbar.refresh}
+                >
+                    <RefreshCw size={16} />
+                </button>
+                <div className="browser__bar browser__address-bar">
+                    <LockIcon size={16} />
+                    <span>masstik.dev/projects</span>
                 </div>
             </div>
 
-            <div className="browser__search-bar">
-                <Search size={20} />
+            <div className="browser__bar browser__search-bar">
+                <Search size={16} />
                 <input
                     type="text"
                     placeholder={locale.projects.toolbar.search}

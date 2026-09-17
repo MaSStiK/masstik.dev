@@ -1,0 +1,95 @@
+/* Карточка проекта */
+.card {
+    --accent-color: var(--gray);
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    overflow: hidden;
+    /* background-color: var(--bg-header); */
+    background-color: var(--bg-browser-card);
+    border: 1px solid #3f3b3f;
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+
+    @media (hover: hover) {
+        &:is(:hover, :focus-visible) {
+            border-color: var(--accent-color);
+        }
+    }
+
+    &:active {
+        border-color: var(--accent-color);
+    }
+}
+
+/* Скриншот карточки */
+.card__image {
+    width: 100%;
+    height: 140px;
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        /* TODO: Добавить позицию картинки center или top для лучшего отображение */
+    }
+}
+
+/* Внутренняя часть карточки */
+.card__content {
+    padding: var(--gap-4);
+}
+
+/* Название проекта */
+.card__title {
+    display: flex;
+    gap: var(--gap-2);
+    align-items: center;
+
+    & span {
+        font-weight: var(--fw-bold);
+    }
+}
+
+/* Тип карточки */
+.card__type {
+    --size: 8px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--size);
+    background-color: var(--accent-color);
+}
+
+/* Описание проекта */
+.card__desc {
+    /* Фиксированная высота блока с текстом */
+    height: 63px;
+    line-height: 1.5;
+    color: var(--gray);
+    font-size: var(--fs-small);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    margin-top: var(--gap-2);
+}
+
+/* Список технологий */
+.card__stack {
+    display: flex;
+    gap: var(--gap-2);
+    margin-top: var(--gap-3);
+}
+
+.card__stack-item {
+    height: 22px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-highlight);
+    border-radius: 4px;
+    font-size: var(--fs-tiny);
+    font-family: var(--font-console);
+    color: var(--accent-color);
+}

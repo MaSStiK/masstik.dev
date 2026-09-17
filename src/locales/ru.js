@@ -33,15 +33,15 @@ const ru = {
         header: "Проекты",
         toolbar: {
             back: "Назад",
+            refresh: "Обновить",
             search: "Поиск по названию, описанию или стеку"
         },
         tree: {
             all: "Все проекты",
-            commercial: "Коммерческие",
-            pet: "Личные проекты",
-            educational: "Учебные",
-            test: "Тестовые",
-            other: "Другие"
+            commercial: "коммерческие",
+            personal: "личные",
+            educational: "учебные",
+            test: "тестовые"
         }
     }
 }

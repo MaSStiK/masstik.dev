@@ -23,7 +23,7 @@
 }
 
 /* Центрировать контент внутри */
-.center {
+.flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
