@@ -10,14 +10,17 @@ export default function Card({ project }) {
     const language = useAtomValue(languageAtom)
 
     return (
-        <div className="card" style={{"--accent-color": projectTypeColors[project.type]}}>
+        <div
+            className="card"
+            style={{"--accent-color": projectTypeColors[project.type]}}
+        >
             <div className="card__image">
                 <Image
                     src={project.image}
                     alt={`${project.title} project image`}
-                    width={336} // Ориг 1500
-                    height={209} // Ориг 932
                     draggable={false}
+                    sizes="336px"
+                    fill
                 />
             </div>
             <div className="card__content">

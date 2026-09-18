@@ -1,41 +1,38 @@
+import projectsData from "@/data/projectsData"
+
+const createProjectFiles = (projectType) => {
+    return projectsData
+        .filter((project) => project.type === projectType)
+        .map((project) => ({
+            type: "file",
+            title: `${project.slug}.${project.extension}`
+        }))
+}
+
 const browserTreeData = [
     {
         nameKey: "commercial",
         projectType: "commercial",
         type: "folder",
-        icon: "/projects/tree/folder-job.svg",
-        children: [
-            {
-                type: "file",
-                title: "lol.jsx"
-            },
-            {
-                type: "file",
-                title: "punktB.jsx"
-            },
-            {
-                type: "file",
-                title: "hedgehog.jsx"
-            },
-        ]
+        children: createProjectFiles("commercial")
     },
     {
         nameKey: "personal",
         projectType: "personal",
         type: "folder",
-        icon: "/projects/tree/folder-project.svg",
+        children: createProjectFiles("personal")
     },
     {
         nameKey: "educational",
         projectType: "educational",
         type: "folder",
-        icon: "/projects/tree/folder-docs.svg",
+        children: createProjectFiles("educational")
     },
     {
         nameKey: "test",
         projectType: "test",
         type: "folder",
-        icon: "/projects/tree/folder-test.svg",
+        children: createProjectFiles("test")
     }
 ]
 

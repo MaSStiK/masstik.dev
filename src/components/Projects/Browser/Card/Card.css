@@ -24,12 +24,11 @@
 
 /* Скриншот карточки */
 .card__image {
+    position: relative;
     width: 100%;
     height: 140px;
 
     & img {
-        width: 100%;
-        height: 100%;
         object-fit: cover;
         object-position: center top;
         /* TODO: Добавить позицию картинки center или top для лучшего отображение */

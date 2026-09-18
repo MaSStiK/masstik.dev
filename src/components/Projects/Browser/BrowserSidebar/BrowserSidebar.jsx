@@ -1,15 +1,18 @@
-import { ChevronRight, ChevronDown } from "lucide-react"
+import { useState } from "react"
+import { Triangle } from "lucide-react"
 import { FolderIcon, FileIcon } from "@/icons"
 import browserTreeData from "@/data/browserTreeData"
 import projectTypeColors from "@/data/projectTypeColors"
 
 import "./BrowserSidebar.css"
+
 import useLocale from "@/hooks/useLocale"
 
 // TODO: Также добавить кол-во проектов с правого края папки
 
 export default function BrowserSidebar() {
     const locale = useLocale()
+
     return (
         <aside className="browser__sidebar">
             <ul className="browser-tree">
@@ -27,39 +30,37 @@ export default function BrowserSidebar() {
 
 function TreeItem({ item, locale }) {
     if (item.type === "folder") {
-        return (
-            <FolderItem
-                item={item}
-                locale={locale}
-            />
-        )
+        return <FolderItem item={item} locale={locale} />
     }
-
-    return (
-        <FileItem
-            item={item}
-            locale={locale}
-        />
-    )
+    return <FileItem item={item} locale={locale} />
 }
 
 function FolderItem({ item, locale }) {
+    const [isOpen, setIsOpen] = useState(true)
+
     return (
         <li>
             <button
                 type="button"
-                className="browser-tree__folder"
-                style={{"--accent-color": projectTypeColors[item.projectType]}}
+                className="button-transition browser-tree__folder"
+                style={{ "--accent-color": projectTypeColors[item.projectType] }}
+                onClick={() => setIsOpen(!isOpen)}
             >
-                <ChevronDown
-                    size={16}
+                <Triangle
+                    size={8}
                     color="var(--gray)"
+                    className={`folder-triangle ${isOpen ? "folder-triangle--open" : ""}`}
                 />
-                <FolderIcon size={13} />
+
+                <FolderIcon
+                    size={13}
+                    className="folder-icon"
+                />
+
                 <span>{`${locale.projects.tree[item.nameKey]}/`}</span>
             </button>
 
-            {item.children && (
+            {item.children && isOpen && (
                 <ul className="browser-tree__children">
                     {item.children.map((child) => (
                         <TreeItem
@@ -74,10 +75,10 @@ function FolderItem({ item, locale }) {
     )
 }
 
-function FileItem({ item, locale }) {
+function FileItem({ item }) {
     return (
         <li>
-            <button type="button" className="browser-tree__file">
+            <button type="button-transition button" className="browser-tree__file">
                 <FileIcon
                     size={11}
                     color="var(--gray)"

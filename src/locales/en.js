@@ -41,7 +41,7 @@ const en = {
             commercial: "commercial",
             personal: "personal",
             educational: "educational",
-            test: "test"
+            test: "tests"
         }
     }
 }
