@@ -4,4 +4,9 @@
     position: relative;
     overflow: hidden;
     z-index: 2;
+    visibility: hidden;
+
+    &.pixel-blast--visible {
+        visibility: visible;
+    }
 }

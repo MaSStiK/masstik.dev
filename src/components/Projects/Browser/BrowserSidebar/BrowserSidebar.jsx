@@ -16,7 +16,7 @@ export default function BrowserSidebar() {
     const [projectFilter, setProjectFilter] = useProjectFilter()
     const locale = useLocale()
 
-    const allClassName = clsx(
+    const allClasses = clsx(
         "button-transition",
         "browser-tree__row",
         "browser-tree__all",
@@ -27,7 +27,7 @@ export default function BrowserSidebar() {
         <aside className="browser__sidebar">
             <button
                 type="button"
-                className={allClassName}
+                className={allClasses}
                 style={{ "--accent-color": projectTypeColors.all }}
                 onClick={() => setProjectFilter("all")}
             >
@@ -60,7 +60,7 @@ function FolderItem({ item, locale }) {
     const [isOpen, setIsOpen] = useState(true)
     const [projectFilter, setProjectFilter] = useProjectFilter()
 
-    const folderClassName = clsx(
+    const folderClasses = clsx(
         "button-transition",
         "browser-tree__row",
         "browser-tree__folder",
@@ -88,7 +88,7 @@ function FolderItem({ item, locale }) {
 
             <button
                 type="button"
-                className={folderClassName}
+                className={folderClasses}
                 style={{ "--accent-color": projectTypeColors[item.projectType] }}
                 onClick={() => setProjectFilter(item.projectType)}
             >

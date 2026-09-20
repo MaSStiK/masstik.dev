@@ -126,7 +126,9 @@
         color: var(--bg-header);
         outline-color: #00000000;
         background-color: var(--accent-color);
-        & svg { fill: var(--bg-header) }
+        & svg {
+            fill: var(--bg-header)
+        }
     }
 }
 
@@ -135,6 +137,8 @@
         color: var(--bg-header);
         outline-color: #00000000;
         background-color: var(--accent-color);
-        & svg { fill: var(--bg-header) }
+        & svg {
+            fill: var(--bg-header)
+        }
     }
 }
