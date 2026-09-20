@@ -1,9 +1,11 @@
+/* Секция Hero */
 .hero {
     width: 100%;
     height: 720px;
     position: relative;
 }
 
+/* Контейнер с содержимым секции */
 .hero__container {
     width: 100%;
     height: 100%;
@@ -18,6 +20,12 @@
     pointer-events: none;
 }
 
+/* Кнопки управления эффектами секции */
+.hero__effects-controls {
+
+}
+
+/* Блок стилизованный под интерфейс */
 .hero__content {
     display: flex;
     gap: var(--gap-6);
@@ -49,6 +57,8 @@
 }
 
 .hero__button {
+    --accent-color: var(--gray);
+    --hover-accent-color: var(--white);
     height: 48px;
     padding: 16px;
     color: var(--bg-surface);
@@ -56,37 +66,27 @@
 
     border: none;
     outline: 4px solid #00000000;
+    background-color: var(--accent-color);
     outline-offset: 4px;
+
+    @media (hover: hover) {
+        &:is(:hover, :focus-visible) {
+            background-color: var(--hover-accent-color);
+            outline-color: var(--hover-accent-color);
+        }
+    }
+
+    &:active {
+        background-color: var(--hover-accent-color);
+        outline-color: var(--hover-accent-color);
+    }
 }
 
 .hero__button--hire {
-    background-color: var(--orange);
+    --accent-color: var(--orange);
+    --hover-accent-color: #fb8044;
 }
-
 .hero__button--projects {
-    background-color: var(--yellow);
-}
-
-@media (hover: hover) {
-    .hero__button--hire:is(:hover, :focus-visible) {
-        background-color: #fb8044;
-        outline-color: #fb8044;
-    }
-    
-    .hero__button--projects:is(:hover, :focus-visible) {
-        background-color: #ffcf42;
-        outline-color: #ffcf42;
-    }
-}
-
-@media (hover: none) {
-    .hero__button--hire:active {
-        background-color: #fb8044;
-        outline-color: #fb8044;
-    }
-
-    .hero__button--projects:active {
-        background-color: #ffcf42;
-        outline-color: #ffcf42;
-    }
+    --accent-color: var(--yellow);
+    --hover-accent-color: #ffcf42;
 }
