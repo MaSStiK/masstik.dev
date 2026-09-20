@@ -31,6 +31,8 @@ const fr = {
     },
     projects: {
         header: "Projets",
+        descriptionTopLine: "Voici mes projets - des expérimentations aux applications web complètes.",
+        descriptionBottomLine: "Chacun fait partie de mon parcours.",
         toolbar: {
             back: "Retour",
             refresh: "Actualiser",

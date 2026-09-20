@@ -23,4 +23,12 @@
     align-content: start;
     gap: var(--gap-4);
     overflow-y: auto;
+
+    &.browser__content--two-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &.browser__content--two-columns .card__image {
+        height: 210px;
+    }
 }

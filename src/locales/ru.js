@@ -31,6 +31,8 @@ const ru = {
     },
     projects: {
         header: "Проекты",
+        descriptionTopLine: "Здесь мои проекты - от экспериментов до полноценных веб-приложений.",
+        descriptionBottomLine: "Каждый из них - часть моего пути.",
         toolbar: {
             back: "Назад",
             refresh: "Обновить",

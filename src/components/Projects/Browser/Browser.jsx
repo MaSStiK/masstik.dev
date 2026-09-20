@@ -1,14 +1,27 @@
+import clsx from "clsx"
 import { useEffect, useState } from "react"
 import BrowserToolbar from "./BrowserToolbar/BrowserToolbar"
 import BrowserSidebar from "./BrowserSidebar/BrowserSidebar"
 import Card from "./Card/Card"
 import projectsData from "@/data/projectsData"
 import getGithubProjects from "@/utils/getGithubProjects"
+import useProjectFilter from "@/hooks/useProjectFilter"
 
 import "./Browser.css"
 
 export default function Browser() {
     const [projects, setProjects] = useState(projectsData)
+    const [projectFilter] = useProjectFilter()
+
+    const filteredProjects = projectFilter === "all"
+        ? projects
+        : projects.filter((project) => project.type === projectFilter)
+
+    // Переключение на две колонны при выборе коммерческих проектов
+    const browserContentClasses = clsx(
+        "browser__content",
+        projectFilter === "commercial" && "browser__content--two-columns"
+    )
 
     useEffect(() => {
         async function loadProjects() {
@@ -42,8 +55,8 @@ export default function Browser() {
             <BrowserToolbar />
             <div className="browser__body">
                 <BrowserSidebar />
-                <div className="browser__content">
-                    {projects.map((item) => (
+                <div className={browserContentClasses}>
+                    {filteredProjects.map((item) => (
                         <Card   
                             key={item.slug}
                             project={item}

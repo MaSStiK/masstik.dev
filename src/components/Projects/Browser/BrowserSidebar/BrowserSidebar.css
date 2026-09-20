@@ -3,10 +3,56 @@
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
+    gap: var(--gap-2);
+    padding: var(--gap-3) 0;
     background-color: var(--bg-browser-sidebar);
-    border-right: 1px solid var(--border-gray);
+    border-right: 1px solid #72707240;
 }
 
+.browser-tree__row {
+    --accent-color: var(--gray);
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 18px 0 32px;
+
+    & span {
+        font-family: var(--font-console);
+        color: var(--accent-color);
+        font-size: 12px;
+    }
+
+    /* Когда категория выбрана */
+    &.browser-tree__row--selected {
+        background-color: color-mix(in srgb, var(--accent-color) 10%, transparent);
+    }
+
+    @media (hover: hover) {
+        &:is(:hover, :focus-visible) {
+            background-color: color-mix(in srgb, var(--accent-color) 20%, transparent);
+        }
+    }
+
+    &:active {
+        background-color: color-mix(in srgb, var(--accent-color) 20%, transparent);
+    }
+}
+
+/* Кнопка "Все проекты" */
+.browser-tree__all {
+    & svg {
+        stroke: var(--accent-color);
+    }
+}
+
+/* Кол-во проектов */
+.browser-tree__count {
+    margin-left: auto;
+}
+
+/* Дерево с папками */
 .browser-tree {
     display: flex;
     flex-direction: column;
@@ -16,40 +62,25 @@
     }
 }
 
+/* Список файлов внутри папки */
 .browser-tree__children {
     display: flex;
     flex-direction: column;
 }
 
-/* Треугольник для отображения открытой или закрытой папки */
-.folder-triangle {
-    fill: var(--gray);
-    transform: rotate(180deg);
+/* Объединяет папку и треугольник */
+.browser-tree__item {
+    position: relative;
 }
 
-.folder-triangle--open {
-    transform: rotate(90deg);
-}
-
-.browser-tree__folder {
-    --accent-color: var(--gray);
-    width: 100%;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 0 18px;
-
-    & span {
-        font-family: var(--font-console);
-        color: var(--accent-color);
-        font-size: 12px;
-        word-spacing: -4px;
-    }
-
-    & svg.folder-icon {
-        fill: var(--accent-color);
-    }
+/* Кнопка с треугольником */
+.browser-tree__folder-toggle {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
 
     @media (hover: hover) {
         &:is(:hover, :focus-visible) {
@@ -62,32 +93,36 @@
     }
 }
 
+/* Треугольник указывает вправо при закрытой папке */
+.browser-tree__triangle {
+    fill: var(--gray);
+    transform: rotate(90deg);
+    /* transition: transform 0.15s ease; */
+    /* TODO: Сделай анимацию закрытия и открытия папки */
+
+    /* Треугольник указывает вниз при раскрытой папке */
+    &.browser-tree__triangle--open {
+        transform: rotate(180deg);
+    }
+}
+
+/* Папка в дереве */
+.browser-tree__folder {
+    & svg.browser-tree__folder-icon {
+        fill: var(--accent-color);
+    }
+}
+
+/* Файл в дереве */
 .browser-tree__file {
-    width: 100%;
     height: 26px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 0 16px 0 34px;
+    padding-left: 34px;
 
     & span {
-        font-family: var(--font-console);
-        color: var(--gray);
         font-size: 11px;
-        word-spacing: -4px;
     }
 
     & svg {
-        stroke: var(--gray);
-    }
-
-    @media (hover: hover) {
-        &:is(:hover, :focus-visible) {
-            background-color: var(--bg-highlight);
-        }
-    }
-
-    &:active {
-        background-color: var(--bg-highlight);
+        stroke: var(--accent-color);
     }
 }

@@ -71,6 +71,7 @@
 
     & svg {
         fill: var(--gray);
+        user-select: none;
     }
 
     & span {

@@ -1,9 +1,9 @@
 const projectTypeColors = {
+    all: "var(--purple)",
     commercial: "var(--green)",
+    personal: "var(--yellow)",
     educational: "var(--blue)",
-    personal: "var(--purple)",
-    test: "var(--orange)",
-    all: "var(--yellow)"
+    test: "var(--orange)"
 }
 
 export default projectTypeColors

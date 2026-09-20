@@ -31,6 +31,8 @@ const en = {
     },
     projects: {
         header: "Projects",
+        descriptionTopLine: "Here are my projects - from experiments to full web applications.",
+        descriptionBottomLine: "Each one is part of my journey.",
         toolbar: {
             back: "Go back",
             refresh: "Refresh",

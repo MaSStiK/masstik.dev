@@ -9,10 +9,10 @@ export default function Projects() {
         <section className="projects">
             <div className="projects__container">
                 <div className="projects__info">
-                    <span className="font-secondary fs-xxlarge fw-bold">{locale.projects.header}</span>
-                    <span className="font-console">
-                        {`// Здесь собраны мои проекты`}<br />
-                        {`// Коммерческие, учебные, личные и тестовые`}
+                    <span className="projects__info-header">{locale.projects.header}</span>
+                    <span className="projects__info-description">
+                        {locale.projects.descriptionTopLine}<br />
+                        {locale.projects.descriptionBottomLine}
                     </span>
                 </div>
                 <Browser />

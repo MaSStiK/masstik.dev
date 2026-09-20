@@ -1,13 +1,12 @@
 import Image from "next/image"
-import { useAtomValue } from "jotai"
-import { languageAtom } from "@/store/language"
 import formatTimeAgo from "@/utils/formatTimeAgo"
 import projectTypeColors from "@/data/projectTypeColors"
+import useProjectFilter from "@/hooks/useProjectFilter"
 
 import "./Card.css"
 
 export default function Card({ project }) {
-    const language = useAtomValue(languageAtom)
+    const [projectFilter] = useProjectFilter()
 
     return (
         <div
@@ -19,7 +18,7 @@ export default function Card({ project }) {
                     src={project.image}
                     alt={`${project.title} project image`}
                     draggable={false}
-                    sizes="336px"
+                    sizes={projectFilter === "commercial" ? "500px" : "336px"}
                     fill
                 />
             </div>
@@ -28,7 +27,7 @@ export default function Card({ project }) {
                     <div className="card__type"></div>
                     <span>{project.title}</span>
                 </div>
-                <p className="card__desc">{project.desc}</p>
+                <p className="card__description">{project.description}</p>
                 <div className="card__stack">
                     {project.stack.map((item) => (
                         <span key={item} className="card__stack-item">{item}</span>

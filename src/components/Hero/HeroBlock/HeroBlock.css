@@ -88,8 +88,7 @@
     }
 
     & hr {
-        margin-top: var(--gap-4);
-        padding-bottom: var(--gap-4);
+        margin: var(--gap-4) 0;
     }
 }
 

@@ -45,3 +45,23 @@ export const FileIcon = ({ size = 24, ...props }) => {
         </svg>
     )
 }
+
+export const GridIcon = ({ size = 24, ...props }) => {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="currentColor"
+            strokeWidth="2"
+            fill="none"
+            {...props}
+        >
+            <rect x="3" y="3" width="7" height="7" />
+            <rect x="14" y="3" width="7" height="7" />
+            <rect x="3" y="14" width="7" height="7" />
+            <rect x="14" y="14" width="7" height="7" />
+        </svg>
+    )
+}

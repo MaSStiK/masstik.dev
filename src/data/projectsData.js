@@ -6,8 +6,8 @@ const projectsData = [
         type: "commercial",
         extension: "html",
         title: "Punkt B - Личный кабинет",
-        desc: "Коммерческий проект для международной онлайн-школы выбора профессии «Пункт Б».",
-        stack: ["jQuery", "Moment.js"],
+        description: "Коммерческий проект для международной онлайн-школы выбора профессии «Пункт Б».",
+        stack: ["jQuery", "Moment.js"]
     },
     {
         slug: "preparation-for-exams",
@@ -16,7 +16,7 @@ const projectsData = [
         type: "commercial",
         extension: "html",
         title: "Сайт преподавателя",
-        desc: "Коммерческий проект лендинга для частного преподавателя обществознания.",
+        description: "Коммерческий проект лендинга для частного преподавателя обществознания.",
         stack: ["jQuery", "IMask.js"]
     },
     {
@@ -26,7 +26,7 @@ const projectsData = [
         type: "personal",
         extension: "jsx",
         title: "Hedgehog RP",
-        desc: "Социальная платформа для политической ролевой игры.",
+        description: "Социальная платформа для политической ролевой игры.",
         stack: ["React", "Vite"]
     },
     {
@@ -36,7 +36,7 @@ const projectsData = [
         type: "personal",
         extension: "jsx",
         title: "Hedgehog RP Map",
-        desc: "Interactive map of the Hedgehog RP world.",
+        description: "Interactive map of the Hedgehog RP world.",
         stack: ["React"]
     },
     {
@@ -46,7 +46,7 @@ const projectsData = [
         type: "personal",
         extension: "jsx",
         title: "Hedgehog RP TV",
-        desc: "Hedgehog TV is a video hosting platform for the Hedgehog RP world.",
+        description: "Hedgehog TV is a video hosting platform for the Hedgehog RP world.",
         stack: ["Next.js", "clsx", "Tippy.js", "Moment.js"]
     },
     {
@@ -56,7 +56,7 @@ const projectsData = [
         type: "personal",
         extension: "jsx",
         title: "Red Chat",
-        desc: "Мессенджер в стиле Telegram с сообщениями в реальном времени, профилями и чатами.",
+        description: "Мессенджер в стиле Telegram с сообщениями в реальном времени, профилями и чатами.",
         stack: ["Next.js", "Jotai", "MongoDB", "Mongoose"]
     },
     {
@@ -66,7 +66,7 @@ const projectsData = [
         type: "educational",
         extension: "html",
         title: "Тестирование навыков",
-        desc: "Тестирование навыков продакт-менеджмента на основе теста ProductStar.",
+        description: "Тестирование навыков продакт-менеджмента на основе теста ProductStar.",
         stack: ["jQuery", "IMask.js", "Figma"]
     },
     {
@@ -76,7 +76,7 @@ const projectsData = [
         type: "educational",
         extension: "html",
         title: "Колесо Фортуны",
-        desc: "Интерактивное колесо для случайного распределения подарков между пользователями.",
+        description: "Интерактивное колесо для случайного распределения подарков между пользователями.",
         stack: ["jQuery", "IMask.js", "Figma"]
     },
     {
@@ -86,7 +86,7 @@ const projectsData = [
         type: "test",
         extension: "html",
         title: "Rocket Business",
-        desc: "Тестовое задание от rocket-business",
+        description: "Тестовое задание от rocket-business",
         stack: ["Figma"]
     },
 ]

@@ -61,7 +61,7 @@
 }
 
 /* Описание проекта */
-.card__desc {
+.card__description {
     /* Фиксированная высота блока с текстом */
     height: 63px;
     line-height: 1.5;
