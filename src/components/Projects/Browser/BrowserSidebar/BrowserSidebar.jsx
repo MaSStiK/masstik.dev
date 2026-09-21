@@ -1,5 +1,4 @@
 import clsx from "clsx"
-import { useState } from "react"
 import { Triangle } from "lucide-react"
 import { GridIcon, FolderIcon, FileIcon } from "@/icons"
 
@@ -8,14 +7,28 @@ import projectsData from "@/data/projectsData"
 import browserTreeData from "@/data/browserTree"
 
 import useCategoryFilter from "@/hooks/useCategoryFilter"
+import useFoldersState from "@/hooks/useFoldersState"
+import useActiveProject from "@/hooks/useActiveProject"
 import useLocale from "@/hooks/useLocale"
 
 import "./BrowserSidebar.css"
 
 export default function BrowserSidebar() {
     const [categoryFilter, setCategoryFilter] = useCategoryFilter()
+    const {foldersState, toggleFolder} = useFoldersState()
+    const [activeProject, setActiveProject] = useActiveProject()
 
     const locale = useLocale()
+
+    function selectCategory(category) {
+        // Если открыт проект - закрываем его
+        if (activeProject) {
+            setActiveProject(null)
+        }
+
+        // Переключаем категорию проектов
+        setCategoryFilter(category)
+    }
 
     const allClasses = clsx(
         "button-transition",
@@ -30,7 +43,7 @@ export default function BrowserSidebar() {
                 type="button"
                 className={allClasses}
                 style={{ "--accent-color": categories.all.color }}
-                onClick={() => setCategoryFilter("all")}
+                onClick={() => selectCategory("all")}
             >
                 <GridIcon size={13} />
                 <span>{locale.projects.tree.all}</span>
@@ -46,7 +59,9 @@ export default function BrowserSidebar() {
                         folder={item}
                         locale={locale}
                         categoryFilter={categoryFilter}
-                        setCategoryFilter={setCategoryFilter}
+                        selectCategory={selectCategory}
+                        isOpen={foldersState[item.category]}
+                        toggleFolder={toggleFolder}
                     />
                 ))}
             </ul>
@@ -58,10 +73,10 @@ function FolderItem({
     folder,
     locale,
     categoryFilter,
-    setCategoryFilter
+    selectCategory,
+    isOpen,
+    toggleFolder
 }) {
-    const [isOpen, setIsOpen] = useState(true)
-
     const folderClasses = clsx(
         "button-transition",
         "browser-tree__row",
@@ -76,7 +91,7 @@ function FolderItem({
                 className="flex-center browser-tree__folder-toggle"
                 aria-label={isOpen ? "Свернуть папку" : "Развернуть папку"}
                 aria-expanded={isOpen}
-                onClick={() => setIsOpen(prev => !prev)}
+                onClick={() => toggleFolder(folder.category)}
             >
                 <Triangle
                     size={8}
@@ -92,7 +107,7 @@ function FolderItem({
                 type="button"
                 className={folderClasses}
                 style={{"--accent-color": folder.color}}
-                onClick={() => setCategoryFilter(folder.category)}
+                onClick={() => selectCategory(folder.category)}
             >
                 <FolderIcon
                     size={13}

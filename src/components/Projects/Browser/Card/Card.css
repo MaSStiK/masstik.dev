@@ -64,14 +64,17 @@
 .card__description {
     /* Фиксированная высота блока с текстом */
     height: 63px;
+    margin-top: var(--gap-2);
+
     line-height: 1.5;
     color: var(--gray);
     font-size: var(--fs-small);
+    text-align: left;
+
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;  
     overflow: hidden;
-    margin-top: var(--gap-2);
 }
 
 /* Список технологий */
