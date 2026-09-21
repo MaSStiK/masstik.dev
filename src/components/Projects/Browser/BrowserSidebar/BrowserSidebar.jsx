@@ -2,25 +2,26 @@ import clsx from "clsx"
 import { useState } from "react"
 import { Triangle } from "lucide-react"
 import { GridIcon, FolderIcon, FileIcon } from "@/icons"
+
+import categories from "@/data/categories"
 import projectsData from "@/data/projectsData"
-import browserTreeData from "@/data/browserTreeData"
-import projectTypeColors from "@/data/projectTypeColors"
-import useProjectFilter from "@/hooks/useProjectFilter"
+import browserTreeData from "@/data/browserTree"
+
+import useCategoryFilter from "@/hooks/useCategoryFilter"
+import useLocale from "@/hooks/useLocale"
 
 import "./BrowserSidebar.css"
 
-import useLocale from "@/hooks/useLocale"
-
-
 export default function BrowserSidebar() {
-    const [projectFilter, setProjectFilter] = useProjectFilter()
+    const [categoryFilter, setCategoryFilter] = useCategoryFilter()
+
     const locale = useLocale()
 
     const allClasses = clsx(
         "button-transition",
         "browser-tree__row",
         "browser-tree__all",
-        projectFilter === "all" && "browser-tree__row--selected"
+        categoryFilter === "all" && "browser-tree__row--selected"
     )
 
     return (
@@ -28,20 +29,24 @@ export default function BrowserSidebar() {
             <button
                 type="button"
                 className={allClasses}
-                style={{ "--accent-color": projectTypeColors.all }}
-                onClick={() => setProjectFilter("all")}
+                style={{ "--accent-color": categories.all.color }}
+                onClick={() => setCategoryFilter("all")}
             >
                 <GridIcon size={13} />
                 <span>{locale.projects.tree.all}</span>
                 <span className="browser-tree__count">{`[${projectsData.length}]`}</span>
             </button>
+
             <hr />
+
             <ul className="browser-tree">
-                {browserTreeData.map((item) => (
-                    <TreeItem
-                        key={item.nameKey}
-                        item={item}
+                {browserTreeData.map(item => (
+                    <FolderItem
+                        key={item.category}
+                        folder={item}
                         locale={locale}
+                        categoryFilter={categoryFilter}
+                        setCategoryFilter={setCategoryFilter}
                     />
                 ))}
             </ul>
@@ -49,22 +54,19 @@ export default function BrowserSidebar() {
     )
 }
 
-function TreeItem({ item, locale }) {
-    if (item.type === "folder") {
-        return <FolderItem item={item} locale={locale} />
-    }
-    return <FileItem item={item} />
-}
-
-function FolderItem({ item, locale }) {
+function FolderItem({
+    folder,
+    locale,
+    categoryFilter,
+    setCategoryFilter
+}) {
     const [isOpen, setIsOpen] = useState(true)
-    const [projectFilter, setProjectFilter] = useProjectFilter()
 
     const folderClasses = clsx(
         "button-transition",
         "browser-tree__row",
         "browser-tree__folder",
-        projectFilter === item.projectType && "browser-tree__row--selected"
+        categoryFilter === folder.category && "browser-tree__row--selected"
     )
 
     return (
@@ -89,25 +91,23 @@ function FolderItem({ item, locale }) {
             <button
                 type="button"
                 className={folderClasses}
-                style={{ "--accent-color": projectTypeColors[item.projectType] }}
-                onClick={() => setProjectFilter(item.projectType)}
+                style={{"--accent-color": folder.color}}
+                onClick={() => setCategoryFilter(folder.category)}
             >
                 <FolderIcon
                     size={13}
                     className="browser-tree__folder-icon"
                 />
-
-                <span>{`${locale.projects.tree[item.nameKey]}/`}</span>
-                <span className="browser-tree__count">{`[${item.children.length}]`}</span>
+                <span>{`${locale.projects.tree[folder.category]}/`}</span>
+                <span className="browser-tree__count">{`[${folder.files.length}]`}</span>
             </button>
 
-            {item.children && isOpen && (
-                <ul className="browser-tree__children">
-                    {item.children.map((child) => (
-                        <TreeItem
-                            key={child.nameKey || child.title}
-                            item={child}
-                            locale={locale}
+            {isOpen && (
+                <ul className="browser-tree__files">
+                    {folder.files.map(file => (
+                        <FileItem
+                            key={file.title}
+                            file={file}
                         />
                     ))}
                 </ul>
@@ -116,7 +116,7 @@ function FolderItem({ item, locale }) {
     )
 }
 
-function FileItem({ item }) {
+function FileItem({ file }) {
     return (
         <li>
             <button
@@ -127,7 +127,7 @@ function FileItem({ item }) {
                     size={11}
                     color="var(--gray)"
                 />
-                <span>{item.title}</span>
+                <span>{file.title}</span>
             </button>
         </li>
     )

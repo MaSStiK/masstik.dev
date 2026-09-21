@@ -5,22 +5,22 @@ import BrowserSidebar from "./BrowserSidebar/BrowserSidebar"
 import Card from "./Card/Card"
 import projectsData from "@/data/projectsData"
 import getGithubProjects from "@/utils/getGithubProjects"
-import useProjectFilter from "@/hooks/useProjectFilter"
+import useCategoryFilter from "@/hooks/useCategoryFilter"
 
 import "./Browser.css"
 
 export default function Browser() {
     const [projects, setProjects] = useState(projectsData)
-    const [projectFilter] = useProjectFilter()
+    const [categoryFilter] = useCategoryFilter()
 
-    const filteredProjects = projectFilter === "all"
+    const filteredProjects = categoryFilter === "all"
         ? projects
-        : projects.filter((project) => project.type === projectFilter)
+        : projects.filter((project) => project.type === categoryFilter)
 
     // Переключение на две колонны при выборе коммерческих проектов
     const browserContentClasses = clsx(
         "browser__content",
-        projectFilter === "commercial" && "browser__content--two-columns"
+        categoryFilter === "commercial" && "browser__content--two-columns"
     )
 
     useEffect(() => {
@@ -60,6 +60,7 @@ export default function Browser() {
                         <Card   
                             key={item.slug}
                             project={item}
+                            categoryFilter={categoryFilter}
                         />
                     ))}
                 </div>

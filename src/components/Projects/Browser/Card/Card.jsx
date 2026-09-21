@@ -1,24 +1,24 @@
 import Image from "next/image"
 import formatTimeAgo from "@/utils/formatTimeAgo"
-import projectTypeColors from "@/data/projectTypeColors"
-import useProjectFilter from "@/hooks/useProjectFilter"
+import categories from "@/data/categories"
 
 import "./Card.css"
 
-export default function Card({ project }) {
-    const [projectFilter] = useProjectFilter()
-
+export default function Card({
+    project,
+    categoryFilter
+}) {
     return (
         <div
             className="card"
-            style={{"--accent-color": projectTypeColors[project.type]}}
+            style={{"--accent-color": categories[project.type].color}}
         >
             <div className="card__image">
                 <Image
                     src={project.image}
                     alt={`${project.title} project image`}
                     draggable={false}
-                    sizes={projectFilter === "commercial" ? "500px" : "336px"}
+                    sizes={categoryFilter === "commercial" ? "500px" : "336px"}
                     fill
                 />
             </div>

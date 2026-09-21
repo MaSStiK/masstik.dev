@@ -63,7 +63,7 @@
 }
 
 /* Список файлов внутри папки */
-.browser-tree__children {
+.browser-tree__files {
     display: flex;
     flex-direction: column;
 }

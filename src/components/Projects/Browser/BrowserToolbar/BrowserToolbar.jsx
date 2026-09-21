@@ -1,16 +1,16 @@
 import { ChevronLeft, RefreshCw, Search } from "lucide-react"
 import { LockIcon } from "@/icons"
 import useLocale from "@/hooks/useLocale"
-import useProjectFilter from "@/hooks/useProjectFilter"
+import useCategoryFilter from "@/hooks/useCategoryFilter"
 
 import "./BrowserToolbar.css"
 
 export default function BrowserToolbar() {
-    const [projectFilter] = useProjectFilter()
+    const [categoryFilter] = useCategoryFilter()
     const locale = useLocale()
 
     // Отображение выбранной категории
-    const categoryQuery = projectFilter !== "all" && `?category=${projectFilter}`
+    const categoryQuery = categoryFilter !== "all" && `?category=${categoryFilter}`
 
     return (
         <div className="browser__toolbar">

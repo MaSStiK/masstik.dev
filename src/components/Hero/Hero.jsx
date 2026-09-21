@@ -2,13 +2,15 @@ import clsx from "clsx"
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import useLocale from "@/hooks/useLocale"
-import PixelBlast from "@/components/ReactBits/PixelBlast/PixelBlast"
 import { Play } from "lucide-react"
 import { TransparencyIcon } from "@/icons"
 import { FaGithub, FaTelegramPlane, FaAt } from "react-icons/fa"
+
+import PixelBlast from "@/components/ReactBits/PixelBlast/PixelBlast"
 import HeroCode from "./HeroCode"
 import HeroBlock from "./HeroBlock/HeroBlock"
+
+import useLocale from "@/hooks/useLocale"
 
 import "./Hero.css"
 
@@ -73,6 +75,7 @@ export default function Hero() {
                             alt="profile-pic"
                             width={256}
                             height={256}
+                            loading="eager"
                         />
                         <HeroCode />
                     </HeroBlock>
