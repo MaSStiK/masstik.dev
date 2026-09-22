@@ -6,6 +6,7 @@ const createProjectFiles = category => {
     return projectsData.filter(project => project.type === category)
         .map(project => ({
             type: "file",
+            slug: project.slug,
             title: `${project.slug}.${project.extension}`
         }))
 }

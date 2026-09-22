@@ -1,8 +1,8 @@
 import useLocale from "@/hooks/useLocale"
 import Browser from "./Browser/Browser"
-import "./Projects.css"
+import "./ProjectsSection.css"
 
-export default function Projects() {
+export default function ProjectsSection() {
     const locale = useLocale()
 
     return (

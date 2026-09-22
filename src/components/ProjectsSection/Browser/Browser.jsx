@@ -1,17 +1,22 @@
 import clsx from "clsx"
 import { useEffect, useState } from "react"
+import projectsData from "@/data/projectsData"
+import getGithubProjects from "@/utils/getGithubProjects"
+
+import Project from "@/components/Project/Project"
 import BrowserToolbar from "./BrowserToolbar/BrowserToolbar"
 import BrowserSidebar from "./BrowserSidebar/BrowserSidebar"
 import Card from "./Card/Card"
-import projectsData from "@/data/projectsData"
-import getGithubProjects from "@/utils/getGithubProjects"
+
 import useCategoryFilter from "@/hooks/useCategoryFilter"
+import useActiveProjectSlug from "@/hooks/useActiveProjectSlug"
 
 import "./Browser.css"
 
 export default function Browser() {
     const [projects, setProjects] = useState(projectsData)
     const [categoryFilter] = useCategoryFilter()
+    const [activeProjectSlug] = useActiveProjectSlug()
 
     const filteredProjects = categoryFilter === "all"
         ? projects
@@ -37,7 +42,7 @@ export default function Browser() {
                 return {
                     ...project,
                     github: repo?.html_url ?? null,
-                    description: repo?.description ?? project.description,
+                    // description: repo?.description ?? project.description, // Это вообще не надо получать, в проектах должно быть три описание на трех языках
                     website: repo?.homepage ?? null,
                     lastUpdated: repo?.pushed_at ?? null
                 }
@@ -49,19 +54,20 @@ export default function Browser() {
         loadProjects()
     }, [])
 
-    // Прокинуть сеттер фильтра в BrowserSidebar и вызывать от туда смену фильтра отображаемых проектов
     return (
         <div className="browser">
             <BrowserToolbar />
             <div className="browser__body">
                 <BrowserSidebar />
                 <div className={browserContentClasses}>
-                    {filteredProjects.map((item) => (
-                        <Card   
-                            key={item.slug}
-                            project={item}
-                            categoryFilter={categoryFilter}
-                        />
+                    {activeProjectSlug
+                        ? <Project projectSlug={activeProjectSlug} />
+                        : filteredProjects.map(item => (
+                            <Card
+                                key={item.slug}
+                                project={item}
+                                categoryFilter={categoryFilter}
+                            />
                     ))}
                 </div>
             </div>

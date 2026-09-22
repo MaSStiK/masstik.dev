@@ -2,13 +2,13 @@ import { ChevronLeft, RefreshCw, Search } from "lucide-react"
 import { LockIcon } from "@/icons"
 import useLocale from "@/hooks/useLocale"
 import useCategoryFilter from "@/hooks/useCategoryFilter"
-import useActiveProject from "@/hooks/useActiveProject"
+import useActiveProjectSlug from "@/hooks/useActiveProjectSlug"
 
 import "./BrowserToolbar.css"
 
 export default function BrowserToolbar() {
     const [categoryFilter, setCategoryFilter] = useCategoryFilter()
-    const [activeProject, setActiveProject] = useActiveProject()
+    const [activeProjectSlug, setActiveProjectSlug] = useActiveProjectSlug()
     const locale = useLocale()
 
     // Отображение выбранной категории
@@ -17,15 +17,15 @@ export default function BrowserToolbar() {
         : ""
 
     // Отображаем проект, если он выбран, иначе категорию
-    const projectPath = activeProject
-        ? `/${activeProject.slug}`
+    const projectPath = activeProjectSlug
+        ? `/${activeProjectSlug}`
         : categoryQuery
 
     // Кнопка Назад
     function goBack() {
         // Если открыт проект - закрываем его и возвращаемся в выбранную категорию
-        if (activeProject) {
-            setActiveProject(null)
+        if (activeProjectSlug) {
+            setActiveProjectSlug(null)
             return
         }
 

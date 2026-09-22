@@ -1,5 +1,5 @@
-import Hero from "../Hero/Hero"
-import Projects from "@/components/Projects/Projects"
+import Hero from "@/components/HeroSection/HeroSection"
+import Projects from "@/components/ProjectsSection/ProjectsSection"
 import Contacts from "@/components/Contacts/Contacts"
 
 import "./Home.css"

@@ -12,9 +12,9 @@ import HeroBlock from "./HeroBlock/HeroBlock"
 
 import useLocale from "@/hooks/useLocale"
 
-import "./Hero.css"
+import "./HeroSection.css"
 
-export default function Hero() {
+export default function HeroSection() {
     const [isBackgroundVisible, setIsBackgroundVisible] = useState(true)
     const [isHeroBlockTransparent, setIsHeroBlockTransparent] = useState(true)
     const locale = useLocale()

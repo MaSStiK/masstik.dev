@@ -8,23 +8,21 @@ import browserTreeData from "@/data/browserTree"
 
 import useCategoryFilter from "@/hooks/useCategoryFilter"
 import useFoldersState from "@/hooks/useFoldersState"
-import useActiveProject from "@/hooks/useActiveProject"
+import useActiveProjectSlug from "@/hooks/useActiveProjectSlug"
 import useLocale from "@/hooks/useLocale"
 
 import "./BrowserSidebar.css"
 
 export default function BrowserSidebar() {
     const [categoryFilter, setCategoryFilter] = useCategoryFilter()
-    const {foldersState, toggleFolder} = useFoldersState()
-    const [activeProject, setActiveProject] = useActiveProject()
+    const {foldersState} = useFoldersState()
+    const [activeProjectSlug, setActiveProjectSlug] = useActiveProjectSlug()
 
     const locale = useLocale()
 
     function selectCategory(category) {
         // Если открыт проект - закрываем его
-        if (activeProject) {
-            setActiveProject(null)
-        }
+        if (activeProjectSlug) setActiveProjectSlug(null)
 
         // Переключаем категорию проектов
         setCategoryFilter(category)
@@ -34,7 +32,9 @@ export default function BrowserSidebar() {
         "button-transition",
         "browser-tree__row",
         "browser-tree__all",
-        categoryFilter === "all" && "browser-tree__row--selected"
+        !activeProjectSlug // Если нету активного проекта
+            && categoryFilter === "all"
+            && "browser-tree__row--selected"
     )
 
     return (
@@ -61,7 +61,6 @@ export default function BrowserSidebar() {
                         categoryFilter={categoryFilter}
                         selectCategory={selectCategory}
                         isOpen={foldersState[item.category]}
-                        toggleFolder={toggleFolder}
                     />
                 ))}
             </ul>
@@ -74,14 +73,18 @@ function FolderItem({
     locale,
     categoryFilter,
     selectCategory,
-    isOpen,
-    toggleFolder
+    isOpen
 }) {
+    const {toggleFolder} = useFoldersState()
+    const [activeProjectSlug] = useActiveProjectSlug()
+
     const folderClasses = clsx(
         "button-transition",
         "browser-tree__row",
         "browser-tree__folder",
-        categoryFilter === folder.category && "browser-tree__row--selected"
+        !activeProjectSlug // Если нету активного проекта
+            && categoryFilter === folder.category
+            && "browser-tree__row--selected"
     )
 
     return (
@@ -132,11 +135,21 @@ function FolderItem({
 }
 
 function FileItem({ file }) {
+    const [activeProjectSlug, setActiveProjectSlug] = useActiveProjectSlug()
+
+    const fileClasses = clsx(
+        "button-transition",
+        "browser-tree__row",
+        "browser-tree__file",
+        activeProjectSlug === file.slug && "browser-tree__row--selected"
+    )
+
     return (
         <li>
             <button
                 type="button"
-                className="button-transition browser-tree__row browser-tree__file"
+                className={fileClasses}
+                onClick={() => setActiveProjectSlug(file.slug)}
             >
                 <FileIcon
                     size={11}

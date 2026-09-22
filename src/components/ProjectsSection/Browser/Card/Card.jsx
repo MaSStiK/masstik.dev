@@ -2,7 +2,7 @@ import Image from "next/image"
 import formatTimeAgo from "@/utils/formatTimeAgo" // TODO: Добавить дату, год создания или дату последнего обновления
 import categories from "@/data/categories"
 import useFoldersState from "@/hooks/useFoldersState"
-import useActiveProject from "@/hooks/useActiveProject"
+import useActiveProjectSlug from "@/hooks/useActiveProjectSlug"
 
 import "./Card.css"
 
@@ -11,14 +11,14 @@ export default function Card({
     categoryFilter
 }) {
     const {setFolderOpen} = useFoldersState()
-    const [activeProject, setActiveProject] = useActiveProject()
+    const [activeProjectSlug, setActiveProjectSlug] = useActiveProjectSlug()
 
     function openProject() {
-        if (activeProject?.slug === project.slug) return
+        if (activeProjectSlug === project.slug) return
 
         // Открываем папку с категорией файла и подсвечиваем активный файл
         setFolderOpen(project.type, true)
-        setActiveProject(project)
+        setActiveProjectSlug(project.slug)
     }
     
     return (
