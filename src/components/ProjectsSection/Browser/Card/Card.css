@@ -35,6 +35,21 @@
     }
 }
 
+/* Дата и тип проекта */
+.card__image-meta {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 2px 4px;
+
+    background-color: color-mix(in srgb, var(--bg-surface) 75%, transparent);
+    border-radius: 3px;
+
+    font-family: var(--font-console);
+    font-size: var(--fs-tiny);
+    color: var(--gray);
+}
+
 /* Внутренняя часть карточки */
 .card__content {
     padding: var(--gap-4);
