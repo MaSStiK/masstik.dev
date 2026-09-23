@@ -35,7 +35,11 @@ export default function Card({
                     sizes={categoryFilter === "commercial" ? "500px" : "336px"}
                     fill
                 />
-                <span className="card__image-meta">2024 · Frontend</span>
+                <span className="card__image-meta">
+                    <span>{project.year}</span>
+                    <span>·</span>
+                    <span>{project.role}</span>
+                </span>
             </div>
             <div className="card__content">
                 <div className="card__title">

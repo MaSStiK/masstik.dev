@@ -42,12 +42,17 @@
     right: 8px;
     padding: 2px 4px;
 
+    display: flex;
+    gap: 2px;
+
     background-color: color-mix(in srgb, var(--bg-surface) 75%, transparent);
     border-radius: 3px;
 
-    font-family: var(--font-console);
-    font-size: var(--fs-tiny);
-    color: var(--gray);
+    & span {
+        font-family: var(--font-console);
+            font-size: var(--fs-tiny);
+            color: var(--gray);
+    }
 }
 
 /* Внутренняя часть карточки */

@@ -49,9 +49,9 @@ code {
 }
 
 /* Шрифт */
-.font-base      { font-family: var(--font-base); }
-.font-heading   { font-family: var(--font-heading); }
-.font-console   { font-family: var(--font-console); }
+.font-base    { font-family: var(--font-base); }
+.font-heading { font-family: var(--font-heading); }
+.font-console { font-family: var(--font-console); }
 
 /* Размер текста */
 h1, .h1 { font-size: var(--fs-xlarge); font-weight: var(--fw-bold); }
