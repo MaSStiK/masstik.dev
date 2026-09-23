@@ -85,6 +85,11 @@
 .browser__search-bar {
     width: min(500px, 100%);
 
+    & svg {
+        stroke: var(--gray);
+        user-select: none;
+    }
+
     & input {
         width: 100%;
         font-size: var(--fs-tiny);
