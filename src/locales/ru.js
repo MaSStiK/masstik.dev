@@ -33,6 +33,8 @@ const ru = {
         header: "Проекты",
         descriptionTopLine: "Здесь мои проекты - от экспериментов до полноценных веб-приложений.",
         descriptionBottomLine: "Каждый из них - часть моего пути.",
+
+        // Browser
         toolbar: {
             back: "Назад",
             refresh: "Обновить",
@@ -44,6 +46,14 @@ const ru = {
             personal: "личные",
             educational: "учебные",
             test: "тестовые"
+        },
+
+        // Projects
+        status: {
+            completed: "Завершён",
+            ongoing: "В разработке",
+            paused: "Приостановлен",
+            archived: "В архиве"
         }
     }
 }

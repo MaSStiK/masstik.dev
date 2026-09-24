@@ -8,6 +8,7 @@ import {
 
 import JotaiProvider from "@/components/JotaiProvider"
 import getInitialLanguage from "@/utils/InitialLanguage"
+import getProjects from "@/utils/getProjects"
 
 import "@/app/styles/style.css"
 
@@ -23,13 +24,17 @@ export default async function RootLayout({ children }) {
 
     // Получаем язык браузера при первом посещении
     const acceptLanguage = headersList.get("accept-language")
-
     const language = getInitialLanguage(savedLanguage, acceptLanguage)
 
+    const projects = await getProjects()
+
     return (
-        <html lang={language} className={`${comfortaa.variable} ${balsamiqSans.variable}`}>
+        <html
+            lang={language}
+            className={`${comfortaa.variable} ${balsamiqSans.variable}`}
+        >
             <body>
-                <JotaiProvider language={language}>
+                <JotaiProvider language={language} projects={projects} >
                     {children}
                 </JotaiProvider>
             </body>

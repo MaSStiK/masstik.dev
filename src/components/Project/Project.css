@@ -1,0 +1,72 @@
+.project {
+    --accent-color: var(--gray);
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Скриншот проекта */
+.project__image {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: -24px;
+        background-image: var(--cover-image);
+        background-size: cover;
+        background-position: center;
+        filter: blur(12px);
+        opacity: 0.8;
+    }
+
+    & img {
+        z-index: 1;
+        object-fit: contain;
+        object-position: center;
+    }
+}
+
+.project__content {
+    padding: 28px 32px;
+}
+
+.project__title {
+    display: flex;
+    gap: var(--gap-2);
+    align-items: center;
+    margin-bottom: 20px;
+
+    & span {
+        font-family: var(--font-heading);
+        font-size: var(--fs-xlarge);
+    }
+}
+
+/* Тип карточки */
+.project__type {
+    --size: 8px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--size);
+    background-color: var(--accent-color);
+}
+
+.project__content hr {
+    border-color: #3b383c;
+    margin: 20px 0;
+}
+
+/* Мета информация о проекте */
+.project__meta {
+    display: flex;
+    gap: var(--gap-5);
+
+    & span {
+        font-family: var(--font-console);
+        font-size: var(--fs-tiny);
+        color: var(--dark-gray);
+    }
+}

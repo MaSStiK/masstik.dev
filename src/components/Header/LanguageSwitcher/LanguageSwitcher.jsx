@@ -1,7 +1,7 @@
 "use client"
 
 import { useAtom } from "jotai"
-import { languageAtom } from "@/store/language"
+import { languageAtom } from "@/store/languageAtom"
 import { LANGUAGES } from "@/utils/InitialLanguage"
 import saveLanguage from "@/actions/setLanguage"
 import "./LanguageSwitcher.css"

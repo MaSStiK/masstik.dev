@@ -16,19 +16,22 @@
 .browser__content {
     flex: 1;
     min-width: 0;
+    overflow-y: auto;
+}
+
+.browser__card-grid {
     padding: var(--gap-4);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: max-content;
     align-content: start;
     gap: var(--gap-4);
-    overflow-y: auto;
 
-    &.browser__content--two-columns {
+    &.browser__card-grid--two-columns {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    &.browser__content--two-columns .card__image {
+    &.browser__card-grid--two-columns .card__image {
         height: 210px;
     }
 }

@@ -33,6 +33,8 @@ const fr = {
         header: "Projets",
         descriptionTopLine: "Voici mes projets - des expérimentations aux applications web complètes.",
         descriptionBottomLine: "Chacun fait partie de mon parcours.",
+
+        // Browser
         toolbar: {
             back: "Retour",
             refresh: "Actualiser",
@@ -44,6 +46,14 @@ const fr = {
             personal: "personnels",
             educational: "éducatifs",
             test: "tests"
+        },
+
+        // Projects
+        status: {
+            completed: "Terminé",
+            ongoing: "En cours",
+            paused: "En pause",
+            archived: "Archivé"
         }
     }
 }

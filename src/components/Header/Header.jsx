@@ -1,3 +1,4 @@
+"use client"
 import { HardDrive } from "lucide-react";
 import useLocale from "@/hooks/useLocale"
 import LanguageSwitcher from "./LanguageSwitcher/LanguageSwitcher"

@@ -2,18 +2,19 @@ import clsx from "clsx"
 import { Triangle } from "lucide-react"
 import { GridIcon, FolderIcon, FileIcon } from "@/icons"
 
-import categories from "@/data/categories"
-import projectsData from "@/data/projectsData"
-import browserTreeData from "@/data/browserTree"
-
 import useCategoryFilter from "@/hooks/useCategoryFilter"
 import useFoldersState from "@/hooks/useFoldersState"
 import useActiveProjectSlug from "@/hooks/useActiveProjectSlug"
 import useLocale from "@/hooks/useLocale"
+import useProjects from "@/hooks/useProjects"
+
+import categories from "@/data/categories"
+import browserTreeData from "@/data/browserTree"
 
 import "./BrowserSidebar.css"
 
 export default function BrowserSidebar() {
+    const projects = useProjects()
     const [categoryFilter, setCategoryFilter] = useCategoryFilter()
     const {foldersState} = useFoldersState()
     const [activeProjectSlug, setActiveProjectSlug] = useActiveProjectSlug()
@@ -47,7 +48,7 @@ export default function BrowserSidebar() {
             >
                 <GridIcon size={13} />
                 <span>{locale.projects.tree.all}</span>
-                <span className="browser-tree__count">{`[${projectsData.length}]`}</span>
+                <span className="browser-tree__count">{`[${projects.length}]`}</span>
             </button>
 
             <hr />
