@@ -1,9 +1,8 @@
 import { Balsamiq_Sans, Comfortaa } from "next/font/google"
-import localFont from "next/font/local"
 
 // Основной шрифт
 export const comfortaa = Comfortaa({
-    subsets: ['latin', 'cyrillic'],
+    subsets: ["latin", "cyrillic"],
     weight: ["300", "400", "500", "600", "700"],
     variable: "--font-comfortaa",
     display: "swap"
@@ -11,7 +10,7 @@ export const comfortaa = Comfortaa({
 
 // Второстепенный шрифт для заголовков
 export const balsamiqSans = Balsamiq_Sans({
-    subsets: ['latin', 'cyrillic'],
+    subsets: ["latin", "cyrillic"],
     variable: "--font-balsamiq",
     weight: ["400", "700"],
     display: "swap"
