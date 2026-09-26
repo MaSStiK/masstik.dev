@@ -1,6 +1,8 @@
-import Image from "next/image"
+
 import useLocale from "@/hooks/useLocale"
 import useProjects from "@/hooks/useProjects"
+
+import ProjectGallery from "./ProjectGallery/ProjectGallery"
 
 import categories from "@/data/categories"
 
@@ -17,6 +19,7 @@ export default function Project({ projectSlug }) {
     const projects = useProjects()
     const project = projects.find(project => project.slug === projectSlug)
     const locale = useLocale()
+
     
     if (!project) return (
         <div>
@@ -35,18 +38,8 @@ export default function Project({ projectSlug }) {
             className="project"
             style={{"--accent-color": categories[project.type].color}}
         >
-            <div
-                className="project__image"
-                style={{ "--cover-image": `url(${project.image})` }}
-            >
-                <Image
-                    src={project.image}
-                    alt={`${project.title} project image`}
-                    draggable={false}
-                    sizes={"1058px"}
-                    fill
-                />
-            </div>
+            <ProjectGallery project={project} />
+
             <div className="project__content flex-col">
                 <div className="project__title">
                     <div className="project__type"></div>
@@ -59,8 +52,6 @@ export default function Project({ projectSlug }) {
                     <span>🛠️ {project.role}</span>
                     <span>📂 ~/{project.type}/{project.slug}.{project.extension}</span>
                 </div>
-
-                <hr />
 
                 <span>{project.description}</span>
             </div>

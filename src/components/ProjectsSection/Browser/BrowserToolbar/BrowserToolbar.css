@@ -12,7 +12,7 @@
 /* Mac точки */
 .browser__toolbar-dots {
     display: flex;
-    gap: 6px;
+    gap: var(--gap-2);
 }
 
 .browser__toolbar-dot {

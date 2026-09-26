@@ -9,9 +9,9 @@ const stackIcons = {
     "mongodb": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
     "mongoose": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongoose/mongoose-original.svg",
     "figma": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
-    "jotai": "/projects/icons/jotai.png",
-    "moment.js": "/projects/icons/momentjs.svg",
-    "imask.js": "/projects/icons/code.svg",
+    "moment.js": "/projects/stack-icons/momentjs.svg",
+    "imask.js": "/projects/stack-icons/code.svg",
+    "jotai": "/projects/stack-icons/jotai.png",
 }
 
 export default stackIcons

@@ -1,5 +1,4 @@
 "use client"
-
 import { useAtom } from "jotai"
 import { languageAtom } from "@/store/languageAtom"
 import { LANGUAGES } from "@/utils/InitialLanguage"
