@@ -1,4 +1,4 @@
-
+"use client"
 import useLocale from "@/hooks/useLocale"
 import useProjects from "@/hooks/useProjects"
 

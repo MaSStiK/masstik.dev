@@ -1,3 +1,5 @@
+"use client"
+
 import "./Contacts.css"
 
 export default function Contacts() {

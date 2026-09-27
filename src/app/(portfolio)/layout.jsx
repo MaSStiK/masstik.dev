@@ -7,13 +7,17 @@ import Contacts from "@/components/Contacts/Contacts"
 
 import Browser from "@/components/Browser/Browser"
 
-export default function HomePage() {
+export default function PortfolioLayout({ children }) {
     return (
         <>
             <Header />
             <main>
                 <Hero />
-                <Projects />
+                <Projects>
+                    <Browser>
+                        {children}
+                    </Browser>
+                </Projects>
                 <Contacts />
             </main>
             <Footer />

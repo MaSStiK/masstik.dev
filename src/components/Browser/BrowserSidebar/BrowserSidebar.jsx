@@ -16,8 +16,8 @@ import "./BrowserSidebar.css"
 export default function BrowserSidebar() {
     const projects = useProjects()
     const [categoryFilter, setCategoryFilter] = useCategoryFilter()
-    const {foldersState} = useFoldersState()
     const [activeProjectSlug, setActiveProjectSlug] = useActiveProjectSlug()
+    const {foldersState} = useFoldersState()
 
     const locale = useLocale()
 

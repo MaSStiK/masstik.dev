@@ -1,5 +1,7 @@
+"use client"
 import useLocale from "@/hooks/useLocale"
-import Browser from "./Browser/Browser"
+import Browser from "@/components/Browser/Browser"
+
 import "./ProjectsSection.css"
 
 export default function ProjectsSection() {
@@ -15,6 +17,7 @@ export default function ProjectsSection() {
                         {locale.projects.descriptionBottomLine}
                     </span>
                 </div>
+
                 <Browser />
             </div>
         </section>

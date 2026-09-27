@@ -3,13 +3,16 @@
     --accent-color: var(--gray);
     display: flex;
     flex-direction: column;
-    border-radius: 6px;
     overflow: hidden;
+
     /* background-color: var(--bg-header); */
     background-color: var(--bg-browser-card);
     border: 1px solid #3f3b3f;
-    cursor: pointer;
+    border-radius: 6px;
     transition: border-color 0.15s ease;
+
+    cursor: pointer;
+    text-decoration: none;
 
     @media (hover: hover) {
         &:is(:hover, :focus-visible) {

@@ -62,3 +62,23 @@ hr {
     border: none;
     border-top: 1px solid var(--border-dark);
 }
+
+main {
+    padding-top: var(--header-height);
+
+    /* Сетка */
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-position: 30px 34px;
+    background-size: 60px 60px;
+    z-index: -1;
+}
