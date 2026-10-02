@@ -1,4 +1,5 @@
 "use client"
+import { useState } from "react"
 import useLocale from "@/hooks/useLocale"
 import useProjects from "@/hooks/useProjects"
 
@@ -16,6 +17,8 @@ const projectStatuses = {
 }
 
 export default function Project({ projectSlug }) {
+    const [isImageOpen, setIsImageOpen] = useState(false)
+
     const projects = useProjects()
     const project = projects.find(project => project.slug === projectSlug)
     const locale = useLocale()
@@ -38,12 +41,23 @@ export default function Project({ projectSlug }) {
             className="project"
             style={{"--accent-color": categories[project.type].color}}
         >
-            <ProjectGallery project={project} />
+            <ProjectGallery
+                project={project}
+                isImageOpen={isImageOpen}
+                setIsImageOpen={setIsImageOpen}
+            />
 
             <div className="project__content flex-col">
                 <div className="project__title">
                     <div className="project__type"></div>
                     <span>{project.title}</span>
+
+                    <button
+                        className="project__gallery-toggle"
+                        onClick={() => setIsImageOpen(prev => !prev)}
+                    >
+                        {isImageOpen ? "Закрыть галерею" : "Открыть галерею"}
+                    </button>
                 </div>
                 
                 <div className="project__meta">
@@ -53,6 +67,16 @@ export default function Project({ projectSlug }) {
                     <span>📂 ~/{project.type}/{project.slug}.{project.extension}</span>
                 </div>
 
+                <span>{project.description}</span>
+                <span>{project.description}</span>
+                <span>{project.description}</span>
+                <span>{project.description}</span>
+                <span>{project.description}</span>
+                <span>{project.description}</span>
+                <span>{project.description}</span>
+                <span>{project.description}</span>
+                <span>{project.description}</span>
+                <span>{project.description}</span>
                 <span>{project.description}</span>
             </div>
         </div>

@@ -5,7 +5,7 @@
 }
 
 .project__content {
-    padding: 28px 32px;
+    padding: var(--gap-7);
 }
 
 .project__title {
@@ -19,6 +19,20 @@
         font-weight: var(--fw-bold);
         font-size: var(--fs-xlarge);
     }
+}
+
+/* Открыть / Закрыть галерею */
+.project__gallery-toggle {
+    height: 32px;
+    padding: 0 var(--gap-4);
+
+    border-radius: 4px;
+    border: 1px solid var(--accent-color);
+    background-color: color-mix(in srgb, var(--accent-color) 10%, transparent);
+
+    color: var(--accent-color);
+
+    margin-left: auto;
 }
 
 /* Тип карточки */

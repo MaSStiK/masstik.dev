@@ -4,34 +4,81 @@ import Image from "next/image"
 
 import "./ProjectGallery.css"
 
-export default function ProjectGallery({ project }) {
-    const [isImageOpen, setIsImageOpen] = useState(false)
-
-    // const imageClassName = clsx(
-    //     "project-gallery__preview",
-    //     isImageOpen && "project-gallery__preview--open"
-    // )
+export default function ProjectGallery({ project, isImageOpen, setIsImageOpen }) {
+    const [activeImageIndex, setActiveImageIndex] = useState(0)
 
     if (!isImageOpen) {
         return (
-            <button
-                className="project-gallery__preview"
-                onClick={() => setIsImageOpen(prev => !prev)}
-            >
+            <div className="project-gallery__preview">
+                <button
+                    className="project-gallery__preview-button"
+                    onClick={() => setIsImageOpen(prev => !prev)}
+                >
+                    <Image
+                        src={project.image}
+                        alt={`${project.title} project image`}
+                        draggable={false}
+                        sizes="1090px"
+                        fill
+                    />
+                </button>
                 <Image
-                    src={project.image}
+                    className="project-gallery__preview-favicon"
+                    src="/projects/hedgehog-rp/favicon.png"
                     alt={`${project.title} project image`}
                     draggable={false}
-                    sizes="1090px"
-                    fill
+                    width={96}
+                    height={96}
                 />
-            </button>
+            </div>
         )
     }
 
+    const images = [
+        project.image, "/projects/map.hedgehog-rp.png", project.image, project.image, project.image, project.image
+    ]
+
     return (
         <div className="project-gallery">
-            
+            <div className="project-gallery__main">
+                <Image
+                    src={images[activeImageIndex]}
+                    alt={`${project.title} project image`}
+                    draggable={false}
+                    sizes={"721px"}
+                    fill
+                />
+            </div>
+            <div className="project-gallery__thumbnails">
+                <div className="project-gallery__thumbnails-list">
+                    {images.map((image, i) => {
+                        const thumbnailClassName = clsx(
+                            "project-gallery__thumbnail",
+                            activeImageIndex === i && "project-gallery__thumbnail--active"
+                        )
+
+                        return (
+                            <button
+                                key={i} // Потом item если link
+                                className={thumbnailClassName}
+                                type="button"
+                                onClick={() => setActiveImageIndex(i)}
+                            >
+                                <Image
+                                    src={image}
+                                    alt=""
+                                    draggable={false}
+                                    sizes={"307px"}
+                                    fill
+                                />
+                                <span className="flex-center project-gallery__thumbnail-counter">
+                                    {String(i).padStart(2, "0")}
+                                </span>
+                            </button>
+                        )
+                    })}
+                </div>
+            </div>
         </div>
     )
 }

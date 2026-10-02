@@ -46,13 +46,13 @@
     &:active {
         background-color: var(--button-default-hover);
     }
-}
 
-button.hero__effects-control--active {
-    border-color: var(--purple);
-        
-    & svg {
-        stroke: var(--purple);
+    &.hero__effects-control--active {
+        border-color: var(--purple);
+            
+        & svg {
+            stroke: var(--purple);
+        }
     }
 }
 
