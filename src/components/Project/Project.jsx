@@ -66,7 +66,7 @@ export default function Project({ projectSlug }) {
                     <span>📂 ~/{project.type}/{project.slug}.{project.extension}</span>
                 </div>
 
-                <ProjectMarkdown readme={project.readme} />
+                <ProjectMarkdown githubRepo={project.githubRepo} />
             </div>
         </div>
     )

@@ -1,4 +1,3 @@
-"use client"
 import { useAtomValue } from "jotai"
 import { localeAtom } from "@/store/languageAtom"
 

@@ -1,23 +1,27 @@
-"use client"
-
 import { useEffect, useRef, useState } from "react"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"
 import rehypeSlug from "rehype-slug"
 
+import useLanguage from "@/hooks/useLanguage"
+import getProjectReadme from "@/utils/getProjectReadme"
+
 import projectMarkdownComponents from "./ProjectMarkdownComponents"
 
 import "./ProjectMarkdown.css"
 
-export default function ProjectMarkdown({ readme }) {
+
+export default function ProjectMarkdown({ githubRepo }) {
     const contentRef = useRef(null)
+    const language = useLanguage()
 
     const [markdown, setMarkdown] = useState("")
     const [headings, setHeadings] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState(false)
 
+    // Загрузка README при смене проекта или языка
     useEffect(() => {
         const controller = new AbortController()
 
@@ -27,25 +31,19 @@ export default function ProjectMarkdown({ readme }) {
             setMarkdown("")
             setHeadings([])
 
-            if (!readme) {
-                setIsError(true)
-                setIsLoading(false)
-                return
-            }
-
             try {
-                const response = await fetch(readme, {
-                    signal: controller.signal
-                })
+                const markdown = await getProjectReadme(
+                    githubRepo,
+                    language,
+                    controller.signal
+                )
 
-                if (!response.ok) {
+                if (!markdown) {
                     setIsError(true)
                     return
                 }
 
-                const text = await response.text()
-
-                setMarkdown(text)
+                setMarkdown(markdown)
             } catch (error) {
                 if (error.name !== "AbortError") {
                     setIsError(true)
@@ -59,9 +57,11 @@ export default function ProjectMarkdown({ readme }) {
 
         loadReadme()
 
+        // Отмена запроса при смене проекта или языка
         return () => controller.abort()
-    }, [readme])
+    }, [githubRepo, language])
 
+    // Получение заголовков README для навигации
     useEffect(() => {
         if (!markdown || !contentRef.current) return
 
@@ -76,6 +76,7 @@ export default function ProjectMarkdown({ readme }) {
         )
     }, [markdown])
 
+    // Состояние загрузки README
     if (isLoading) {
         return (
             <div className="project-markdown__loading">
@@ -84,6 +85,7 @@ export default function ProjectMarkdown({ readme }) {
         )
     }
 
+    // Ошибка загрузки README
     if (isError) {
         return (
             <div className="project-markdown__error">
@@ -94,6 +96,7 @@ export default function ProjectMarkdown({ readme }) {
 
     return (
         <div className="project-markdown">
+            {/* Навигация по разделам README */}
             <nav className="project-markdown__navigation">
                 {headings.map(heading => (
                     <a
@@ -106,16 +109,10 @@ export default function ProjectMarkdown({ readme }) {
                 ))}
             </nav>
 
-            <div
-                ref={contentRef}
-                className="project-markdown__content"
-            >
+            <div className="project-markdown__content" ref={contentRef}>
                 <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
-                    rehypePlugins={[
-                        rehypeRaw,
-                        rehypeSlug
-                    ]}
+                    rehypePlugins={[rehypeRaw, rehypeSlug]}
                     components={projectMarkdownComponents}
                 >
                     {markdown}

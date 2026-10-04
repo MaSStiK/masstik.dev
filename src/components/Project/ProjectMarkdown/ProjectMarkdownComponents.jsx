@@ -1,7 +1,4 @@
-const hiddenClasses = [
-    "readme-language-switch",
-    "readme-navigation"
-]
+const hiddenClasses = ["language-switch"]
 
 function shouldHide(className) {
     if (!className) return false
@@ -11,7 +8,7 @@ function shouldHide(className) {
     )
 }
 
-
+// Кастомный рендер элементов Markdown
 const projectMarkdownComponents = {
     h1: ({ children, ...props }) => (
         <h2 className="project-markdown__title" {...props}>
