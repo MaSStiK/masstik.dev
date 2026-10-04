@@ -15,7 +15,7 @@ export default function ProjectGallery({ project, isImageOpen, setIsImageOpen })
                     onClick={() => setIsImageOpen(prev => !prev)}
                 >
                     <Image
-                        src={project.image}
+                        src={project.preview}
                         alt={`${project.title} project image`}
                         draggable={false}
                         sizes="1090px"
@@ -24,7 +24,7 @@ export default function ProjectGallery({ project, isImageOpen, setIsImageOpen })
                 </button>
                 <Image
                     className="project-gallery__preview-favicon"
-                    src="/projects/hedgehog-rp/favicon.png"
+                    src="/projects/hedgehog-rp/favicon.png" // TODO: project.favicon
                     alt={`${project.title} project image`}
                     draggable={false}
                     width={96}
@@ -35,7 +35,7 @@ export default function ProjectGallery({ project, isImageOpen, setIsImageOpen })
     }
 
     const images = [
-        project.image, "/projects/map.hedgehog-rp.png", project.image, project.image, project.image, project.image
+        project.preview, "/projects/map.hedgehog-rp/preview.png", project.preview, project.preview, project.preview, project.preview
     ]
 
     return (

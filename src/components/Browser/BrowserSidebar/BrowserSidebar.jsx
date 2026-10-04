@@ -110,7 +110,7 @@ function FolderItem({
             <button
                 type="button"
                 className={folderClasses}
-                style={{"--accent-color": folder.color}}
+                style={{ "--accent-color": folder.color }}
                 onClick={() => selectCategory(folder.category)}
             >
                 <FolderIcon

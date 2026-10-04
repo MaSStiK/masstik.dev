@@ -4,6 +4,7 @@ import useLocale from "@/hooks/useLocale"
 import useProjects from "@/hooks/useProjects"
 
 import ProjectGallery from "./ProjectGallery/ProjectGallery"
+import ProjectMarkdown from "./ProjectMarkdown/ProjectMarkdown"
 
 import categories from "@/data/categories"
 
@@ -23,14 +24,11 @@ export default function Project({ projectSlug }) {
     const project = projects.find(project => project.slug === projectSlug)
     const locale = useLocale()
 
-    
     if (!project) return (
         <div>
             <span>Project Not Found</span>
         </div>
     )
-
-    console.log(project);
 
     function getProjectStatus(status) {
         return `${projectStatuses[status]} ${locale.projects.status[status]}`
@@ -39,7 +37,7 @@ export default function Project({ projectSlug }) {
     return (
         <div
             className="project"
-            style={{"--accent-color": categories[project.type].color}}
+            style={{ "--accent-color": categories[project.type].color }}
         >
             <ProjectGallery
                 project={project}
@@ -50,6 +48,7 @@ export default function Project({ projectSlug }) {
             <div className="project__content flex-col">
                 <div className="project__title">
                     <div className="project__type"></div>
+
                     <span>{project.title}</span>
 
                     <button
@@ -59,7 +58,7 @@ export default function Project({ projectSlug }) {
                         {isImageOpen ? "Закрыть галерею" : "Открыть галерею"}
                     </button>
                 </div>
-                
+
                 <div className="project__meta">
                     <span>📅 {project.year}</span>
                     <span>{getProjectStatus(project.status)}</span>
@@ -67,17 +66,7 @@ export default function Project({ projectSlug }) {
                     <span>📂 ~/{project.type}/{project.slug}.{project.extension}</span>
                 </div>
 
-                <span>{project.description}</span>
-                <span>{project.description}</span>
-                <span>{project.description}</span>
-                <span>{project.description}</span>
-                <span>{project.description}</span>
-                <span>{project.description}</span>
-                <span>{project.description}</span>
-                <span>{project.description}</span>
-                <span>{project.description}</span>
-                <span>{project.description}</span>
-                <span>{project.description}</span>
+                <ProjectMarkdown readme={project.readme} />
             </div>
         </div>
     )

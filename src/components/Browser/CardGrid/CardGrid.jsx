@@ -18,7 +18,7 @@ export default function CardGrid() {
     // Переключение на две колонны при выборе коммерческих проектов
     const cardGridClasses = clsx(
         "browser__card-grid",
-        categoryFilter === "commercial" && "browser__card-grid--two-columns"
+        categoryFilter === "commercial" && "browser__card-grid--two-columns" // TODO: Вынести эту гадость в стейт и в одном месте переключение сделать и читать его в классе
     )
 
     return (

@@ -26,12 +26,12 @@ export default function Card({
     return (
         <button
             className="card"
-            style={{"--accent-color": categories[project.type].color}}
+            style={{ "--accent-color": categories[project.type].color }}
             onClick={openProject}
         >
             <div className="card__image">
                 <Image
-                    src={project.image}
+                    src={project.preview}
                     alt={`${project.title} project image`}
                     draggable={false}
                     sizes={categoryFilter === "commercial" ? "500px" : "336px"}
