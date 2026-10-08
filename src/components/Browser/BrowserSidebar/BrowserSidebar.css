@@ -114,6 +114,7 @@
 .browser-tree__folder {
     & svg.browser-tree__folder-icon {
         fill: var(--accent-color);
+        stroke: var(--accent-color);
     }
 }
 
