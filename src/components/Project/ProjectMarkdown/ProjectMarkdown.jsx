@@ -7,10 +7,10 @@ import rehypeSlug from "rehype-slug"
 import useLanguage from "@/hooks/useLanguage"
 import getProjectReadme from "@/utils/getProjectReadme"
 
+import Loader from "@/components/Loader/Loader"
 import projectMarkdownComponents from "./ProjectMarkdownComponents"
 
 import "./ProjectMarkdown.css"
-
 
 export default function ProjectMarkdown({ githubRepo }) {
     const contentRef = useRef(null)
@@ -18,16 +18,17 @@ export default function ProjectMarkdown({ githubRepo }) {
 
     const [markdown, setMarkdown] = useState("")
     const [headings, setHeadings] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
-    const [isError, setIsError] = useState(false)
+    const [status, setStatus] = useState("loading")
+
+    const isLoading = status === "loading"
+    const isError = status === "error"
 
     // Загрузка README при смене проекта или языка
     useEffect(() => {
         const controller = new AbortController()
 
         async function loadReadme() {
-            setIsLoading(true)
-            setIsError(false)
+            setStatus("loading")
             setMarkdown("")
             setHeadings([])
 
@@ -39,18 +40,15 @@ export default function ProjectMarkdown({ githubRepo }) {
                 )
 
                 if (!markdown) {
-                    setIsError(true)
+                    setStatus("error")
                     return
                 }
 
                 setMarkdown(markdown)
+                setStatus("success")
             } catch (error) {
                 if (error.name !== "AbortError") {
-                    setIsError(true)
-                }
-            } finally {
-                if (!controller.signal.aborted) {
-                    setIsLoading(false)
+                    setStatus("error")
                 }
             }
         }
@@ -80,7 +78,7 @@ export default function ProjectMarkdown({ githubRepo }) {
     if (isLoading) {
         return (
             <div className="project-markdown__loading">
-                Loading README...
+                <Loader />
             </div>
         )
     }
