@@ -1,6 +1,6 @@
 import clsx from "clsx"
 import { Triangle } from "lucide-react"
-import { GridIcon, FolderIcon, FileIcon } from "@/icons"
+import { LayoutGrid, FolderIcon, FileIcon } from "lucide-react"
 
 import useCategoryFilter from "@/hooks/useCategoryFilter"
 import useFoldersState from "@/hooks/useFoldersState"
@@ -46,7 +46,7 @@ export default function BrowserSidebar() {
                 style={{ "--accent-color": categories.all.color }}
                 onClick={() => selectCategory("all")}
             >
-                <GridIcon size={13} />
+                <LayoutGrid size={13} />
                 <span>{locale.projects.tree.all}</span>
                 <span className="browser-tree__count">{`[${projects.length}]`}</span>
             </button>
