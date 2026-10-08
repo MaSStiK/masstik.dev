@@ -1,20 +1,53 @@
+/* Анимация загрузки */
+.project-markdown__loading {
+    display: flex;
+    justify-content: center;
+    padding: var(--gap-5) 0;
+}
+
+/* Контейнер с разметкой и навигацией */
+.project-markdown {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: var(--gap-3);
+}
+
+/* Навигация */
+.project-markdown__navigation {
+    flex: 1 1 0;
+    min-width: 0;
+    position: sticky;
+    top: 80px;
+
+    & li {
+        list-style-type: disc;
+        padding: 2px 0;
+    }
+
+    & a {
+        color: var(--white);
+        text-decoration: none;
+    }
+}
+
+/* Разметка файла */
 .project-markdown__content {
+    flex: 3 1 0;
     line-height: 1.5;
 
-    & h1,
-    & h2,
-    & h3,
-    & h4 {
-        margin: 24px 0 12px;
+    & .project-markdown__title {
         font-family: var(--font-heading);
-    }
-
-    & h1 {
         font-size: var(--fs-xlarge);
+        scroll-margin-top: var(--gap-3);
+        margin-bottom: var(--gap-3);
     }
 
-    & h2 {
+    & .project-markdown__heading {
+        font-family: var(--font-heading);
         font-size: var(--fs-large);
+        scroll-margin-top: var(--gap-3);
+        margin: var(--gap-6) 0 var(--gap-3);
     }
 
     & p {

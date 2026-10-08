@@ -24,7 +24,7 @@ export default function ProjectGallery({ project, isImageOpen, setIsImageOpen })
                 </button>
                 <Image
                     className="project-gallery__preview-favicon"
-                    src="/projects/hedgehog-rp/favicon.png" // TODO: project.favicon
+                    src={project.favicon}
                     alt={`${project.title} project image`}
                     draggable={false}
                     width={96}

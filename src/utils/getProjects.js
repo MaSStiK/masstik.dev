@@ -1,11 +1,9 @@
 import projectsData from "@/data/projectsData"
 
-const GITHUB_USERNAME = "MaSStiK"
-
 // Получение списка репозиториев GitHub
 async function getGithubProjects() {
     const response = await fetch(
-        `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`,
+        `https://api.github.com/users/MaSStiK/repos?per_page=100`,
         {
             next: {
                 revalidate: 3600

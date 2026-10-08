@@ -1,7 +1,6 @@
 .project {
     --accent-color: var(--gray);
     width: 100%;
-    overflow: hidden;
 }
 
 .project__content {
@@ -49,13 +48,27 @@
     display: flex;
     gap: var(--gap-5);
 
-    border-bottom: 1px solid #3b383c;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-
     & span {
         font-family: var(--font-console);
         font-size: var(--fs-tiny);
         color: var(--dark-gray);
+    }
+}
+
+.project__separator {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: var(--gap-5) 0;
+
+    & span {
+        font-family: var(--font-console);
+        color: var(--gray);
+        padding: 0 var(--gap-2);
+    }
+
+    & hr {
+        width: 100%;
+        border-color: var(--border-gray);
     }
 }

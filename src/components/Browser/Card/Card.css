@@ -7,7 +7,7 @@
 
     /* background-color: var(--bg-header); */
     background-color: var(--bg-browser-card);
-    border: 1px solid #3f3b3f;
+    border: 1px solid var(--border-gray);
     border-radius: 6px;
     transition: border-color 0.15s ease;
 

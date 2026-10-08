@@ -2,24 +2,26 @@ import { useEffect, useRef, useState } from "react"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"
-import rehypeSlug from "rehype-slug"
+import remarkHideSections from "./remarkHideSections.js"
 
 import useLanguage from "@/hooks/useLanguage"
 import getProjectReadme from "@/utils/getProjectReadme"
+import getHeadingId from "@/utils/getHeadingId"
 
 import Loader from "@/components/Loader/Loader"
+import ProjectMarkdownNav from "./ProjectMarkdownNav/ProjectMarkdownNav"
 import projectMarkdownComponents from "./ProjectMarkdownComponents"
 
 import "./ProjectMarkdown.css"
 
 export default function ProjectMarkdown({ githubRepo }) {
-    const contentRef = useRef(null)
     const language = useLanguage()
+    const contentRef = useRef(null)
 
     const [markdown, setMarkdown] = useState("")
     const [headings, setHeadings] = useState([])
-    const [status, setStatus] = useState("loading")
 
+    const [status, setStatus] = useState("loading")
     const isLoading = status === "loading"
     const isError = status === "error"
 
@@ -66,11 +68,18 @@ export default function ProjectMarkdown({ githubRepo }) {
         const elements = contentRef.current.querySelectorAll("h2, h3")
 
         setHeadings(
-            Array.from(elements).map(element => ({
-                id: element.id,
-                title: element.textContent,
-                level: element.tagName.toLowerCase()
-            }))
+            Array.from(elements).map(element => {
+                const id = getHeadingId(element.textContent)
+
+                // Обновление ID заголовка без эмодзи
+                element.id = id
+
+                return {
+                    id,
+                    title: element.textContent,
+                    level: element.tagName.toLowerCase()
+                }
+            })
         )
     }, [markdown])
 
@@ -94,23 +103,12 @@ export default function ProjectMarkdown({ githubRepo }) {
 
     return (
         <div className="project-markdown">
-            {/* Навигация по разделам README */}
-            <nav className="project-markdown__navigation">
-                {headings.map(heading => (
-                    <a
-                        key={heading.id}
-                        className={`project-markdown__navigation-${heading.level}`}
-                        href={`#${heading.id}`}
-                    >
-                        {heading.title}
-                    </a>
-                ))}
-            </nav>
+            <ProjectMarkdownNav headings={headings} />
 
             <div className="project-markdown__content" ref={contentRef}>
                 <ReactMarkdown
-                    remarkPlugins={[remarkGfm]}
-                    rehypePlugins={[rehypeRaw, rehypeSlug]}
+                    remarkPlugins={[remarkGfm, remarkHideSections]}
+                    rehypePlugins={[rehypeRaw]}
                     components={projectMarkdownComponents}
                 >
                     {markdown}

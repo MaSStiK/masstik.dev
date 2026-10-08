@@ -5,6 +5,7 @@ import useProjects from "@/hooks/useProjects"
 
 import ProjectGallery from "./ProjectGallery/ProjectGallery"
 import ProjectMarkdown from "./ProjectMarkdown/ProjectMarkdown"
+import { FileText } from "lucide-react"
 
 import categories from "@/data/categories"
 
@@ -64,6 +65,15 @@ export default function Project({ projectSlug }) {
                     <span>{getProjectStatus(project.status)}</span>
                     <span>🛠️ {project.role}</span>
                     <span>📂 ~/{project.type}/{project.slug}.{project.extension}</span>
+                </div>
+
+                <div className="project__separator">
+                    <FileText
+                        size={18}
+                        color="var(--gray)"
+                    />
+                    <span>{`README.md`}</span>
+                    <hr />
                 </div>
 
                 <ProjectMarkdown githubRepo={project.githubRepo} />
