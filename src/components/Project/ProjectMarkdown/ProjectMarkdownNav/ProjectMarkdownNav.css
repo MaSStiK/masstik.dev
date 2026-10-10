@@ -7,22 +7,28 @@
 
     & li {
         border-left: 1px solid var(--border-gray);
-        padding-left: var(--gap-4);
+        padding-left: var(--gap-2);
         margin-left: var(--gap-2);
     }
 
     & .project-markdown__navigation-h3 {
+        width: calc(100% - var(--gap-5));
         border-left: 1px solid var(--border-gray);
-        padding-left: var(--gap-4);
-        margin-left: var(--gap-2);
+        padding-left: var(--gap-2);
+        margin-left: var(--gap-5);
     }
 }
 
 /* Кнопки навигации */
 .project-markdown__navigation button {
-    padding: 6px 0;
+    width: 100%;
 
     & span {
+        width: 100%;
+        display: inline-flex;
+        padding: var(--gap-2) var(--gap-3);
+        border-radius: 4px;
+
         font-size: var(--fs-small);
         color: var(--gray);
         text-align: left;
@@ -31,13 +37,19 @@
     @media (hover: hover) {
         &:is(:hover, :focus-visible) {
             border-color: var(--accent-color);
-            & span { color: var(--accent-color); }
+            & span {
+                background-color: color-mix(in srgb, var(--accent-color) 10%, transparent);
+                color: var(--accent-color);
+            }
         }
     }
 
     &:active {
         border-color: var(--accent-color);
-        & span { color: var(--accent-color); }
+        & span {
+            background-color: color-mix(in srgb, var(--accent-color) 10%, transparent); 
+            color: var(--accent-color);
+        }
     }
 }
 
