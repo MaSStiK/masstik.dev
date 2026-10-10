@@ -1,9 +1,13 @@
 import { List } from "lucide-react"
+
 import scrollToElement from "@/utils/scrollToElement"
+import useLocale from "@/hooks/useLocale"
 
 import "./ProjectMarkdownNav.css"
 
 export default function ProjectMarkdownNav({ headings }) {
+    const locale = useLocale()
+    
     return (
         <nav className="project-markdown__navigation">
             <div className="project-markdown__navigation-header">
@@ -11,7 +15,7 @@ export default function ProjectMarkdownNav({ headings }) {
                     size={18}
                     color="var(--gray)"
                 />
-                <span>Содержание</span>
+                <span>{locale.project.markdown.contents}</span>
             </div>
 
             <ul>
@@ -35,7 +39,10 @@ export default function ProjectMarkdownNav({ headings }) {
                         className={`project-markdown__navigation-h2 button-transition`}
                         onClick={() => scrollToElement("#gallery", "browser-content")}
                     >
-                        Gallery
+                        <span className="button-transition">
+                            📸
+                            {locale.project.markdown.gallery}
+                        </span>
                     </button>
                 </li>
             </ul>

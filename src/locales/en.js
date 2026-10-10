@@ -33,8 +33,8 @@ const en = {
         header: "Projects",
         descriptionTopLine: "Here are my projects - from experiments to full web applications.",
         descriptionBottomLine: "Each one is part of my journey.",
-
-        // Browser
+    },
+    browser: {
         toolbar: {
             back: "Go back",
             refresh: "Refresh",
@@ -46,14 +46,18 @@ const en = {
             personal: "personal",
             educational: "educational",
             test: "tests"
-        },
-
-        // Projects
+        }
+    },
+    project: {
         status: {
             completed: "Completed",
             ongoing: "In Progress",
             paused: "Paused",
             archived: "Archived"
+        },
+        markdown: {
+            contents: "Contents",
+            gallery: "Gallery"
         }
     }
 }

@@ -32,7 +32,7 @@ export default function Project({ projectSlug }) {
     )
 
     function getProjectStatus(status) {
-        return `${projectStatuses[status]} ${locale.projects.status[status]}`
+        return `${projectStatuses[status]} ${locale.project.status[status]}`
     }
 
     return (

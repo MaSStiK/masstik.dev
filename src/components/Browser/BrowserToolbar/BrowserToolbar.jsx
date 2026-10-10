@@ -46,14 +46,14 @@ export default function BrowserToolbar() {
             <div className="browser__address">
                 <button
                     className="button-transition flex-center browser__toolbar-button"
-                    aria-label={locale.projects.toolbar.back}
+                    aria-label={locale.browser.toolbar.back}
                     onClick={goBack}
                 >
                     <ChevronLeft size={16} />
                 </button>
                 <button
                     className="button-transition flex-center browser__toolbar-button"
-                    aria-label={locale.projects.toolbar.refresh}
+                    aria-label={locale.browser.toolbar.refresh}
                 >
                     <RefreshCw size={16} />
                 </button>
@@ -67,7 +67,7 @@ export default function BrowserToolbar() {
                 <Search size={16} />
                 <input
                     type="text"
-                    placeholder={locale.projects.toolbar.search}
+                    placeholder={locale.browser.toolbar.search}
                 />
             </div>
         </div>

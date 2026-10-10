@@ -47,7 +47,7 @@ export default function BrowserSidebar() {
                 onClick={() => selectCategory("all")}
             >
                 <LayoutGrid size={13} />
-                <span>{locale.projects.tree.all}</span>
+                <span>{locale.browser.tree.all}</span>
                 <span className="browser-tree__count">{`[${projects.length}]`}</span>
             </button>
 
@@ -117,7 +117,7 @@ function FolderItem({
                     size={13}
                     className="browser-tree__folder-icon"
                 />
-                <span>{`${locale.projects.tree[folder.category]}/`}</span>
+                <span>{`${locale.browser.tree[folder.category]}/`}</span>
                 <span className="browser-tree__count">{`[${folder.files.length}]`}</span>
             </button>
 
