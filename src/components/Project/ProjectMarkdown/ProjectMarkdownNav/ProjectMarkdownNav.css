@@ -16,13 +16,14 @@
     & span {
         text-transform: uppercase;
         font-family: var(--font-console);
-        font-size: var(--fs-tiny);
+        font-size: var(--fs-small);
         color: var(--gray);
     }
 }
 
 /* Кнопки навигации */
 .project-markdown__navigation button {
+    font-size: var(--fs-small);
     color: var(--gray);
     text-align: left;
     padding: 6px 0;
