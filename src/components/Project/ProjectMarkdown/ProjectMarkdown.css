@@ -23,23 +23,19 @@
         scroll-margin-top: var(--gap-3);
     }
 
-    /* h1 */
-    & .project-markdown__title {
-        
+    & [data-heading-level="h1"] {
+        font-size: var(--fs-xxlarge);
+        margin-bottom: var(--gap-4);
+    }
+
+    & [data-heading-level="h2"] {
         font-size: var(--fs-xlarge);
-        margin-bottom: var(--gap-3);
-    }
-
-    /* h2 */
-    & .project-markdown__heading {
-        font-size: var(--fs-large);
         margin: var(--gap-6) 0 var(--gap-3);
     }
 
-    /* h3 */
-    & .project-markdown__subheading {
+    & [data-heading-level="h3"] {
         font-size: var(--fs-large);
-        margin: var(--gap-6) 0 var(--gap-3);
+        margin: var(--gap-4) 0 var(--gap-2);
     }
 
     & p {

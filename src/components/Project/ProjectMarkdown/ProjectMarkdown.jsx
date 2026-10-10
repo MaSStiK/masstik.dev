@@ -77,7 +77,7 @@ export default function ProjectMarkdown({ githubRepo }) {
                 return {
                     id,
                     title: element.textContent,
-                    level: element.tagName.toLowerCase()
+                    level: element.dataset.headingLevel
                 }
             })
         )

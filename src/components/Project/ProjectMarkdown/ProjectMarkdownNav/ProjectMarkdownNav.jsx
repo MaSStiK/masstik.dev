@@ -15,17 +15,29 @@ export default function ProjectMarkdownNav({ headings }) {
             </div>
 
             <ul>
-                {headings.map(heading => (
+                {headings.map((heading, index) => (
                     <li key={heading.id}>
                         <button
-                            className={`project-markdown__navigation-${heading.level} button-transition`}
                             type="button"
-                            onClick={() => scrollToElement(heading.id)}
+                            className={`project-markdown__navigation-${heading.level} button-transition`}
+                            onClick={() => scrollToElement(heading.id, "browser-content")}
                         >
-                            {heading.title}
+                            <span className="button-transition">
+                                {index === 0 && "🏠 "}
+                                {heading.title}
+                            </span>
                         </button>
                     </li>
                 ))}
+                <li>
+                    <button
+                        type="button"
+                        className={`project-markdown__navigation-h2 button-transition`}
+                        onClick={() => scrollToElement("#gallery", "browser-content")}
+                    >
+                        Gallery
+                    </button>
+                </li>
             </ul>
         </nav>
     )

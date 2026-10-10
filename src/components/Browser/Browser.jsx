@@ -15,7 +15,7 @@ export default function Browser() {
             <BrowserToolbar />
             <div className="browser__body">
                 <BrowserSidebar />
-                <div className="browser__content">
+                <div className="browser__content" id="browser-content">
                     {activeProjectSlug
                         ? <Project key={activeProjectSlug} projectSlug={activeProjectSlug} />
                         : <CardGrid />
