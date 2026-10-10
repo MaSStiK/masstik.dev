@@ -33,17 +33,6 @@ export default function ProjectMarkdownNav({ headings }) {
                         </button>
                     </li>
                 ))}
-                <li>
-                    <button
-                        type="button"
-                        className={`project-markdown__navigation-h2 button-transition`}
-                        onClick={() => scrollToElement("#gallery", "browser-content")}
-                    >
-                        <span className="button-transition">
-                            {`📸 ${locale.project.markdown.gallery}`}
-                        </span>
-                    </button>
-                </li>
             </ul>
         </nav>
     )

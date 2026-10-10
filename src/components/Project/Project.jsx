@@ -19,7 +19,7 @@ const projectStatuses = {
 }
 
 export default function Project({ projectSlug }) {
-    const [isImageOpen, setIsImageOpen] = useState(false)
+    const [isGalleryOpen, setIsGalleryOpen] = useState(false)
 
     const projects = useProjects()
     const project = projects.find(project => project.slug === projectSlug)
@@ -42,8 +42,8 @@ export default function Project({ projectSlug }) {
         >
             <ProjectGallery
                 project={project}
-                isImageOpen={isImageOpen}
-                setIsImageOpen={setIsImageOpen}
+                isGalleryOpen={isGalleryOpen}
+                setIsGalleryOpen={setIsGalleryOpen}
             />
 
             <div className="project__content flex-col">
@@ -54,9 +54,9 @@ export default function Project({ projectSlug }) {
 
                     <button
                         className="project__gallery-toggle"
-                        onClick={() => setIsImageOpen(prev => !prev)}
+                        onClick={() => setIsGalleryOpen(prev => !prev)}
                     >
-                        {isImageOpen ? "Закрыть галерею" : "Открыть галерею"}
+                        {isGalleryOpen ? locale.project.gallery.close : locale.project.gallery.open}
                     </button>
                 </div>
 
@@ -76,7 +76,10 @@ export default function Project({ projectSlug }) {
                     <hr />
                 </div>
 
-                <ProjectMarkdown githubRepo={project.githubRepo} />
+                <ProjectMarkdown
+                    githubRepo={project.githubRepo}
+                    setIsGalleryOpen={setIsGalleryOpen}
+                />
             </div>
         </div>
     )

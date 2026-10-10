@@ -49,6 +49,10 @@ const en = {
         }
     },
     project: {
+        gallery: {
+            open: "Open gallery",
+            close: "Close gallery"
+        },
         status: {
             completed: "Completed",
             ongoing: "In Progress",

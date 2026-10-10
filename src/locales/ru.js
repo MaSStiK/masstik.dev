@@ -49,6 +49,10 @@ const ru = {
         }
     },
     project: {
+        gallery: {
+            open: "Открыть галерею",
+            close: "Закрыть галерею"
+        },
         status: {
             completed: "Завершён",
             ongoing: "В разработке",

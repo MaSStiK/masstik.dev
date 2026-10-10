@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm"
 import rehypeRaw from "rehype-raw"
 import remarkHideSections from "./remarkHideSections.js"
 
+import useLocale from "@/hooks/useLocale"
 import useLanguage from "@/hooks/useLanguage"
 import getProjectReadme from "@/utils/getProjectReadme"
 import getHeadingId from "@/utils/getHeadingId"
@@ -14,7 +15,8 @@ import projectMarkdownComponents from "./ProjectMarkdownComponents"
 
 import "./ProjectMarkdown.css"
 
-export default function ProjectMarkdown({ githubRepo }) {
+export default function ProjectMarkdown({ githubRepo, setIsGalleryOpen }) {
+    const locale = useLocale()
     const language = useLanguage()
     const contentRef = useRef(null)
 
@@ -102,6 +104,11 @@ export default function ProjectMarkdown({ githubRepo }) {
         )
     }
 
+    function openGallery() {
+        setIsGalleryOpen(true)
+        // TODO: Добавить прокрутку наверх
+    }
+
     return (
         <div className="project-markdown">
             <ProjectMarkdownNav headings={headings} />
@@ -114,6 +121,14 @@ export default function ProjectMarkdown({ githubRepo }) {
                 >
                     {markdown}
                 </ReactMarkdown>
+
+                <h2>{`📸 ${locale.project.markdown.gallery}`}</h2>
+                <button
+                    className="project__gallery-toggle"
+                    onClick={openGallery}
+                >
+                    {locale.project.gallery.open}
+                </button>
             </div>
         </div>
     )

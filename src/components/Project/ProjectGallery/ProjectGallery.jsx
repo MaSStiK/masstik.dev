@@ -4,15 +4,15 @@ import Image from "next/image"
 
 import "./ProjectGallery.css"
 
-export default function ProjectGallery({ project, isImageOpen, setIsImageOpen }) {
+export default function ProjectGallery({ project, isGalleryOpen, setIsGalleryOpen }) {
     const [activeImageIndex, setActiveImageIndex] = useState(0)
 
-    if (!isImageOpen) {
+    if (!isGalleryOpen) {
         return (
             <div className="project-gallery__preview">
                 <button
                     className="project-gallery__preview-button"
-                    onClick={() => setIsImageOpen(prev => !prev)}
+                    onClick={() => setIsGalleryOpen(prev => !prev)}
                 >
                     <Image
                         src={project.preview}
