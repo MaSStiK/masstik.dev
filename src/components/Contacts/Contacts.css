@@ -1,3 +1,4 @@
 .contacts {
     padding: 50px var(--gap-4);
+    scroll-margin-top: 60px;
 }

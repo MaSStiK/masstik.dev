@@ -4,6 +4,6 @@ import "./Contacts.css"
 
 export default function Contacts() {
     return (
-        <div className="contacts">Contacts</div>
+        <div className="contacts" id="contacts">Contacts</div>
     )
 }

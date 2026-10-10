@@ -8,7 +8,7 @@ export default function ProjectsSection() {
     const locale = useLocale()
 
     return (
-        <section className="projects">
+        <section className="projects" id="projects">
             <div className="projects__container">
                 <div className="projects__info">
                     <span className="projects__info-header">{locale.projects.header}</span>

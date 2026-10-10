@@ -3,15 +3,17 @@ import clsx from "clsx"
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+
+import { FaGithub, FaTelegramPlane, FaAt } from "react-icons/fa"
 import { Play } from "lucide-react"
 import { TransparencyIcon } from "@/icons"
-import { FaGithub, FaTelegramPlane, FaAt } from "react-icons/fa"
 
 import PixelBlast from "@/components/ReactBits/PixelBlast/PixelBlast"
 import HeroCode from "./HeroCode"
 import HeroBlock from "./HeroBlock/HeroBlock"
 
 import useLocale from "@/hooks/useLocale"
+import scrollToElement from "@/utils/scrollToElement"
 
 import "./HeroSection.css"
 
@@ -133,10 +135,16 @@ export default function HeroSection() {
                         </HeroBlock>
 
                         <div className="flex-row gap-6 hero__buttons">
-                            <button className="button button-transition hero__button hero__button--hire">
+                            <button
+                                className="button button-transition hero__button hero__button--hire"
+                                onClick={() => scrollToElement("contacts")}
+                            >
                                 {locale.hero.actions.contact}
                             </button>
-                            <button className="button button-transition hero__button hero__button--projects">
+                            <button
+                                className="button button-transition hero__button hero__button--projects"
+                                onClick={() => scrollToElement("projects")}
+                            >
                                 {locale.hero.actions.projects}
                             </button>
                         </div>
