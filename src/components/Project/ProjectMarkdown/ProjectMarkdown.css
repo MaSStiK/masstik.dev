@@ -13,40 +13,32 @@
     gap: var(--gap-3);
 }
 
-/* Навигация */
-.project-markdown__navigation {
-    flex: 1 1 0;
-    min-width: 0;
-    position: sticky;
-    top: 80px;
-
-    & li {
-        list-style-type: disc;
-        padding: 2px 0;
-    }
-
-    & a {
-        color: var(--white);
-        text-decoration: none;
-    }
-}
-
 /* Разметка файла */
 .project-markdown__content {
     flex: 3 1 0;
     line-height: 1.5;
 
-    & .project-markdown__title {
+    & h2, h3 {
         font-family: var(--font-heading);
-        font-size: var(--fs-xlarge);
         scroll-margin-top: var(--gap-3);
+    }
+
+    /* h1 */
+    & .project-markdown__title {
+        
+        font-size: var(--fs-xlarge);
         margin-bottom: var(--gap-3);
     }
 
+    /* h2 */
     & .project-markdown__heading {
-        font-family: var(--font-heading);
         font-size: var(--fs-large);
-        scroll-margin-top: var(--gap-3);
+        margin: var(--gap-6) 0 var(--gap-3);
+    }
+
+    /* h3 */
+    & .project-markdown__subheading {
+        font-size: var(--fs-large);
         margin: var(--gap-6) 0 var(--gap-3);
     }
 
@@ -82,7 +74,15 @@
     }
 
     & code {
+        display: inline;
         font-family: var(--font-console);
+        font-weight: 400;
+
+        /* Перенос строки после блока */
+        &::after {
+            content: "";
+            display: block;
+        }
     }
 
     & img {

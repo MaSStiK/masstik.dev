@@ -1,0 +1,48 @@
+/* Навигация */
+.project-markdown__navigation {
+    flex: 1 1 0;
+    min-width: 0;
+    position: sticky;
+    top: 40px;
+}
+
+/* Содержание */
+.project-markdown__navigation-header  {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-3);
+    margin-bottom: var(--gap-3);
+
+    & span {
+        text-transform: uppercase;
+        font-family: var(--font-console);
+        font-size: var(--fs-tiny);
+        color: var(--gray);
+    }
+}
+
+/* Кнопки навигации */
+.project-markdown__navigation button {
+    color: var(--gray);
+    text-align: left;
+    padding: 6px 0;
+
+    @media (hover: hover) {
+        &:is(:hover, :focus-visible) {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+    }
+
+    &:active {
+        border-color: var(--accent-color);
+        color: var(--accent-color);
+    }
+}
+
+/* Заголовки третьего уровня */
+.project-markdown__navigation .project-markdown__navigation-h3 {
+    border-left: 1px solid var(--border-gray);
+    padding-left: var(--gap-4);
+    margin-left: var(--gap-2);
+}

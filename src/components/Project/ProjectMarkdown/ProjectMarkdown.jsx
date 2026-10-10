@@ -93,6 +93,7 @@ export default function ProjectMarkdown({ githubRepo }) {
     }
 
     // Ошибка загрузки README
+    // TODO: Добавить обработку ошибок с разным текстом, учитывать что у github может возникнуть лимит
     if (isError) {
         return (
             <div className="project-markdown__error">

@@ -55,20 +55,27 @@
     }
 }
 
+/* Разделение мета информации об проекте и блока с markdown */
 .project__separator {
     width: 100%;
     display: flex;
     align-items: center;
     margin: var(--gap-5) 0;
 
+    & svg {
+        flex-shrink: 0;
+    }
+
     & span {
         font-family: var(--font-console);
         color: var(--gray);
-        padding: 0 var(--gap-2);
+        padding-left: var(--gap-1);
+        padding-right: var(--gap-2);
+        flex-shrink: 0;
     }
 
     & hr {
-        width: 100%;
+        flex: 1;
         border-color: var(--border-gray);
     }
 }

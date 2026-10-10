@@ -1,13 +1,13 @@
-nav {
+.navigation {
     min-width: 375px;
 }
 
-nav ul {
+.navigation ul {
     width: 100%;
     justify-content: center;
 }
 
-nav ul li button {
+.navigation ul li button {
     height: 32px;
     display: flex;
     align-items: center;

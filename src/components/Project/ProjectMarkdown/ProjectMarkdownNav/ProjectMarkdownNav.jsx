@@ -1,27 +1,29 @@
+import { List } from "lucide-react"
+import scrollToElement from "@/utils/scrollToElement"
+
 import "./ProjectMarkdownNav.css"
 
 export default function ProjectMarkdownNav({ headings }) {
-    function scrollToHeading(event, id) {
-        event.preventDefault()
-
-        document.getElementById(id)?.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        })
-    }
-
     return (
         <nav className="project-markdown__navigation">
+            <div className="project-markdown__navigation-header">
+                <List
+                    size={18}
+                    color="var(--gray)"
+                />
+                <span>Содержание</span>
+            </div>
+
             <ul>
                 {headings.map(heading => (
                     <li key={heading.id}>
-                        <a
-                            className={`project-markdown__navigation-${heading.level}`}
-                            href={`#${heading.id}`}
-                            onClick={event => scrollToHeading(event, heading.id)}
+                        <button
+                            className={`project-markdown__navigation-${heading.level} button-transition`}
+                            type="button"
+                            onClick={() => scrollToElement(heading.id)}
                         >
                             {heading.title}
-                        </a>
+                        </button>
                     </li>
                 ))}
             </ul>

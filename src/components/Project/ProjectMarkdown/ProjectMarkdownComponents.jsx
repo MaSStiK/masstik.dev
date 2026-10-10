@@ -11,15 +11,33 @@ function shouldHide(className) {
 // Кастомный рендер элементов Markdown
 const projectMarkdownComponents = {
     h1: ({ node: _node, children, ...props }) => (
-        <h2 className="project-markdown__title" {...props}>
+        <h2
+            className="project-markdown__title"
+            data-heading-level="h1"
+            {...props}
+        >
             {children}
         </h2>
     ),
 
     h2: ({ node: _node, children, ...props }) => (
-        <h2 className="project-markdown__heading" {...props}>
+        <h2
+            className="project-markdown__heading"
+            data-heading-level="h2"
+            {...props}
+        >
             {children}
         </h2>
+    ),
+
+    h3: ({ node: _node, children, ...props }) => (
+        <h3
+            className="project-markdown__subheading"
+            data-heading-level="h3"
+            {...props}
+        >
+            {children}
+        </h3>
     ),
 
     p: ({ node: _node, className, children, ...props }) => {

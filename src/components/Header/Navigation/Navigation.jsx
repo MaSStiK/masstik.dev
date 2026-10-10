@@ -5,7 +5,7 @@ export default function Navigation() {
     const locale = useLocale()
 
     return (
-        <nav>
+        <nav className="navigation">
             <ul className="flex-row gap-1">
                 <li>
                     <button>{locale.header.nav.about_me}</button>
