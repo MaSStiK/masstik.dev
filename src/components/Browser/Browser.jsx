@@ -17,7 +17,7 @@ export default function Browser() {
                 <BrowserSidebar />
                 <div className="browser__content">
                     {activeProjectSlug
-                        ? <Project projectSlug={activeProjectSlug} />
+                        ? <Project key={activeProjectSlug} projectSlug={activeProjectSlug} />
                         : <CardGrid />
                     }
                 </div>

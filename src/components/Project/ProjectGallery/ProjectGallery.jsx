@@ -38,11 +38,17 @@ export default function ProjectGallery({ project, isImageOpen, setIsImageOpen })
         project.preview, "/projects/map.hedgehog-rp/preview.png", project.preview, project.preview, project.preview, project.preview
     ]
 
+    console.log(project.gallery);
+
+    // По возможности добавить краткое описание картинок в json файл в галереи
+    const gallery = project.gallery?.length ? project.gallery : images
+    
+
     return (
         <div className="project-gallery">
             <div className="project-gallery__main">
                 <Image
-                    src={images[activeImageIndex]}
+                    src={gallery[activeImageIndex]}
                     alt={`${project.title} project image`}
                     draggable={false}
                     sizes={"721px"}
@@ -51,7 +57,7 @@ export default function ProjectGallery({ project, isImageOpen, setIsImageOpen })
             </div>
             <div className="project-gallery__thumbnails">
                 <div className="project-gallery__thumbnails-list">
-                    {images.map((image, i) => {
+                    {gallery.map((image, i) => {
                         const thumbnailClassName = clsx(
                             "project-gallery__thumbnail",
                             activeImageIndex === i && "project-gallery__thumbnail--active"

@@ -103,7 +103,6 @@ const projectsData = [
 projectsData.forEach(project => {
     project.preview = `/projects/${project.slug}/preview.png`
     project.favicon = `/projects/${project.slug}/favicon.png`
-    project.readme = `/projects/${project.slug}/README.md`
 })
 
 export default projectsData
