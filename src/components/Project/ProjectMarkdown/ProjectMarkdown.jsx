@@ -106,7 +106,10 @@ export default function ProjectMarkdown({ githubRepo, setIsGalleryOpen }) {
 
     function openGallery() {
         setIsGalleryOpen(true)
-        // TODO: Добавить прокрутку наверх
+        document.querySelector("#browser-content")?.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
     }
 
     return (
@@ -122,7 +125,7 @@ export default function ProjectMarkdown({ githubRepo, setIsGalleryOpen }) {
                     {markdown}
                 </ReactMarkdown>
 
-                <h2>{`📸 ${locale.project.markdown.gallery}`}</h2>
+                <h2 data-heading-level="h2">{`📸 ${locale.project.markdown.gallery}`}</h2>
                 <button
                     className="project__gallery-toggle"
                     onClick={openGallery}
