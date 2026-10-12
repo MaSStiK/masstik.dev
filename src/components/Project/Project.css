@@ -46,12 +46,18 @@
 /* Мета информация о проекте */
 .project__meta {
     display: flex;
-    gap: var(--gap-5);
+    flex-wrap: wrap;
+    gap: var(--gap-2) var(--gap-5);
 
     & span {
         font-family: var(--font-console);
         font-size: var(--fs-tiny);
         color: var(--dark-gray);
+    }
+
+    /* Последний элемент на новую строку */
+    & span:last-child {
+        flex-basis: 100%;
     }
 }
 

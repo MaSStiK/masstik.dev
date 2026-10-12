@@ -1,7 +1,9 @@
 "use client"
 import { useState } from "react"
 import useLocale from "@/hooks/useLocale"
+import useLanguage from "@/hooks/useLanguage"
 import useProjects from "@/hooks/useProjects"
+import formatTimeAgo from "@/utils/formatTimeAgo"
 
 import ProjectGallery from "./ProjectGallery/ProjectGallery"
 import ProjectMarkdown from "./ProjectMarkdown/ProjectMarkdown"
@@ -24,12 +26,16 @@ export default function Project({ projectSlug }) {
     const projects = useProjects()
     const project = projects.find(project => project.slug === projectSlug)
     const locale = useLocale()
+    const language = useLanguage()
 
     if (!project) return (
         <div>
             <span>Project Not Found</span>
         </div>
     )
+
+    console.log(project);
+    
 
     function getProjectStatus(status) {
         return `${projectStatuses[status]} ${locale.project.status[status]}`
@@ -61,10 +67,11 @@ export default function Project({ projectSlug }) {
                 </div>
 
                 <div className="project__meta">
-                    <span>📅 {project.year}</span>
+                    <span>📅 {locale.project.meta.createdAt} {project.year}</span>
                     <span>{getProjectStatus(project.status)}</span>
                     <span>🛠️ {project.role}</span>
                     <span>📂 ~/{project.type}/{project.slug}.{project.extension}</span>
+                    <span>🔄 {locale.project.meta.lastUpdated} {formatTimeAgo(project.lastUpdated, language)}</span>
                 </div>
 
                 <div className="project__separator">

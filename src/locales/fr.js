@@ -49,6 +49,10 @@ const fr = {
         }
     },
     project: {
+        meta: {
+            createdAt: "Créé en",
+            lastUpdated: "Dernière mise à jour"
+        },
         gallery: {
             open: "Ouvrir la galerie",
             close: "Fermer la galerie"

@@ -49,6 +49,10 @@ const ru = {
         }
     },
     project: {
+        meta: {
+            createdAt: "Создан в",
+            lastUpdated: "Последнее обновление"
+        },
         gallery: {
             open: "Открыть галерею",
             close: "Закрыть галерею"

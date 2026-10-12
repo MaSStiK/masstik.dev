@@ -49,6 +49,10 @@ const en = {
         }
     },
     project: {
+        meta: {
+            createdAt: "Created in",
+            lastUpdated: "Last updated"
+        },
         gallery: {
             open: "Open gallery",
             close: "Close gallery"

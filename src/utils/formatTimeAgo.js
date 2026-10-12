@@ -7,6 +7,6 @@ import "dayjs/locale/fr"
 
 dayjs.extend(relativeTime)
 
-export default function formatTimeAgo(date, locale="en") {
-    return dayjs(date).locale(locale).fromNow()
+export default function formatTimeAgo(date, language = "en") {
+    return dayjs(date).locale(language).fromNow()
 }
