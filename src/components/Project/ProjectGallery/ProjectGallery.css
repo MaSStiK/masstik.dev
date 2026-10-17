@@ -166,3 +166,24 @@
     font-size: var(--fs-tiny);
     color: var(--gray);
 }
+
+/* Разделитель */
+.project-gallery__separator {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+    border-left: 2px solid var(--accent-color);
+
+    & span {
+        font-family: var(--font-console);
+        color: var(--gray);
+        padding: 0 var(--gap-2);
+        flex-shrink: 0;
+    }
+
+    & hr {
+        flex: 1;
+        border-color: var(--border-gray);
+    }
+}

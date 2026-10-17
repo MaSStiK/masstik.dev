@@ -6,7 +6,12 @@ import useLanguage from "@/hooks/useLanguage"
 
 import "./ProjectGallery.css"
 
-export default function ProjectGallery({ project, isGalleryOpen, setIsGalleryOpen }) {
+
+export default function ProjectGallery({
+    project,
+    isGalleryOpen,
+    setIsGalleryOpen
+}) {
     const language = useLanguage()
     const [activeImageIndex, setActiveImageIndex] = useState(0)
 
@@ -25,6 +30,7 @@ export default function ProjectGallery({ project, isGalleryOpen, setIsGalleryOpe
                         fill
                     />
                 </button>
+
                 <Image
                     className="project-gallery__preview-favicon"
                     src={project.favicon}
@@ -37,17 +43,42 @@ export default function ProjectGallery({ project, isGalleryOpen, setIsGalleryOpe
         )
     }
 
-    const images = [
-        project.preview, "/projects/map.hedgehog-rp/preview.png", project.preview, project.preview, project.preview, project.preview
+    const fallbackGallery = [
+        project.preview,
+        "/projects/map.hedgehog-rp/preview.png",
+        project.preview,
+        project.preview,
+        project.preview,
+        project.preview
     ].map(src => ({
+        type: "image",
         src,
         description: null
     }))
 
-    const gallery = project.gallery?.length ? project.gallery : images
-    
-    const activeImage = gallery[activeImageIndex]
+    const gallery = project.gallery?.length
+        ? project.gallery
+        : fallbackGallery
+
+    // Получение только изображений для переключения активной картинки
+    const images = gallery.filter(item => item.type === "image")
+
+    const activeImage = images[activeImageIndex]
     const description = activeImage.description?.[language]
+
+    // Добавление индекса только изображениям
+    let imageIndex = 0
+
+    const galleryItems = gallery.map(item => {
+        if (item.type !== "image") {
+            return item
+        }
+
+        return {
+            ...item,
+            imageIndex: imageIndex++
+        }
+    })
 
     return (
         <div className="project-gallery">
@@ -57,42 +88,62 @@ export default function ProjectGallery({ project, isGalleryOpen, setIsGalleryOpe
                         src={activeImage.src}
                         alt={`${project.title} project image`}
                         draggable={false}
-                        sizes={"721px"}
+                        sizes="721px"
                         fill
-                        // TODO: Исправить формат картинки, Задавать фиксированную ширину, но динамичную высоту в соответствии с картинкой 
+                        // TODO: Исправить формат картинки, Задавать фиксированную ширину, но динамичную высоту в соответствии с картинкой
                     />
                 </div>
+
                 <figcaption className="project-gallery__main-desc">
                     {description &&
                         <span className="project-gallery__main-title">{description}</span>
                     }
-                    <span className="project-gallery__main-counter">{activeImageIndex+1} / {gallery.length}</span>
+
+                    <span className="project-gallery__main-counter">
+                        {activeImageIndex + 1} / {images.length}
+                    </span>
                 </figcaption>
             </figure>
+
             <div className="project-gallery__thumbnails">
                 <div className="project-gallery__thumbnails-list">
-                    {gallery.map((image, i) => {
+                    {galleryItems.map((item, i) => {
+                        // Разделитель изображений
+                        if (item.type === "separator") {
+                            return (
+                                <div
+                                    key={`separator-${i}`}
+                                    className="project-gallery__separator"
+                                >
+                                    <span>{item.title?.[language]}</span>
+                                    <hr />
+                                </div>
+                            )
+                        }
+
                         const thumbnailClassName = clsx(
                             "project-gallery__thumbnail",
-                            activeImageIndex === i && "project-gallery__thumbnail--active"
+                            activeImageIndex === item.imageIndex &&
+                                "project-gallery__thumbnail--active"
                         )
 
                         return (
                             <button
-                                key={i} // Потом image.src
+                                key={item.src}
                                 className={thumbnailClassName}
                                 type="button"
-                                onClick={() => setActiveImageIndex(i)}
+                                onClick={() => setActiveImageIndex(item.imageIndex)}
                             >
                                 <Image
-                                    src={image.src}
+                                    src={item.src}
                                     alt=""
                                     draggable={false}
-                                    sizes={"307px"}
+                                    sizes="307px"
                                     fill
                                 />
+
                                 <span className="flex-center project-gallery__thumbnail-counter">
-                                    {String(i+1).padStart(2, "0")}
+                                    {String(item.imageIndex + 1).padStart(2, "0")}
                                 </span>
                             </button>
                         )
