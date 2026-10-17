@@ -5,13 +5,16 @@ import useLanguage from "@/hooks/useLanguage"
 import useProjects from "@/hooks/useProjects"
 import useFoldersState from "@/hooks/useFoldersState"
 import useCategoryFilter from "@/hooks/useCategoryFilter"
-import formatTimeAgo from "@/utils/formatTimeAgo"
+import useActiveProjectSlug from "@/hooks/useActiveProjectSlug"
+
+import Loader from "@/components/Loader/Loader"
 
 import ProjectGallery from "./ProjectGallery/ProjectGallery"
 import ProjectMarkdown from "./ProjectMarkdown/ProjectMarkdown"
 import { FileText } from "lucide-react"
 
 import categories from "@/data/categories"
+import formatTimeAgo from "@/utils/formatTimeAgo"
 
 import "./Project.css"
 
@@ -32,9 +35,24 @@ export default function Project({ projectSlug }) {
 
     const {setFolderOpen} = useFoldersState()
     const [, setCategoryFilter] = useCategoryFilter()
+    const [, setActiveProjectSlug] = useActiveProjectSlug()
 
     // Открытие проекта, устанавливаем фильтр категорий и открытую папку на тип проекта
     useEffect(() => {
+        // Закрытие несуществующего проекта
+        if (!project) {
+            // Не закрываем проект, пока данные загружаются
+            if (!projects.length) return null
+
+            const url = new URL(window.location.href)
+            url.searchParams.delete("project")
+
+            window.history.replaceState(window.history.state, "", url)
+
+            setActiveProjectSlug(null)
+            return
+        }
+
         setFolderOpen(project.type, true)
         setCategoryFilter(project.type)
 
@@ -42,7 +60,7 @@ export default function Project({ projectSlug }) {
         const url = new URL(window.location.href)
         url.searchParams.set("project", projectSlug)
 
-        window.history.replaceState(null, "", url)
+        window.history.replaceState(window.history.state, "", url)
 
         // Удаление проекта из URL при закрытии
         return () => {
@@ -53,14 +71,10 @@ export default function Project({ projectSlug }) {
             url.searchParams.delete("project")
             window.history.replaceState(window.history.state, "", url)
         }
-    }, [projectSlug, project.type, setFolderOpen, setCategoryFilter])
+    }, [projectSlug, project, project?.type, projects.length, setActiveProjectSlug, setFolderOpen, setCategoryFilter])
 
-    // TODO: Исправить это и добавить preloader пока загружаются проекты
-    if (!project) return (
-        <div>
-            <span>Project Not Found</span>
-        </div>
-    )
+    // Загрузка проекта
+    if (!project) return <Loader />
 
     function getProjectStatus(status) {
         return `${projectStatuses[status]} ${locale.project.status[status]}`
