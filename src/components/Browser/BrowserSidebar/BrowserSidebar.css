@@ -101,8 +101,6 @@
 .browser-tree__triangle {
     fill: var(--gray);
     transform: rotate(90deg);
-    /* transition: transform 0.15s ease; */
-    /* TODO: Сделай анимацию закрытия и открытия папки */
 
     /* Треугольник указывает вниз при раскрытой папке */
     &.browser-tree__triangle--open {

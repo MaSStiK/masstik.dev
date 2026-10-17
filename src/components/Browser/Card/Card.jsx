@@ -1,7 +1,6 @@
 import Image from "next/image"
 
 import categories from "@/data/categories"
-import useFoldersState from "@/hooks/useFoldersState"
 
 import useActiveProjectSlug from "@/hooks/useActiveProjectSlug"
 
@@ -11,14 +10,10 @@ export default function Card({
     project,
     categoryFilter
 }) {
-    const {setFolderOpen} = useFoldersState()
     const [activeProjectSlug, setActiveProjectSlug] = useActiveProjectSlug()
 
     function openProject() {
         if (activeProjectSlug === project.slug) return
-
-        // Открываем папку с категорией файла и подсвечиваем активный файл
-        setFolderOpen(project.type, true)
         setActiveProjectSlug(project.slug)
     }
     

@@ -1,9 +1,12 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import useLocale from "@/hooks/useLocale"
 import useLanguage from "@/hooks/useLanguage"
 import useProjects from "@/hooks/useProjects"
 import formatTimeAgo from "@/utils/formatTimeAgo"
+
+import useFoldersState from "@/hooks/useFoldersState"
+import useCategoryFilter from "@/hooks/useCategoryFilter"
 
 import ProjectGallery from "./ProjectGallery/ProjectGallery"
 import ProjectMarkdown from "./ProjectMarkdown/ProjectMarkdown"
@@ -27,6 +30,17 @@ export default function Project({ projectSlug }) {
     const project = projects.find(project => project.slug === projectSlug)
     const locale = useLocale()
     const language = useLanguage()
+
+    const {setFolderOpen} = useFoldersState()
+    const [, setCategoryFilter] = useCategoryFilter()
+
+    // Открытие проекта, устанавливаем фильтр категорий и открытую папку на тип проекта
+    useEffect(() => {
+        setFolderOpen(project.type, true)
+        setCategoryFilter(project.type)
+
+        console.log("Project opened:", projectSlug)
+    }, [projectSlug, project.type, setFolderOpen, setCategoryFilter])
 
     // TODO: Исправить это и добавить preloader пока загружаются проекты
     if (!project) return (

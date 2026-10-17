@@ -1,5 +1,6 @@
 import { ChevronLeft, RefreshCw, Search } from "lucide-react"
 import { LockIcon } from "@/icons"
+
 import useLocale from "@/hooks/useLocale"
 import useCategoryFilter from "@/hooks/useCategoryFilter"
 import useActiveProjectSlug from "@/hooks/useActiveProjectSlug"
@@ -9,6 +10,7 @@ import "./BrowserToolbar.css"
 export default function BrowserToolbar() {
     const [categoryFilter, setCategoryFilter] = useCategoryFilter()
     const [activeProjectSlug, setActiveProjectSlug] = useActiveProjectSlug()
+
     const locale = useLocale()
 
     // Отображение выбранной категории
@@ -35,6 +37,11 @@ export default function BrowserToolbar() {
         }
     }
 
+    async function refresh() {
+        // TODO: Из за кэша github не выйдет получить новые данные пока сам git Того не захочет
+        // Поэтому можно сделать просто анимацию обновления
+    }
+
     return (
         <div className="browser__toolbar">
             <div className="browser__toolbar-dots">
@@ -51,13 +58,15 @@ export default function BrowserToolbar() {
                 >
                     <ChevronLeft size={16} />
                 </button>
+
                 <button
                     className="button-transition flex-center browser__toolbar-button"
                     aria-label={locale.browser.toolbar.refresh}
-                    // TODO: Принудительное об обновление страницы с проектом
+                    onClick={refresh}
                 >
                     <RefreshCw size={16} />
                 </button>
+
                 <div className="browser__bar browser__address-bar">
                     <LockIcon size={16} />
                     <span>masstik.dev/projects{projectPath}</span>
@@ -66,6 +75,7 @@ export default function BrowserToolbar() {
 
             <div className="browser__bar browser__search-bar">
                 <Search size={16} />
+
                 <input
                     type="text"
                     placeholder={locale.browser.toolbar.search}
