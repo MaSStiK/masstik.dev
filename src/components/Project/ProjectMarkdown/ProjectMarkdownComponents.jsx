@@ -48,6 +48,7 @@ const projectMarkdownComponents = {
         )
     },
 
+    // TODO: Нужно как то обрабатывать некоторые ссылки заменяя их на внешние/внутренние или же открывать конкретную картинку в галереи
     a: ({ node: _node, children, href, ...props }) => (
         <a href={href} {...props}>
             {children}

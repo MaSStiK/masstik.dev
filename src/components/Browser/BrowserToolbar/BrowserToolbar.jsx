@@ -54,6 +54,7 @@ export default function BrowserToolbar() {
                 <button
                     className="button-transition flex-center browser__toolbar-button"
                     aria-label={locale.browser.toolbar.refresh}
+                    // TODO: Принудительное об обновление страницы с проектом
                 >
                     <RefreshCw size={16} />
                 </button>

@@ -2,9 +2,12 @@ import clsx from "clsx"
 import { useState } from "react"
 import Image from "next/image"
 
+import useLanguage from "@/hooks/useLanguage"
+
 import "./ProjectGallery.css"
 
 export default function ProjectGallery({ project, isGalleryOpen, setIsGalleryOpen }) {
+    const language = useLanguage()
     const [activeImageIndex, setActiveImageIndex] = useState(0)
 
     if (!isGalleryOpen) {
@@ -36,25 +39,36 @@ export default function ProjectGallery({ project, isGalleryOpen, setIsGalleryOpe
 
     const images = [
         project.preview, "/projects/map.hedgehog-rp/preview.png", project.preview, project.preview, project.preview, project.preview
-    ]
+    ].map(src => ({
+        src,
+        description: null
+    }))
 
-    console.log(project.gallery);
-
-    // По возможности добавить краткое описание картинок в json файл в галереи
     const gallery = project.gallery?.length ? project.gallery : images
     
+    const activeImage = gallery[activeImageIndex]
+    const description = activeImage.description?.[language]
 
     return (
         <div className="project-gallery">
-            <div className="project-gallery__main">
-                <Image
-                    src={gallery[activeImageIndex]}
-                    alt={`${project.title} project image`}
-                    draggable={false}
-                    sizes={"721px"}
-                    fill
-                />
-            </div>
+            <figure className="project-gallery__main">
+                <div className="project-gallery__main-image">
+                    <Image
+                        src={activeImage.src}
+                        alt={`${project.title} project image`}
+                        draggable={false}
+                        sizes={"721px"}
+                        fill
+                        // TODO: Исправить формат картинки, Задавать фиксированную ширину, но динамичную высоту в соответствии с картинкой 
+                    />
+                </div>
+                <figcaption className="project-gallery__main-desc">
+                    {description &&
+                        <span className="project-gallery__main-title">{description}</span>
+                    }
+                    <span className="project-gallery__main-counter">{activeImageIndex+1} / {gallery.length}</span>
+                </figcaption>
+            </figure>
             <div className="project-gallery__thumbnails">
                 <div className="project-gallery__thumbnails-list">
                     {gallery.map((image, i) => {
@@ -65,20 +79,20 @@ export default function ProjectGallery({ project, isGalleryOpen, setIsGalleryOpe
 
                         return (
                             <button
-                                key={i} // Потом item если link
+                                key={i} // Потом image.src
                                 className={thumbnailClassName}
                                 type="button"
                                 onClick={() => setActiveImageIndex(i)}
                             >
                                 <Image
-                                    src={image}
+                                    src={image.src}
                                     alt=""
                                     draggable={false}
                                     sizes={"307px"}
                                     fill
                                 />
                                 <span className="flex-center project-gallery__thumbnail-counter">
-                                    {String(i).padStart(2, "0")}
+                                    {String(i+1).padStart(2, "0")}
                                 </span>
                             </button>
                         )

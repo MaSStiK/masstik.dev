@@ -28,14 +28,12 @@ export default function Project({ projectSlug }) {
     const locale = useLocale()
     const language = useLanguage()
 
+    // TODO: Исправить это и добавить preloader пока загружаются проекты
     if (!project) return (
         <div>
             <span>Project Not Found</span>
         </div>
     )
-
-    console.log(project);
-    
 
     function getProjectStatus(status) {
         return `${projectStatuses[status]} ${locale.project.status[status]}`

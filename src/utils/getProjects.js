@@ -19,6 +19,7 @@ async function getGithubProjects() {
     return response.json()
 }
 
+// Получение списка проектов
 export default async function getProjects() {
     // Получение данных репозиториев
     const repos = await getGithubProjects()

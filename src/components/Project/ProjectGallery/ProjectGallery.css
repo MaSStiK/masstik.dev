@@ -65,19 +65,37 @@
 /* Окно с отображаемой картинкой */
 .project-gallery__main {
     flex: 7;
-    position: relative;
-    aspect-ratio: 1500 / 932;
     overflow: hidden;
     margin: var(--gap-3) 0;
-
     border: 1px solid var(--border-gray);
     border-radius: 4px;
+}
+
+.project-gallery__main-image {
+    position: relative;
+    aspect-ratio: 1500 / 932;
 
     & img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
+}
+
+.project-gallery__main-desc {
+    display: flex;
+    padding: var(--gap-3);
+    gap: var(--gap-3);
+    border-top: 1px solid var(--border-gray);
+}
+
+.project-gallery__main-title {
+
+}
+
+.project-gallery__main-counter {
+    color: var(--gray);
+    margin-left: auto;
 }
 
 /* Контейнер для прокрутки */
