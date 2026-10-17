@@ -3,10 +3,9 @@ import { useState, useEffect } from "react"
 import useLocale from "@/hooks/useLocale"
 import useLanguage from "@/hooks/useLanguage"
 import useProjects from "@/hooks/useProjects"
-import formatTimeAgo from "@/utils/formatTimeAgo"
-
 import useFoldersState from "@/hooks/useFoldersState"
 import useCategoryFilter from "@/hooks/useCategoryFilter"
+import formatTimeAgo from "@/utils/formatTimeAgo"
 
 import ProjectGallery from "./ProjectGallery/ProjectGallery"
 import ProjectMarkdown from "./ProjectMarkdown/ProjectMarkdown"
@@ -39,7 +38,21 @@ export default function Project({ projectSlug }) {
         setFolderOpen(project.type, true)
         setCategoryFilter(project.type)
 
-        console.log("Project opened:", projectSlug)
+        // Добавление проекта в URL
+        const url = new URL(window.location.href)
+        url.searchParams.set("project", projectSlug)
+
+        window.history.replaceState(null, "", url)
+
+        // Удаление проекта из URL при закрытии
+        return () => {
+            const url = new URL(window.location.href)
+
+            if (url.searchParams.get("project") !== projectSlug) return
+
+            url.searchParams.delete("project")
+            window.history.replaceState(window.history.state, "", url)
+        }
     }, [projectSlug, project.type, setFolderOpen, setCategoryFilter])
 
     // TODO: Исправить это и добавить preloader пока загружаются проекты

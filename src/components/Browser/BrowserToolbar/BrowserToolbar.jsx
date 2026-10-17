@@ -20,7 +20,7 @@ export default function BrowserToolbar() {
 
     // Отображаем проект, если он выбран, иначе категорию
     const projectPath = activeProjectSlug
-        ? `/${activeProjectSlug}`
+        ? `?project=${activeProjectSlug}`
         : categoryQuery
 
     // Кнопка Назад
