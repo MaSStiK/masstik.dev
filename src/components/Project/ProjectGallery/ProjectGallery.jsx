@@ -108,48 +108,66 @@ export default function ProjectGallery({
             <div className="project-gallery__thumbnails">
                 <div className="project-gallery__thumbnails-list">
                     {galleryItems.map((item, i) => {
-                        // Разделитель изображений
                         if (item.type === "separator") {
                             return (
-                                <div
+                                <ProjectGallerySeparator
                                     key={`separator-${i}`}
-                                    className="project-gallery__separator"
-                                >
-                                    <span>{item.title?.[language]}</span>
-                                    <hr />
-                                </div>
+                                    title={item.title?.[language]}
+                                />
                             )
                         }
 
-                        const thumbnailClassName = clsx(
-                            "project-gallery__thumbnail",
-                            activeImageIndex === item.imageIndex &&
-                                "project-gallery__thumbnail--active"
-                        )
-
                         return (
-                            <button
+                            <ProjectGalleryThumbnail
                                 key={item.src}
-                                className={thumbnailClassName}
-                                type="button"
+                                item={item}
+                                isActive={activeImageIndex === item.imageIndex}
                                 onClick={() => setActiveImageIndex(item.imageIndex)}
-                            >
-                                <Image
-                                    src={item.src}
-                                    alt=""
-                                    draggable={false}
-                                    sizes="307px"
-                                    fill
-                                />
-
-                                <span className="flex-center project-gallery__thumbnail-counter">
-                                    {String(item.imageIndex + 1).padStart(2, "0")}
-                                </span>
-                            </button>
+                            />
                         )
                     })}
                 </div>
             </div>
+        </div>
+    )
+}
+
+
+// Изображение галереи
+function ProjectGalleryThumbnail({ item, isActive, onClick }) {
+    const thumbnailClassName = clsx(
+        "project-gallery__thumbnail",
+        isActive && "project-gallery__thumbnail--active"
+    )
+
+    return (
+        <button
+            className={thumbnailClassName}
+            type="button"
+            onClick={onClick}
+        >
+            <Image
+                src={item.src}
+                alt=""
+                draggable={false}
+                sizes="307px"
+                fill
+            />
+
+            <span className="flex-center project-gallery__thumbnail-counter">
+                {String(item.imageIndex + 1).padStart(2, "0")}
+            </span>
+        </button>
+    )
+}
+
+
+// Разделитель изображений
+function ProjectGallerySeparator({ title }) {
+    return (
+        <div className="project-gallery__separator">
+            <span>{title}</span>
+            <hr />
         </div>
     )
 }
