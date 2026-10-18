@@ -18,6 +18,31 @@
     pointer-events: none;
 }
 
+.hero__content-header {
+    width: calc(100% - 16px);
+    display: flex;
+    align-items: center;
+    gap: var(--gap-2);
+
+    position: absolute;
+    top: -40px;
+    left: 8px;
+
+    & span {
+        font-family: var(--font-console);
+        font-size: var(--fs-small);
+        color: var(--green);
+    }
+
+    & span:last-of-type {
+        color: var(--dark-gray);
+    }
+
+    & hr {
+        flex: 1;
+    }
+}
+
 /* Кнопки управления эффектами секции */
 .hero__effects-controls {
     display: flex;

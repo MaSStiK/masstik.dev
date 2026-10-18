@@ -44,6 +44,12 @@ export default function HeroSection() {
 
             <div className="hero__container">
                 <div className="hero__content">
+                    <div className="hero__content-header">
+                        <span>~/about</span>
+                        <hr />
+                        <span>01</span>
+                    </div>
+
                     <div className="hero__effects-controls">
                         <button
                             className={clsx(
