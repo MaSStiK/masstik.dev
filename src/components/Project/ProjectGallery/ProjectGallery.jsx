@@ -22,7 +22,6 @@ export default function ProjectGallery({
             <div className="project-gallery__preview">
                 <button
                     className="project-gallery__preview-button"
-                    disabled={!project.gallery?.length}
                     onClick={() => setIsGalleryOpen(prev => !prev)}
                 >
                     <Image

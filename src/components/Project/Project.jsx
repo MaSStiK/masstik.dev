@@ -97,14 +97,12 @@ export default function Project({ projectSlug }) {
 
                     <span>{project.title}</span>
 
-                    {project.gallery?.length > 0 &&
-                        <button
-                            className="project__gallery-toggle"
-                            onClick={() => setIsGalleryOpen(prev => !prev)}
-                        >
-                            {isGalleryOpen ? locale.project.gallery.close : locale.project.gallery.open}
-                        </button>
-                    }
+                    <button
+                        className="project__gallery-toggle"
+                        onClick={() => setIsGalleryOpen(prev => !prev)}
+                    >
+                        {isGalleryOpen ? locale.project.gallery.close : locale.project.gallery.open}
+                    </button>
                 </div>
 
                 <div className="project__meta">
