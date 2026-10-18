@@ -51,7 +51,8 @@ const fr = {
     project: {
         meta: {
             createdAt: "Créé en",
-            lastUpdated: "Dernière mise à jour"
+            lastUpdated: "Dernière mise à jour",
+            empty: "La galerie de ce projet n'a pas encore été mise en ligne"
         },
         gallery: {
             open: "Ouvrir la galerie",

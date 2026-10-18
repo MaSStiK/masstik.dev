@@ -72,13 +72,12 @@
 }
 
 .project-gallery__main-image {
-    position: relative;
-    aspect-ratio: 1500 / 932;
+    width: 100%;
 
     & img {
+        display: block;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
     }
 }
 
@@ -120,9 +119,7 @@
 
 /* Элемент в списке */
 .project-gallery__thumbnail {
-    position: relative;
     width: 100%;
-    aspect-ratio: 1500 / 932;
     flex-shrink: 0;
 
     border: 1px solid var(--border-gray);
@@ -131,9 +128,9 @@
     transition: border-color 0.15s ease;
 
     & img {
+        display: block;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
     }
 
     @media (hover: hover) {
@@ -186,4 +183,10 @@
         flex: 1;
         border-color: var(--border-gray);
     }
+}
+
+/* Если галерея пустая */
+.project-gallery__empty {
+    width: 100%;
+    padding: var(--gap-7) var(--gap-4);
 }

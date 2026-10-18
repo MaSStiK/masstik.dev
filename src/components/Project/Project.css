@@ -8,6 +8,7 @@
 }
 
 .project__title {
+    min-height: 32px;
     display: flex;
     gap: var(--gap-2);
     align-items: center;

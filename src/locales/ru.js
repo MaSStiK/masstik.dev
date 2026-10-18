@@ -51,7 +51,8 @@ const ru = {
     project: {
         meta: {
             createdAt: "Создан в",
-            lastUpdated: "Последнее обновление"
+            lastUpdated: "Последнее обновление",
+            empty: "Галерея для этого проекта ещё не загружена"
         },
         gallery: {
             open: "Открыть галерею",

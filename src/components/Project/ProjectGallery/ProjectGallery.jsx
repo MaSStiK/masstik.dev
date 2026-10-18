@@ -2,6 +2,7 @@ import clsx from "clsx"
 import { useState } from "react"
 import Image from "next/image"
 
+import useLocale from "@/hooks/useLocale"
 import useLanguage from "@/hooks/useLanguage"
 
 import "./ProjectGallery.css"
@@ -12,6 +13,7 @@ export default function ProjectGallery({
     isGalleryOpen,
     setIsGalleryOpen
 }) {
+    const locale = useLocale()
     const language = useLanguage()
     const [activeImageIndex, setActiveImageIndex] = useState(0)
 
@@ -20,6 +22,7 @@ export default function ProjectGallery({
             <div className="project-gallery__preview">
                 <button
                     className="project-gallery__preview-button"
+                    disabled={!project.gallery?.length}
                     onClick={() => setIsGalleryOpen(prev => !prev)}
                 >
                     <Image
@@ -43,25 +46,21 @@ export default function ProjectGallery({
         )
     }
 
-    const fallbackGallery = [
-        project.preview,
-        "/projects/map.hedgehog-rp/preview.png",
-        project.preview,
-        project.preview,
-        project.preview,
-        project.preview
-    ].map(src => ({
-        type: "image",
-        src,
-        description: null
-    }))
-
-    const gallery = project.gallery?.length
-        ? project.gallery
-        : fallbackGallery
+    const gallery = project.gallery ?? []
 
     // Получение только изображений для переключения активной картинки
     const images = gallery.filter(item => item.type === "image")
+
+    // Отображение пустой галереи
+    if (!images.length) {
+        return (
+            <div className="project-gallery">
+                <div className="project-gallery__empty">
+                    <span>{locale.project.gallery.empty}</span>
+                </div>
+            </div>
+        )
+    }
 
     const activeImage = images[activeImageIndex]
     const description = activeImage.description?.[language]
@@ -87,10 +86,10 @@ export default function ProjectGallery({
                     <Image
                         src={activeImage.src}
                         alt={`${project.title} project image`}
-                        draggable={false}
+                        width={activeImage.width}
+                        height={activeImage.height}
                         sizes="721px"
-                        fill
-                        // TODO: Исправить формат картинки, Задавать фиксированную ширину, но динамичную высоту в соответствии с картинкой
+                        draggable={false}
                     />
                 </div>
 
@@ -149,9 +148,10 @@ function ProjectGalleryThumbnail({ item, isActive, onClick }) {
             <Image
                 src={item.src}
                 alt=""
-                draggable={false}
+                width={item.width}
+                height={item.height}
                 sizes="307px"
-                fill
+                draggable={false}
             />
 
             <span className="flex-center project-gallery__thumbnail-counter">

@@ -55,7 +55,8 @@ const en = {
         },
         gallery: {
             open: "Open gallery",
-            close: "Close gallery"
+            close: "Close gallery",
+            empty: "The gallery for this project has not been uploaded yet"
         },
         status: {
             completed: "Completed",
