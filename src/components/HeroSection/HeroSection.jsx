@@ -9,6 +9,7 @@ import { Play } from "lucide-react"
 import { TransparencyIcon } from "@/icons"
 
 import PixelBlast from "@/components/ReactBits/PixelBlast/PixelBlast"
+import SectionHeader from "@/components/SectionHeader/SectionHeader"
 import HeroCode from "./HeroCode"
 import HeroBlock from "./HeroBlock/HeroBlock"
 
@@ -44,11 +45,12 @@ export default function HeroSection() {
 
             <div className="hero__container">
                 <div className="hero__content">
-                    <div className="hero__content-header">
-                        <span>~/about</span>
-                        <hr />
-                        <span>01</span>
-                    </div>
+                    <SectionHeader
+                        className="hero__section-header"
+                        accentColor="--green"
+                        header="about"
+                        number="01"
+                    />
 
                     <div className="hero__effects-controls">
                         <button

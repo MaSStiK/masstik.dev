@@ -18,29 +18,26 @@
     pointer-events: none;
 }
 
-.hero__content-header {
-    width: calc(100% - 16px);
+/* Контент секции */
+.hero__content {
+    width: min(calc(1300px + var(--gap-5) * 2), 100%);
     display: flex;
-    align-items: center;
-    gap: var(--gap-2);
+    gap: var(--gap-6);
+    padding: var(--gap-5);
+    position: relative;
+    pointer-events: none;
 
+    & > * {
+        pointer-events: auto;
+    }
+}
+
+/* Заголовок секции ~/about */
+.hero__section-header {
+    width: calc(100% - var(--gap-5) * 2);
     position: absolute;
-    top: -40px;
-    left: 8px;
-
-    & span {
-        font-family: var(--font-console);
-        font-size: var(--fs-small);
-        color: var(--green);
-    }
-
-    & span:last-of-type {
-        color: var(--dark-gray);
-    }
-
-    & hr {
-        flex: 1;
-    }
+    top: -28px;
+    left: var(--gap-5);
 }
 
 /* Кнопки управления эффектами секции */
@@ -81,21 +78,9 @@
     }
 }
 
-/* Контент секции */
-.hero__content {
-    display: flex;
-    gap: var(--gap-6);
-    padding: var(--gap-2);
-    position: relative;
-    pointer-events: none;
-
-    & > * {
-        pointer-events: auto;
-    }
-}
-
 /* Обвертка для блока hero-bio и hero__buttons */
 .hero__side {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

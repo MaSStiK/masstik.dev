@@ -1,0 +1,21 @@
+.section-header {
+    --accent-color: var(--dark-gray);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-2);
+
+    & span {
+        font-family: var(--font-console);
+        font-size: var(--fs-small);
+        color: var(--accent-color);
+    }
+
+    /* & span:last-of-type {
+        color: var(--dark-gray);
+    } */
+
+    & hr {
+        flex: 1;
+    }
+}

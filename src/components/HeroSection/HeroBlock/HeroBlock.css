@@ -80,7 +80,6 @@
 
 /* Блок с текстовым описанием */
 .hero-bio {
-    width: 700px;
     height: fit-content;
     
     & p {
