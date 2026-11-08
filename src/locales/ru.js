@@ -2,7 +2,8 @@ const ru = {
     header: {
         nav: {
             about_me: "Обо мне",
-            projects: "Проекты & Стек",
+            projects: "Проекты",
+            stack: "Стек",
             contacts: "Контакты"
         },
         disc: "Диск"

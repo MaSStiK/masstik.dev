@@ -2,7 +2,8 @@ const fr = {
     header: {
         nav: {
             about_me: "À propos de moi",
-            projects: "Projets & Stack",
+            projects: "Projets",
+            stack: "Stack",
             contacts: "Contacts"
         },
         disc: "Disque"
