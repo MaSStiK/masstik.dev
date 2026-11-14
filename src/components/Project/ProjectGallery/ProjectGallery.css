@@ -121,6 +121,7 @@
 .project-gallery__thumbnail {
     width: 100%;
     flex-shrink: 0;
+    position: relative;
 
     border: 1px solid var(--border-gray);
     border-radius: 4px;
