@@ -17,6 +17,7 @@ export default function ProjectGallery({
     const language = useLanguage()
     const [activeImageIndex, setActiveImageIndex] = useState(0)
 
+    // Отображение баннера проекта, если галерея закрыта
     if (!isGalleryOpen) {
         return (
             <div className="project-gallery__preview">
@@ -45,12 +46,11 @@ export default function ProjectGallery({
         )
     }
 
-    const gallery = project.gallery ?? []
-
     // Получение только изображений для переключения активной картинки
+    const gallery = project.gallery ?? []
     const images = gallery.filter(item => item.type === "image")
 
-    // Отображение пустой галереи
+    // Отображение пустой галереи, если изображений нету
     if (!images.length) {
         return (
             <div className="project-gallery">

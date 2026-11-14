@@ -1,13 +1,11 @@
 "use client"
 
-import { useRef } from "react"
-
 import BrowserToolbar from "./BrowserToolbar/BrowserToolbar"
 import BrowserSidebar from "./BrowserSidebar/BrowserSidebar"
 import CardGrid from "./CardGrid/CardGrid"
 
 import useActiveProjectSlug from "@/hooks/useActiveProjectSlug"
-import useProjectDeepLink from "@/hooks/useProjectDeepLink"
+import useProjectFromUrl from "@/hooks/useProjectFromUrl"
 
 import Project from "@/components/Project/Project"
 
@@ -15,12 +13,11 @@ import "./Browser.css"
 
 export default function Browser() {
     const [activeProjectSlug] = useActiveProjectSlug()
-    const browserRef = useRef(null)
 
-    useProjectDeepLink(browserRef)
+    useProjectFromUrl()
 
     return (
-        <div className="browser" ref={browserRef}>
+        <div className="browser">
             <BrowserToolbar />
 
             <div className="browser__body">

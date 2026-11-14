@@ -69,7 +69,7 @@ export default function BrowserToolbar() {
 
                 <div className="browser__bar browser__address-bar">
                     <LockIcon size={16} />
-                    <span>masstik.dev/projects{projectPath}</span>
+                    <span>masstik.dev{projectPath}</span>
                 </div>
             </div>
 
