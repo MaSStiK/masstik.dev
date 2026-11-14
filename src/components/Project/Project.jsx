@@ -30,6 +30,8 @@ export default function Project({ projectSlug }) {
 
     const projects = useProjects()
     const project = projects.find(project => project.slug === projectSlug)
+    const projectExists = Boolean(project)
+    const projectType = project?.type
     const locale = useLocale()
     const language = useLanguage()
 
@@ -40,38 +42,25 @@ export default function Project({ projectSlug }) {
     // Открытие проекта, устанавливаем фильтр категорий и открытую папку на тип проекта
     useEffect(() => {
         // Закрытие несуществующего проекта
-        if (!project) {
+        if (!projectExists) {
             // Не закрываем проект, пока данные загружаются
-            if (!projects.length) return null
-
-            const url = new URL(window.location.href)
-            url.searchParams.delete("project")
-
-            window.history.replaceState(window.history.state, "", url)
+            if (!projects.length) return
 
             setActiveProjectSlug(null)
             return
         }
 
-        setFolderOpen(project.type, true)
-        setCategoryFilter(project.type)
-
-        // Добавление проекта в URL
-        const url = new URL(window.location.href)
-        url.searchParams.set("project", projectSlug)
-
-        window.history.replaceState(window.history.state, "", url)
-
-        // Удаление проекта из URL при закрытии
-        return () => {
-            const url = new URL(window.location.href)
-
-            if (url.searchParams.get("project") !== projectSlug) return
-
-            url.searchParams.delete("project")
-            window.history.replaceState(window.history.state, "", url)
-        }
-    }, [projectSlug, project, project?.type, projects.length, setActiveProjectSlug, setFolderOpen, setCategoryFilter])
+        setFolderOpen(projectType, true)
+        setCategoryFilter(projectType)
+    }, [
+        projectSlug,
+        projectExists,
+        projectType,
+        projects.length,
+        setActiveProjectSlug,
+        setFolderOpen,
+        setCategoryFilter
+    ])
 
     // Загрузка проекта
     if (!project) return <Loader />

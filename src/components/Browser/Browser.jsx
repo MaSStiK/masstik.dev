@@ -5,7 +5,7 @@ import BrowserSidebar from "./BrowserSidebar/BrowserSidebar"
 import CardGrid from "./CardGrid/CardGrid"
 
 import useActiveProjectSlug from "@/hooks/useActiveProjectSlug"
-import useProjectFromUrl from "@/hooks/useProjectFromUrl"
+import useBrowserUrlSync from "@/hooks/useBrowserUrlSync"
 
 import Project from "@/components/Project/Project"
 
@@ -14,7 +14,7 @@ import "./Browser.css"
 export default function Browser() {
     const [activeProjectSlug] = useActiveProjectSlug()
 
-    useProjectFromUrl()
+    useBrowserUrlSync()
 
     return (
         <div className="browser">
