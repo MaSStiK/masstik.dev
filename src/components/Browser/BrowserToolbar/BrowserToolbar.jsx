@@ -15,12 +15,12 @@ export default function BrowserToolbar() {
 
     // Отображение выбранной категории
     const categoryQuery = categoryFilter !== "all"
-        ? `?category=${categoryFilter}`
+        ? `/?category=${categoryFilter}`
         : ""
 
     // Отображаем проект, если он выбран, иначе категорию
     const projectPath = activeProjectSlug
-        ? `?project=${activeProjectSlug}`
+        ? `/?project=${activeProjectSlug}`
         : categoryQuery
 
     // Кнопка Назад
