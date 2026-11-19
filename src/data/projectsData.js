@@ -9,7 +9,7 @@ const projectsData = [
         type: "commercial",
         status: "archived",
         role: "Frontend",
-        stack: ["jQuery", "Moment.js"]
+        stack: ["Vanilla JS", "jQuery", "Moment.js"]
     },
     {
         slug: "preparation-for-exams",
@@ -19,7 +19,7 @@ const projectsData = [
         type: "commercial",
         status: "archived",
         role: "Frontend",
-        stack: ["jQuery", "IMask.js"]
+        stack: ["Vanilla JS", "jQuery", "IMask.js"]
     },
     {
         slug: "hedgehog-rp",
@@ -69,7 +69,7 @@ const projectsData = [
         type: "educational",
         status: "archived",
         role: "Frontend",
-        stack: ["jQuery", "IMask.js", "Figma"]
+        stack: ["Vanilla JS", "jQuery", "IMask.js", "Figma"]
     },
     {
         slug: "fortune-wheel",
@@ -79,7 +79,7 @@ const projectsData = [
         type: "educational",
         status: "archived",
         role: "Frontend",
-        stack: ["jQuery", "IMask.js", "Figma"]
+        stack: ["Vanilla JS", "jQuery", "IMask.js", "Figma"]
     },
     {
         slug: "rocket-business",
@@ -89,7 +89,7 @@ const projectsData = [
         type: "test",
         status: "archived",
         role: "Frontend",
-        stack: ["Figma"]
+        stack: ["Vanilla JS", "Figma"]
     },
 ]
 
