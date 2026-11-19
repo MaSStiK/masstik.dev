@@ -1,8 +1,7 @@
 import Image from "next/image"
-
 import categories from "@/data/categories"
-
 import useActiveProjectSlug from "@/hooks/useActiveProjectSlug"
+import useLanguage from "@/hooks/useLanguage"
 
 import "./Card.css"
 
@@ -11,6 +10,7 @@ export default function Card({
     categoryFilter
 }) {
     const [activeProjectSlug, setActiveProjectSlug] = useActiveProjectSlug()
+    const language = useLanguage()
 
     function openProject() {
         if (activeProjectSlug === project.slug) return
@@ -42,7 +42,7 @@ export default function Card({
                     <div className="card__type"></div>
                     <span>{project.title}</span>
                 </div>
-                <p className="card__description">{project.description}</p>
+                <p className="card__description">{project.description[language]}</p>
                 <div className="card__stack">
                     {project.stack.map((item) => (
                         <span key={item} className="card__stack-item">{item}</span>

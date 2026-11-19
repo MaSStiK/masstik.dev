@@ -1,10 +1,11 @@
+import projectDescriptions from "@/locales/projectDescriptions"
+
 const projectsData = [
     {
         slug: "punkt-b",
         githubRepo: "punkt-b",
         extension: "html",
         title: "Punkt B - Личный кабинет",
-        description: "Коммерческий проект для международной онлайн-школы выбора профессии «Пункт Б».",
         type: "commercial",
         status: "archived",
         role: "Frontend",
@@ -15,7 +16,6 @@ const projectsData = [
         githubRepo: "preparation-for-exams",
         extension: "html",
         title: "Сайт преподавателя",
-        description: "Коммерческий проект лендинга для частного преподавателя обществознания.",
         type: "commercial",
         status: "archived",
         role: "Frontend",
@@ -26,7 +26,6 @@ const projectsData = [
         githubRepo: "hedgehog-rp-legacy",
         extension: "jsx",
         title: "Hedgehog RP",
-        description: "Социальная платформа для политической ролевой игры.",
         type: "personal",
         status: "completed",
         role: "Fullstack",
@@ -37,7 +36,6 @@ const projectsData = [
         githubRepo: "map.hedgehog-rp",
         extension: "jsx",
         title: "Hedgehog RP Map",
-        description: "Interactive map of the Hedgehog RP world.",
         type: "personal",
         status: "completed",
         role: "Frontend",
@@ -48,7 +46,6 @@ const projectsData = [
         githubRepo: "tv.hedgehog-rp",
         extension: "jsx",
         title: "Hedgehog RP TV",
-        description: "Hedgehog TV is a video hosting platform for the Hedgehog RP world.",
         type: "personal",
         status: "completed",
         role: "Fullstack",
@@ -59,7 +56,6 @@ const projectsData = [
         githubRepo: "red-chat",
         extension: "jsx",
         title: "Red Chat",
-        description: "Мессенджер в стиле Telegram с сообщениями в реальном времени, профилями и чатами.",
         type: "personal",
         status: "paused",
         role: "Fullstack",
@@ -70,7 +66,6 @@ const projectsData = [
         githubRepo: "skills-testing-public",
         extension: "html",
         title: "Тестирование навыков",
-        description: "Тестирование навыков продакт-менеджмента на основе теста ProductStar.",
         type: "educational",
         status: "archived",
         role: "Frontend",
@@ -81,7 +76,6 @@ const projectsData = [
         githubRepo: "fortune-wheel-public",
         extension: "html",
         title: "Колесо Фортуны",
-        description: "Интерактивное колесо для случайного распределения подарков между пользователями.",
         type: "educational",
         status: "archived",
         role: "Frontend",
@@ -92,7 +86,6 @@ const projectsData = [
         githubRepo: "rocket-business",
         extension: "html",
         title: "Rocket Business",
-        description: "Тестовое задание от rocket-business",
         type: "test",
         status: "archived",
         role: "Frontend",
@@ -103,6 +96,7 @@ const projectsData = [
 projectsData.forEach(project => {
     project.preview = `/projects/${project.slug}/preview.png`
     project.favicon = `/projects/${project.slug}/favicon.png`
+    project.description = projectDescriptions[project.slug] ?? null
 })
 
 export default projectsData
