@@ -9,7 +9,7 @@ export default function HeroBlock({
     children
 }) {
     const blockClasses = clsx(
-        "hero-block",
+        "window-shadow hero-block",
         className,
         transparent && "hero-block--transparent"
     )

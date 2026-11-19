@@ -58,6 +58,10 @@ body {
 .bg-primary { background-color: var(--bg-base); }
 .bg-secondary { background-color: var(--bg-surface); }
 
+.window-shadow {
+    box-shadow: 0 25px 50px -12px #00000080;
+}
+
 hr {
     border: none;
     border-top: 1px solid var(--border-dark);

@@ -1,13 +1,13 @@
 .projects {
     width: 100%;
-    padding: var(--gap-5);
+    padding: var(--gap-8) var(--gap-5);
     position: relative;
     scroll-margin-top: 60px;
 
     display: flex;
     justify-content: center;
 
-    background-color: var(--bg-projects);
+    background-color: var(--bg-base);
 
     /* Если нужен фон под сетку */
     &::before {
@@ -16,7 +16,7 @@
         inset: 0;
         z-index: -2;
 
-        background-color: var(--bg-projects);
+        /* background-color: var(--bg-projects); */
     }
 }
 
