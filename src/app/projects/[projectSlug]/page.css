@@ -1,0 +1,7 @@
+body:has(.project__page) {
+    scroll-padding-top: var(--header-height);
+}
+
+.project__page {
+    height: calc(100vh - var(--header-height) - var(--footer-height));
+}

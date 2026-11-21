@@ -1,4 +1,9 @@
+:root {
+    --footer-height: 50px;
+}
+
 footer {
+    height: var(--footer-height);
     padding: var(--gap-4);
     background-color: var(--bg-header);
 }

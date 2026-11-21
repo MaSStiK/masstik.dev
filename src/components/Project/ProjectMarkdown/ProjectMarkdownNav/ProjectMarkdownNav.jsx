@@ -1,12 +1,24 @@
-import { List } from "lucide-react"
-
+import { usePathname } from "next/navigation"
 import scrollToElement from "@/utils/scrollToElement"
 import useLocale from "@/hooks/useLocale"
+
+import { List } from "lucide-react"
 
 import "./ProjectMarkdownNav.css"
 
 export default function ProjectMarkdownNav({ headings }) {
     const locale = useLocale()
+    const pathname = usePathname()
+
+    // Прокрутка к заголовку README
+    function scrollToHeading(id) {
+        if (pathname === "/") {
+            scrollToElement(id, "browser-content")
+            return
+        }
+
+        scrollToElement(id)
+    }
     
     return (
         <nav className="project-markdown__navigation">
@@ -24,7 +36,7 @@ export default function ProjectMarkdownNav({ headings }) {
                         <button
                             type="button"
                             className={`project-markdown__navigation-${heading.level} button-transition`}
-                            onClick={() => scrollToElement(heading.id, "browser-content")}
+                            onClick={() => scrollToHeading(heading.id, "browser-content")}
                         >
                             <span className="button-transition">
                                 {index === 0 && "🏠 "}
