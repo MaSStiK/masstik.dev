@@ -55,10 +55,30 @@ code {
 .font-console { font-family: var(--font-console); }
 
 /* Размер текста */
-h1, .h1 { font-size: var(--fs-xlarge); font-weight: var(--fw-bold); }
-h2, .h2 { font-size: var(--fs-xlarge); font-weight: var(--fw-semibold); }
-h3, .h3 { font-size: var(--fs-large);  font-weight: var(--fw-semibold); }
-h4, .h4 { font-size: var(--fs-large);  font-weight: var(--fw-semibold); }
+h1, .h1 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-xxlarge);
+    font-weight: var(--fw-bold);
+}
+
+h2, .h2 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-xxlarge);
+    font-weight: var(--fw-semibold);
+}
+
+h3, .h3 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-large);
+    font-weight: var(--fw-semibold);
+}
+
+h4, .h4 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-large);
+    font-weight: var(--fw-semibold);
+}
+
 p, .p, span, label { font-size: var(--fs-medium); }
 .fs-xxlarge  { font-size: var(--fs-xxlarge); }
 .fs-xlarge   { font-size: var(--fs-xlarge); }

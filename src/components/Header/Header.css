@@ -18,6 +18,15 @@ header {
     border-bottom: 1px solid var(--border-dark);
 }
 
+.header__title span {
+    font-family: var(--font-console);
+    font-size: var(--fs-xlarge);
+
+    &:nth-of-type(2) {
+        margin: 0 4px;
+    }
+}
+
 .header-button {
     width: 104px;
     height: 32px;
@@ -39,8 +48,4 @@ header {
     &:active {
         background-color: var(--bg-surface);
     }
-}
-
-.site-title {
-    margin: 0 4px;
 }

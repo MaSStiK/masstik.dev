@@ -1,0 +1,13 @@
+/* Блок с краткой информацией */
+.hero-info {
+    align-items: center;
+
+    & code {
+        /* Фиксированная ширина, чтобы не скакала при смене языка */
+        width: 100%;
+    }
+}
+
+.hero-info__pic {
+    border-radius: 8px;
+}

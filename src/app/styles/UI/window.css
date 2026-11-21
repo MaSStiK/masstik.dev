@@ -1,0 +1,29 @@
+/* Стилизация окна */
+.window {
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid var(--border-dark);
+    background-color: var(--bg-surface);
+}
+
+/* Заголовок окна */
+.window__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-header);
+    padding: var(--gap-2);
+}
+
+/* Контент окна */
+.window__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2);
+    padding: var(--gap-4);
+}
+
+.window-shadow {
+    box-shadow: 0 25px 50px -12px #00000080;
+}

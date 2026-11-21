@@ -17,7 +17,7 @@ export default function ProjectsSection() {
                         header="projects"
                         number="02"
                     />
-                    <span className="projects__info-header">{locale.projects.header}</span>
+                    <h2>{locale.projects.header}</h2>
                     <span className="projects__info-description">
                         {locale.projects.descriptionTopLine}<br />
                         {locale.projects.descriptionBottomLine}

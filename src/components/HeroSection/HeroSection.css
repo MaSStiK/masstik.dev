@@ -78,6 +78,17 @@
     }
 }
 
+/* Изначально прозрачность включена */
+.window--transparent {
+    background-color: transparent;
+    backdrop-filter: blur(12px);
+}
+
+/* Заголовок блока */
+.hero .window__header span {
+    font-family: var(--font-console);
+}
+
 /* Обвертка для блока hero-bio и hero__buttons */
 .hero__side {
     flex: 1;

@@ -69,6 +69,10 @@ const fr = {
             contents: "Sommaire",
             gallery: "Galerie"
         }
+    },
+    contacts: {
+        header: "Me contacter",
+        description: "Que tu aies une idée de projet, une offre d'emploi ou simplement envie de dire bonjour, mon terminal est toujours ouvert."
     }
 }
 

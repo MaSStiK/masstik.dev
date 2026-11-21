@@ -1,0 +1,63 @@
+/* Блок с текстовым описанием */
+.hero-bio {
+    height: fit-content;
+    
+    & p {
+        line-height: 1.4;
+    }
+
+    & hr {
+        margin: var(--gap-4) 0;
+    }
+}
+
+/* Ссылки в hero-bio */
+.hero-bio .hero-bio__link {
+    --accent-color: var(--gray);
+    text-transform: uppercase;
+    font-size: var(--fs-small);
+    font-family: var(--font-console);
+    border: none;
+
+    color: var(--accent-color);
+    outline: 2px solid var(--accent-color);
+    background-color: color-mix(in srgb, var(--accent-color) 10%, var(--button-default));
+
+    & svg {
+        width: 20px;
+        height: 20px;
+        transition: fill 0.15s ease;
+        fill: var(--accent-color)
+    }
+}
+
+/* Когда прозрачность включена - у кнопок прозрачный фон */
+.hero-bio.window--transparent .hero-bio__link {
+    background-color: color-mix(in srgb, var(--accent-color) 20%, transparent);
+}
+
+.hero-bio .hero-bio__link--github   { --accent-color: var(--green); }
+.hero-bio .hero-bio__link--telegram { --accent-color: var(--blue); }
+.hero-bio .hero-bio__link--gmail    { --accent-color: var(--red); }
+
+@media (hover: hover) {
+    .hero-bio .hero-bio__link:is(:hover, :focus-visible) {
+        color: var(--bg-header);
+        outline-color: #00000000;
+        background-color: var(--accent-color);
+        & svg {
+            fill: var(--bg-header)
+        }
+    }
+}
+
+@media (hover: none) {
+    .hero-bio .hero-bio__link:active {
+        color: var(--bg-header);
+        outline-color: #00000000;
+        background-color: var(--accent-color);
+        & svg {
+            fill: var(--bg-header)
+        }
+    }
+}

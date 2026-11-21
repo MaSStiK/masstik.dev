@@ -35,12 +35,6 @@
     gap: var(--gap-2);
 }
 
-.projects__info-header {
-    font-family: var(--font-heading);
-    font-size: var(--fs-xxlarge);
-    font-weight: var(--fw-bold);
-}
-
 .projects__info-description {
     font-size: var(--fs-small);
     color: var(--gray);
