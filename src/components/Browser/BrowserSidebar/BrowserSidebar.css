@@ -6,7 +6,7 @@
     gap: var(--gap-2);
     padding: var(--gap-3) 0;
     background-color: var(--bg-browser-sidebar);
-    border-right: 1px solid #72707240;
+    border-right: 1px solid var(--border-dark);
 }
 
 .browser-tree__row {

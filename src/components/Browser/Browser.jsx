@@ -17,7 +17,7 @@ export default function Browser() {
     useBrowserUrlSync()
 
     return (
-        <div className="window-shadow browser">
+        <div className="window window-shadow browser">
             <BrowserToolbar />
 
             <div className="browser__body">

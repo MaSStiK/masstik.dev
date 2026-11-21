@@ -10,10 +10,10 @@
 .window__header {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: var(--bg-header);
     padding: var(--gap-2);
+    background-color: var(--bg-header);
+    border-bottom: 1px solid var(--border-dark);
 }
 
 /* Контент окна */
