@@ -72,7 +72,12 @@ const en = {
     },
     contacts: {
         header: "Get in Touch",
-        description: "Whether you have a project idea, a job offer, or just want to say hi - my terminal is always open."
+        description: "Whether you have a project idea, a job offer, or just want to say hi - my terminal is always open.",
+        status: "open to work and collaboration",
+        response: {
+            prefix: "within ",
+            time: "48 hours"
+        }
     }
 }
 

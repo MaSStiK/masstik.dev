@@ -65,6 +65,7 @@ export default function Navigation() {
                         href="/"
                         className="button-transition"
                         onClick={event => navigateToSection(event, "stack")}
+                        // TODO: Для стека сделать переключение браузера, возможно через глобальный стейт
                     >
                         {locale.header.nav.stack}
                     </Link>

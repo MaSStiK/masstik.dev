@@ -72,7 +72,12 @@ const fr = {
     },
     contacts: {
         header: "Me contacter",
-        description: "Que tu aies une idée de projet, une offre d'emploi ou simplement envie de dire bonjour, mon terminal est toujours ouvert."
+        description: "Que tu aies une idée de projet, une offre d'emploi ou simplement envie de dire bonjour, mon terminal est toujours ouvert.",
+        status: "ouvert aux offres d'emploi et aux collaborations",
+        response: {
+            prefix: "sous ",
+            time: "48 heures"
+        }
     }
 }
 

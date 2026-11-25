@@ -1,0 +1,65 @@
+/* Информация */
+.contacts__info {
+    flex: 1;
+
+    & code span {
+        font-size: 12px;
+    }
+}
+
+.contacts__info-text {
+    font-size: var(--fs-small);
+    color: var(--gray);
+}
+
+/* ContactsInfoLink */
+.contacts__links .window {
+    --stroke-color: var(--gray);
+    --subtitle-color: var(--light-gray);
+    cursor: pointer;
+
+    @media (hover: hover) {
+        &:is(:hover, :focus-visible) {
+            border-color: color-mix(in srgb, var(--accent-color) 50%, transparent);
+            --stroke-color: var(--accent-color);
+            --subtitle-color: var(--white);
+        }
+    }
+
+    &:active {
+        border-color: color-mix(in srgb, var(--accent-color) 50%, transparent);
+        --stroke-color: var(--accent-color);
+        --subtitle-color: var(--white);
+    }
+}
+
+.contacts__link {
+    align-items: center;
+    text-decoration: none;
+}
+
+.contacts__link--github   { --accent-color: var(--green); }
+.contacts__link--telegram { --accent-color: var(--blue); }
+.contacts__link--gmail    { --accent-color: var(--red); }
+
+.contacts__link-icon {
+    width: 32px;
+    height: 32px;
+    background-color: color-mix(in srgb, var(--accent-color) 15%, transparent);
+    border-radius: 4px;
+
+    & svg {
+        fill: var(--accent-color)
+    }
+}
+
+.contacts__link-subtitle {
+    color: var(--subtitle-color);
+    transition: color 0.15s ease;
+}
+
+.contacts__link-arrow {
+    stroke: var(--stroke-color);
+    transition: stroke 0.15s ease;
+    margin-left: auto;
+}

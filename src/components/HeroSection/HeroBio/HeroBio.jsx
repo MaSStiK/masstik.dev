@@ -2,7 +2,7 @@ import clsx from "clsx"
 import Link from "next/link"
 import useLocale from "@/hooks/useLocale"
 
-import { FaGithub, FaTelegramPlane, FaAt } from "react-icons/fa"
+import { FaGithub, FaTelegramPlane, FaEnvelope } from "react-icons/fa"
 
 import "./HeroBio.css"
 
@@ -61,7 +61,7 @@ export default function HeroBio({
                             className="button button-transition hero-bio__link hero-bio__link--gmail"
                             href="mailto:masstik.dev@gmail.com"
                         >
-                            <FaAt size={20} />
+                            <FaEnvelope size={20} />
                             Gmail
                         </Link>
                     </li>

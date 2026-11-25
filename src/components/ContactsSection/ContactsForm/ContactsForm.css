@@ -1,0 +1,14 @@
+/* Консоль дл отправки информации */
+.contacts__console {
+    flex: 1;
+}
+
+.contacts__console .window__inner span {
+    font-size: var(--fs-small);
+    color: var(--light-gray);
+    font-family: var(--font-console);
+}
+
+.contacts__console .window__inner span span {
+    color: var(--orange);
+}

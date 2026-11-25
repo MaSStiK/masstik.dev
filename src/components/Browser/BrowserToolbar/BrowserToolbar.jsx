@@ -38,7 +38,7 @@ export default function BrowserToolbar() {
     }
 
     async function refresh() {
-        // TODO: Из за кэша github не выйдет получить новые данные пока сам git Того не захочет
+        // TODO: Из за кэша github не выйдет получить новые данные пока сам git того не захочет
         // Поэтому можно сделать просто анимацию обновления
     }
 
