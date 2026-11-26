@@ -35,10 +35,10 @@ export default function ProjectMarkdownNav({ headings }) {
                     <li key={heading.id}>
                         <button
                             type="button"
-                            className={`project-markdown__navigation-${heading.level} button-transition`}
+                            className={`project-markdown__navigation-${heading.level} default-transition`}
                             onClick={() => scrollToHeading(heading.id, "browser-content")}
                         >
-                            <span className="button-transition">
+                            <span className="default-transition">
                                 {index === 0 && "🏠 "}
                                 {heading.title}
                             </span>

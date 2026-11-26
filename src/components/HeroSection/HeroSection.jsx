@@ -53,8 +53,7 @@ export default function HeroSection() {
                     <div className="hero__effects-controls">
                         <button
                             className={clsx(
-                                "flex-center",
-                                "button-transition",
+                                "default-transition flex-center",
                                 isBgVisible && "hero__effects-control--active"
                             )}
                             onClick={() => setIsBgVisible(prev => !prev)}
@@ -63,8 +62,7 @@ export default function HeroSection() {
                         </button>
                         <button
                             className={clsx(
-                                "flex-center",
-                                "button-transition",
+                                "default-transition flex-center",
                                 isWindowTp && "hero__effects-control--active"
                             )}
                             onClick={() => setIsWindowTp(prev => !prev)}
@@ -80,13 +78,13 @@ export default function HeroSection() {
 
                         <div className="flex-row gap-6 hero__buttons">
                             <button
-                                className="button button-transition hero__button hero__button--hire"
+                                className="button default-transition hero__button hero__button--hire"
                                 onClick={() => scrollToElement("contacts")}
                             >
                                 {locale.hero.actions.contact}
                             </button>
                             <button
-                                className="button button-transition hero__button hero__button--projects"
+                                className="button default-transition hero__button hero__button--projects"
                                 onClick={() => scrollToElement("projects")}
                             >
                                 {locale.hero.actions.projects}

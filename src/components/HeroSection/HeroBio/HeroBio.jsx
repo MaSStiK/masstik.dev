@@ -36,7 +36,7 @@ export default function HeroBio({
                 <ul className="flex-row gap-4">
                     <li>
                         <Link
-                            className="button button-transition hero-bio__link hero-bio__link--github"
+                            className="button default-transition hero-bio__link hero-bio__link--github"
                             href="https://github.com/MaSStiK"
                             rel="noopener noreferrer"
                             target="_blank"
@@ -47,7 +47,7 @@ export default function HeroBio({
                     </li>
                     <li>
                         <Link
-                            className="button button-transition hero-bio__link hero-bio__link--telegram"
+                            className="button default-transition hero-bio__link hero-bio__link--telegram"
                             href="https://t.me/MaSStiK"
                             rel="noopener noreferrer"
                             target="_blank"
@@ -58,7 +58,7 @@ export default function HeroBio({
                     </li>
                     <li>
                         <Link
-                            className="button button-transition hero-bio__link hero-bio__link--gmail"
+                            className="button default-transition hero-bio__link hero-bio__link--gmail"
                             href="mailto:masstik.dev@gmail.com"
                         >
                             <FaEnvelope size={20} />

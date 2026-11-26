@@ -30,7 +30,7 @@ export default function BrowserSidebar() {
     }
 
     const allClasses = clsx(
-        "button-transition",
+        "default-transition",
         "browser-tree__row",
         "browser-tree__all",
         !activeProjectSlug // Если нету активного проекта
@@ -80,7 +80,7 @@ function FolderItem({
     const [activeProjectSlug] = useActiveProjectSlug()
 
     const folderClasses = clsx(
-        "button-transition",
+        "default-transition",
         "browser-tree__row",
         "browser-tree__folder",
         !activeProjectSlug // Если нету активного проекта
@@ -139,7 +139,7 @@ function FileItem({ file }) {
     const [activeProjectSlug, setActiveProjectSlug] = useActiveProjectSlug()
 
     const fileClasses = clsx(
-        "button-transition",
+        "default-transition",
         "browser-tree__row",
         "browser-tree__file",
         activeProjectSlug === file.slug && "browser-tree__row--selected"

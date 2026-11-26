@@ -52,7 +52,7 @@ export default function BrowserToolbar() {
 
             <div className="browser__address">
                 <button
-                    className="button-transition flex-center browser__toolbar-button"
+                    className="default-transition flex-center browser__toolbar-button"
                     aria-label={locale.browser.toolbar.back}
                     onClick={goBack}
                 >
@@ -60,7 +60,7 @@ export default function BrowserToolbar() {
                 </button>
 
                 <button
-                    className="button-transition flex-center browser__toolbar-button"
+                    className="default-transition flex-center browser__toolbar-button"
                     aria-label={locale.browser.toolbar.refresh}
                     onClick={refresh}
                 >

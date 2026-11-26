@@ -45,7 +45,7 @@ export default function Navigation() {
                 <li>
                     <Link
                         href="/"
-                        className="button-transition"
+                        className="default-transition"
                         onClick={event => navigateToSection(event, "about")}
                     >
                         {locale.header.nav.about_me}
@@ -54,7 +54,7 @@ export default function Navigation() {
                 <li>
                     <Link
                         href="/"
-                        className="button-transition"
+                        className="default-transition"
                         onClick={event => navigateToSection(event, "projects")}
                     >
                         {locale.header.nav.projects}
@@ -63,7 +63,7 @@ export default function Navigation() {
                 <li>
                     <Link
                         href="/"
-                        className="button-transition"
+                        className="default-transition"
                         onClick={event => navigateToSection(event, "stack")}
                         // TODO: Для стека сделать переключение браузера, возможно через глобальный стейт
                     >
@@ -73,7 +73,7 @@ export default function Navigation() {
                 <li>
                     <Link
                         href="/"
-                        className="button-transition"
+                        className="default-transition"
                         onClick={event => navigateToSection(event, "contacts")}
                     >
                         {locale.header.nav.contacts}

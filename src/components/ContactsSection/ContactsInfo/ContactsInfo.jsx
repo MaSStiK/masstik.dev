@@ -21,7 +21,7 @@ export default function ContactsInfo() {
             </div>
 
             <div className="flex-col gap-3 contacts__links">
-                <div className="window window__shadow button-transition contacts__link--github">
+                <div className="window window__shadow default-transition contacts__link--github">
                     <div className="window__inner">
                         <ContactsInfoLink
                             icon={FaGithub}
@@ -31,7 +31,7 @@ export default function ContactsInfo() {
                         />
                     </div>
                 </div>
-                <div className="window window__shadow button-transition contacts__link--telegram">
+                <div className="window window__shadow default-transition contacts__link--telegram">
                     <div className="window__inner">
                         <ContactsInfoLink
                             icon={FaTelegramPlane}
@@ -42,7 +42,7 @@ export default function ContactsInfo() {
                         />
                     </div>
                 </div>
-                <div className="window window__shadow button-transition contacts__link--gmail">
+                <div className="window window__shadow default-transition contacts__link--gmail">
                     <div className="window__inner">
                         <ContactsInfoLink
                             icon={FaEnvelope}
@@ -57,38 +57,3 @@ export default function ContactsInfo() {
         </div>
     )
 }
-
-
-{/* <ul className="flex-row gap-4">
-    <li>
-        <Link
-            className="button button-transition hero-bio__link hero-bio__link--github"
-            href="https://github.com/MaSStiK"
-            rel="noopener noreferrer"
-            target="_blank"
-        >
-            <FaGithub size={20} />
-            Github
-        </Link>
-    </li>
-    <li>
-        <Link
-            className="button button-transition hero-bio__link hero-bio__link--telegram"
-            href="https://t.me/MaSStiK"
-            rel="noopener noreferrer"
-            target="_blank"
-        >
-            <FaTelegramPlane size={20} />
-            Telegram
-        </Link>
-    </li>
-    <li>
-        <Link
-            className="button button-transition hero-bio__link hero-bio__link--gmail"
-            href="mailto:masstik.dev@gmail.com"
-        >
-            <FaEnvelope size={20} />
-            Gmail
-        </Link>
-    </li>
-</ul> */}
