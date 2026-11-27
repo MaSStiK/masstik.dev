@@ -67,7 +67,7 @@
     flex: 7;
     overflow: hidden;
     margin: var(--gap-3) 0;
-    border: 1px solid var(--border-gray);
+    border: 1px solid var(--border-window);
     border-radius: 4px;
 }
 
@@ -85,7 +85,7 @@
     display: flex;
     padding: var(--gap-3);
     gap: var(--gap-3);
-    border-top: 1px solid var(--border-gray);
+    border-top: 1px solid var(--border-window);
 }
 
 .project-gallery__main-title {
@@ -123,7 +123,7 @@
     flex-shrink: 0;
     position: relative;
 
-    border: 1px solid var(--border-gray);
+    border: 1px solid var(--border-window);
     border-radius: 4px;
     overflow: hidden;
     transition: border-color 0.15s ease;
@@ -182,7 +182,7 @@
 
     & hr {
         flex: 1;
-        border-color: var(--border-gray);
+        border-color: var(--border-window);
     }
 }
 

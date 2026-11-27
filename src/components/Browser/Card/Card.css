@@ -1,4 +1,4 @@
-/* Карточка проекта */
+/* Карточка проекта в списке проектов */
 .card {
     --accent-color: var(--gray);
     display: flex;
@@ -7,7 +7,7 @@
 
     /* background-color: var(--bg-header); */
     background-color: var(--bg-browser-card);
-    border: 1px solid var(--border-gray);
+    border: 1px solid var(--border-window);
     border-radius: 6px;
     transition: border-color 0.15s ease;
 

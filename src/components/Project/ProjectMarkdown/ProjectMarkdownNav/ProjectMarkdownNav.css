@@ -6,14 +6,14 @@
     top: 40px;
 
     & li {
-        border-left: 1px solid var(--border-gray);
+        border-left: 1px solid var(--border-window);
         padding-left: var(--gap-2);
         margin-left: var(--gap-2);
     }
 
     & .project-markdown__navigation-h3 {
         width: calc(100% - var(--gap-5));
-        border-left: 1px solid var(--border-gray);
+        border-left: 1px solid var(--border-window);
         padding-left: var(--gap-2);
         margin-left: var(--gap-5);
     }

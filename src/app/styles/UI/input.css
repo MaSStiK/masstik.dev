@@ -10,3 +10,8 @@ input {
         color: var(--gray);
     }
 }
+
+.input {
+    border: 1px solid var(--border-window);
+    border-radius: 4px;
+}

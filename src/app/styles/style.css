@@ -20,8 +20,8 @@
     /* Осветить или Затемнить цвет */
     /* https://toolbark.com/tools/darken-lighten-color */
 
-    --border-gray:  #413f42;
     --border-dark:  #373537;
+    --border-window: #413f42;
 
     /* Monokai Pro Color Palette */
     --white:      #fdf9f3;

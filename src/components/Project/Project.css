@@ -82,6 +82,6 @@
 
     & hr {
         flex: 1;
-        border-color: var(--border-gray);
+        border-color: var(--border-window);
     }
 }

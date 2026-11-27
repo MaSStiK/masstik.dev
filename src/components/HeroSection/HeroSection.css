@@ -51,7 +51,7 @@
     width: 36px;
     height: 36px;
     border-radius: 6px;
-    border: 1px solid var(--border-gray);
+    border: 1px solid var(--border-window);
     background-color: var(--button-default);
 
     & svg {
