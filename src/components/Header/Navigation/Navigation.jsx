@@ -46,7 +46,7 @@ export default function Navigation() {
                     <Link
                         href="/"
                         className="default-transition"
-                        onClick={event => navigateToSection(event, "about")}
+                        onClick={event => navigateToSection(event, "page-top")}
                     >
                         {locale.header.nav.about_me}
                     </Link>

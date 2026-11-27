@@ -16,9 +16,12 @@ export default function Header() {
                 <span className="text-red">MaSStiK<span className="text-orange">.dev</span></span>
                 <span className="text-gray">{"/>"}</span>
             </span>
+
             <Navigation />
+
             <div className="flex-row gap-2">
                 <LanguageSwitcher />
+
                 <button className="header-button">
                     <HardDrive size={16} />
                     {locale.header.disc}

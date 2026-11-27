@@ -5,13 +5,11 @@ import Hero from "@/components/HeroSection/HeroSection"
 import Projects from "@/components/ProjectsSection/ProjectsSection"
 import Contacts from "@/components/ContactsSection/ContactsSection"
 
-import Browser from "@/components/Browser/Browser"
-
 export default function HomePage() {
     return (
         <>
             <Header />
-            <main>
+            <main id="page-top">
                 <Hero />
                 <Projects />
                 <Contacts />
