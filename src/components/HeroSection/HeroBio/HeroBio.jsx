@@ -20,7 +20,7 @@ export default function HeroBio({
     return (
         <div className={classes}>
             <div className="window__header">
-                <span className="text-gray">{`// README.md`}</span>
+                <span className="font-console text-gray">{`// README.md`}</span>
             </div>
             <div className="window__inner">
                 <p><span className="text-gray">&gt;</span> {locale.hero.readme.whoAmI}</p>

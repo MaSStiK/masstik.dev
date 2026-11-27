@@ -10,7 +10,7 @@ export default function ContactsForm() {
     return (
         <div className="window window__shadow contacts__console">
             <div className="window__header">
-                <span className="text-gray">{`// send-message.sh`}</span>
+                <span className="font-console text-gray">{`// send-message.sh`}</span>
             </div>
             <div className="window__inner">
                 <div className="flex-col gap-2">

@@ -15,7 +15,7 @@ export default function HeroAbout({
     return (
         <div className={classes}>
             <div className="window__header">
-                <span className="text-gray">{`// About.md`}</span>
+                <span className="font-console text-gray">{`// About.md`}</span>
             </div>
             <div className="window__inner">
                 <Image
