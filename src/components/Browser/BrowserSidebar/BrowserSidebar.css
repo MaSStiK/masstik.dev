@@ -18,7 +18,7 @@
     align-items: center;
     gap: 6px;
     padding: 0 18px 0 32px;
-    border-right: 2px solid #ffffff00;
+    border-right: 2px solid #00000000;
 
     & span {
         font-family: var(--font-console);

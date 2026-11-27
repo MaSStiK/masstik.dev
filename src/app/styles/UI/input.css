@@ -1,4 +1,4 @@
-input {
+input:is([type="text"], [type="email"]) {
     background: none;
     border: none;
     outline: none;
@@ -11,7 +11,36 @@ input {
     }
 }
 
-.input {
+textarea {
+    background: none;
+    border: none;
+    outline: none;
+    font-family: var(--font-console);
+    font-size: var(--fs-medium);
+    color: var(--white);
+
+    &::placeholder {
+        color: var(--gray);
+    }
+}
+
+:is(input, textarea).text-input {
+    padding: var(--gap-3);
+    background-color: var(--bg-header);
+    outline: 1px solid #00000000;
     border: 1px solid var(--border-window);
     border-radius: 4px;
+
+    transition: 
+        outline-color 0.15s ease,
+        border-color 0.15s ease;
+
+    &:focus {
+        outline-color: var(--purple);
+        border-color: var(--purple);
+    }
+}
+
+textarea.text-input {
+    resize: none;
 }

@@ -77,6 +77,13 @@ const en = {
         response: {
             prefix: "within ",
             time: "48 hours"
+        },
+        form: {
+            name: "Your name or nickname",
+            email: "Email (optional, for a reply)",
+            message: "Message",
+            messagePlaceholder: "Hello! I have a project idea...",
+            send: "Send message"
         }
     }
 }

@@ -77,6 +77,13 @@ const fr = {
         response: {
             prefix: "sous ",
             time: "48 heures"
+        },
+        form: {
+            name: "Votre nom ou pseudonyme",
+            email: "Email (facultatif, pour vous répondre)",
+            message: "Message",
+            messagePlaceholder: "Bonjour ! J'ai une idée de projet...",
+            send: "Envoyer le message"
         }
     }
 }
